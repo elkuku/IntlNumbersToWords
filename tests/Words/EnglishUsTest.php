@@ -3,6 +3,7 @@
 namespace tests;
 
 use IntlNumbersToWords\Numbers;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Numbers_Words class extension to spell numbers in United States English.
@@ -26,17 +27,22 @@ use IntlNumbersToWords\Numbers;
 
 //require_once 'Numbers/Words.php';
 
-class Numbers_Words_EnglishUsTest extends \PHPUnit_Framework_TestCase
+class Numbers_Words_EnglishUsTest extends TestCase
 {
+    /**
+     * @var Numbers
+     */
     var $handle;
     var $lang = 'en_US';
 
     public static function main()
     {
+        /*
         require_once 'PHPUnit/TextUI/TestRunner.php';
         PHPUnit_TextUI_TestRunner::run(
             new PHPUnit_Framework_TestSuite('Numbers_Words_EnglishUsTest')
         );
+        */
     }
 
     function setUp()
