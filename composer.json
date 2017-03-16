@@ -1,0 +1,18 @@
+{
+  "name": "elkuku/intl-numbers-to-words",
+  "description": "Convert numbers to words in many languages",
+  "authors": [
+    {
+      "name": "Nikolai Plath",
+      "email": "der.el.kuku@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "IntlNumbersToWords": "src/"
+    }
+  }
+}
