@@ -1,6 +1,9 @@
 <?php
+
+namespace IntlNumbersToWords;
+
 /**
- * Numbers_Words
+ * Numbers
  *
  * PHP version 5
  *
@@ -23,12 +26,10 @@
  * @version  SVN: $Id$
  * @link     http://pear.php.net/package/Numbers_Words
  */
-
-// {{{ Numbers_Words
-require_once 'Numbers/Words/Exception.php';
+use IntlNumbersToWords\Exception\NumbersToWordsException;
 
 /**
- * The Numbers_Words class provides method to convert arabic numerals to words.
+ * The Numbers class provides method to convert arabic numerals to words.
  *
  * @category Numbers
  * @package  Numbers_Words
@@ -38,10 +39,8 @@ require_once 'Numbers/Words/Exception.php';
  * @since    PHP 4.2.3
  * @access   public
  */
-class Numbers_Words
+class Numbers
 {
-    // {{{ constants
-
     /**
      * Masculine gender, for languages that need it
      */
@@ -66,10 +65,6 @@ class Numbers_Words
       */
     const GENDER_ABSTRACT = 3;
 
-    // }}}
-
-    // {{{ properties
-
     /**
      * Default Locale name
      * @var string
@@ -83,9 +78,6 @@ class Numbers_Words
      * @access public
      */
     public $decimalPoint = '.';
-
-    // }}}
-    // {{{ toWords()
 
     /**
      * Converts a number to its word representation
@@ -101,9 +93,9 @@ class Numbers_Words
      * @since  PHP 4.2.3
      * @return string  The corresponding word representation
      */
-    function toWords($num, $locale = '', $options = array())
+    public function toWords($num, $locale = '', $options = [])
     {
-        if (empty($locale) && isset($this) && $this instanceof Numbers_Words) {
+        if (empty($locale)) {
             $locale = $this->locale;
         }
 
@@ -113,9 +105,8 @@ class Numbers_Words
 
         $classname = self::loadLocale($locale, '_toWords');
 
-
+        /* @type Numbers $obj */
         $obj = new $classname;
-
 
         if (!is_int($num)) {
             $num = $obj->normalizeNumber($num);
@@ -129,9 +120,7 @@ class Numbers_Words
         }
         return trim($obj->_toWords($num, $options));
     }
-    // }}}
 
-    // {{{ toCurrency()
     /**
      * Converts a currency value to word representation (1.02 => one dollar two cents)
      * If the number has not any fraction part, the "cents" number is omitted.
@@ -162,6 +151,7 @@ class Numbers_Words
 
         $classname = self::loadLocale($locale, 'toCurrencyWords');
 
+        /* @type Numbers $obj */
         $obj = new $classname;
 
         if (is_null($decimalPoint)) {
@@ -189,10 +179,10 @@ class Numbers_Words
         } elseif ($len > 2) {
             // get the 3rd digit after the comma
             $round_digit = substr($currency[1], 2, 1);
-            
+
             // cut everything after the 2nd digit
             $currency[1] = substr($currency[1], 0, 2);
-            
+
             if ($round_digit >= 5) {
                 // round up without losing precision
                 include_once "Math/BigInteger.php";
@@ -213,9 +203,7 @@ class Numbers_Words
 
         return trim($obj->toCurrencyWords($intCurr, $currency[0], $currency[1]));
     }
-    // }}}
 
-    // {{{ getLocales()
     /**
      * Lists available locales for Numbers_Words
      *
@@ -229,16 +217,14 @@ class Numbers_Words
      *
      * @return mixed[] Array of locale names ("de_DE", "en")
      */
-    public static function getLocales($locales = null)
+    public function getLocales($locales = null)
     {
         $ret = array();
         if (isset($locales) && is_string($locales)) {
             $locales = array($locales);
         }
 
-        $dname = __DIR__ . DIRECTORY_SEPARATOR . 'Words'
-            . DIRECTORY_SEPARATOR . 'Locale'
-            . DIRECTORY_SEPARATOR;
+        $dname = __DIR__ . DIRECTORY_SEPARATOR . 'Words' . DIRECTORY_SEPARATOR;
 
         $sfiles = glob($dname . '??.php');
         foreach ($sfiles as $fname) {
@@ -263,7 +249,6 @@ class Numbers_Words
         sort($ret);
         return $ret;
     }
-    // }}}
 
     /**
      * Load the given locale and return class name
@@ -273,28 +258,22 @@ class Numbers_Words
      *
      * @return string Locale class name
      *
-     * @throws Numbers_Words_Exception When the class cannot be loaded
+     * @throws NumbersToWordsException When the class cannot be loaded
      */
-    public static function loadLocale($locale, $requiredMethod)
+    public function loadLocale($locale, $requiredMethod)
     {
-        $classname = 'Numbers_Words_Locale_' . $locale;
+        $localeToPath = str_replace('_', '\\', $locale);
+        $classname = 'IntlNumbersToWords\\Words\\' . $localeToPath;
         if (!class_exists($classname)) {
-            $file = str_replace('_', '/', $classname) . '.php';
-            if (stream_resolve_include_path($file)) {
-                include_once $file;
-            }
-
-            if (!class_exists($classname)) {
-                throw new Numbers_Words_Exception(
-                    'Unable to load locale class ' . $classname
-                );
-            }
+            throw new NumbersToWordsException(
+                'Unable to load locale class ' . $classname
+            );
         }
 
         $methods = get_class_methods($classname);
 
         if (!in_array($requiredMethod, $methods)) {
-            throw new Numbers_Words_Exception(
+            throw new NumbersToWordsException(
                 "Unable to find method '$requiredMethod' in class '$classname'"
             );
         }
