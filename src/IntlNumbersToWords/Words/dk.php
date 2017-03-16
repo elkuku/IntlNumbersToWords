@@ -133,14 +133,14 @@ class Numbers_Words_Locale_dk extends Numbers_Words
       'CHF' => array(array('schweitzer franc'), array('rappen')),
       'CYP' => array(array('cypriotisk pund', 'cypriotiske pund'), array('cent')),
       'CZK' => array(array('tjekkisk koruna'), array('halerz')),
-      'DKK' => array(array('krone', 'kroner'), array('øre')),
+      'DKK' => array(array('krone', 'kroner'), array('ï¿½re')),
       'EUR' => array(array('euro'), array('euro-cent')),
       'GBP' => array(array('pund'), array('pence')),
       'HKD' => array(array('Hong Kong dollar', 'Hong Kong dollars'), array('cent')),
       'JPY' => array(array('yen'), array('sen')),
-      'NOK' => array(array('norsk krone', 'norske kroner'), array('øre')),
+      'NOK' => array(array('norsk krone', 'norske kroner'), array('ï¿½re')),
       'PLN' => array(array('zloty', 'zlotys'), array('grosz')),
-      'SEK' => array(array('svensk krone', 'svenske kroner'), array('øre')),
+      'SEK' => array(array('svensk krone', 'svenske kroner'), array('ï¿½re')),
       'USD' => array(array('dollar', 'dollars'), array('cent'))
     );
 

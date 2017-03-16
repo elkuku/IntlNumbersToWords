@@ -111,7 +111,7 @@ class Numbers_Words_Locale_fr extends Numbers_Words
      * @access private
      */
     var $_and = 'et';
-    
+
     /**
      * The word separator.
      * @var string
@@ -302,12 +302,12 @@ class Numbers_Words_Locale_fr extends Numbers_Words
     function _showDigitsGroup($num, $last = false)
     {
         $ret = '';
-        
+
         // extract the value of each digit from the three-digit number
         $e = $num%10;                  // ones
         $d = ($num-$e)%100/10;         // tens
         $s = ($num-$d*10-$e)%1000/100; // hundreds
-        
+
         // process the "hundreds" digit.
         if ($s) {
             if ($s>1) {
@@ -341,7 +341,7 @@ class Numbers_Words_Locale_fr extends Numbers_Words
                     } elseif ($resto) {
                         $ret .= $this->_dash;
                     }
-                    
+
                     if ($resto) {
                         $ret .= $this->_showDigitsGroup($resto);
                     }

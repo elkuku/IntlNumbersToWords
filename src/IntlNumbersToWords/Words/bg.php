@@ -125,7 +125,7 @@ class Numbers_Words_Locale_bg extends Numbers_Words
      * @access private
      */
     var $_and = 'и';
-    
+
     /**
      * The word separator.
      * @var string
@@ -326,11 +326,11 @@ class Numbers_Words_Locale_bg extends Numbers_Words
 
             $ret =& $m[0];
             if ($first) {
-                array_unshift($ret, $first); 
+                array_unshift($ret, $first);
             }
             return $ret;
         }
-        
+
         return explode(' ', number_format($num, 0, '', ' ')); // a faster version for integers
     }
     // }}}
@@ -364,12 +364,12 @@ class Numbers_Words_Locale_bg extends Numbers_Words
              the array may vary.
         */
         $ret = array();
-        
+
         // extract the value of each digit from the three-digit number
         $e = $num%10;                  // ones
         $d = ($num-$e)%100/10;         // tens
         $s = ($num-$d*10-$e)%1000/100; // hundreds
-        
+
         // process the "hundreds" digit.
         if ($s) {
             switch ($s) {

@@ -193,8 +193,8 @@ class Numbers_Words_Locale_et extends Numbers_Words
      * @access private
      */
     var $_digits = array(
-        0 => 'null', 'üks', 'kaks', 'kolm', 'neli',
-        'viis', 'kuus', 'seitse', 'kaheksa', 'üheksa'
+        0 => 'null', 'ï¿½ks', 'kaks', 'kolm', 'neli',
+        'viis', 'kuus', 'seitse', 'kaheksa', 'ï¿½heksa'
     );
 
     /**
@@ -296,13 +296,13 @@ class Numbers_Words_Locale_et extends Numbers_Words
         case 4:
         case 3:
         case 2:
-            $ret .= $this->_sep . $this->_digits[$t] . 'kümmend';
+            $ret .= $this->_sep . $this->_digits[$t] . 'kï¿½mmend';
             break;
 
         case 1:
             switch ($d) {
             case 0:
-                $ret .= $this->_sep . 'kümme';
+                $ret .= $this->_sep . 'kï¿½mme';
                 break;
 
             case 1:

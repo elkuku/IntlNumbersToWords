@@ -1,4 +1,7 @@
 <?php
+
+namespace IntlNumbersToWords\Words\en;
+
 /**
  * Numbers_Words
  *
@@ -21,6 +24,7 @@
  * @version  SVN: $Id$
  * @link     http://pear.php.net/package/Numbers_Words
  */
+use IntlNumbersToWords\Numbers;
 
 /**
  * Class for translating numbers into American English.
@@ -28,11 +32,6 @@
  * @author Piotr Klaban
  * @package Numbers_Words
  */
-
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
 
 /**
  * Class for translating numbers into American English.
@@ -43,7 +42,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_en_US extends Numbers_Words
+class US extends Numbers
 {
 
     // {{{ properties
@@ -248,7 +247,7 @@ class Numbers_Words_Locale_en_US extends Numbers_Words
       'HRK' => array(array('Croatian kuna'), array('lipa')),
       'HUF' => array(array('forint'), array('filler')),
       'ILS' => array(array('new sheqel','new sheqels'), array('agora','agorot')),
-      'ISK' => array(array('Icelandic króna'), array('aurar')),
+      'ISK' => array(array('Icelandic krï¿½na'), array('aurar')),
       'JPY' => array(array('yen'), array('sen')),
       'LTL' => array(array('litas'), array('cent')),
       'LVL' => array(array('lat'), array('sentim')),
@@ -261,7 +260,7 @@ class Numbers_Words_Locale_en_US extends Numbers_Words
       'SEK' => array(array('Swedish krona'), array('oere')),
       'SIT' => array(array('Tolar'), array('stotinia')),
       'SKK' => array(array('Slovak koruna'), array()),
-      'TRL' => array(array('lira'), array('kuruş')),
+      'TRL' => array(array('lira'), array('kuruï¿½')),
       'UAH' => array(array('hryvna'), array('cent')),
       'USD' => array(array('dollar'), array('cent')),
       'YUM' => array(array('dinars'), array('para')),

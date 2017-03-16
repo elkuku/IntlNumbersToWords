@@ -68,7 +68,7 @@ class Numbers_Words_Locale_es extends Numbers_Words
      * @var string
      * @access public
      */
-    var $lang_native = 'Español';
+    var $lang_native = 'Espaï¿½ol';
 
     /**
      * The word for the minus sign
@@ -85,16 +85,16 @@ class Numbers_Words_Locale_es extends Numbers_Words
     var $_exponent = array(
         0 => array('',''),
         3 => array('mil','mil'),
-        6 => array('millón','millones'),
-       12 => array('billón','billones'),
-       18 => array('trilón','trillones'),
-       24 => array('cuatrillón','cuatrillones'),
-       30 => array('quintillón','quintillones'),
-       36 => array('sextillón','sextillones'),
-       42 => array('septillón','septillones'),
-       48 => array('octallón','octallones'),
-       54 => array('nonallón','nonallones'),
-       60 => array('decallón','decallones'),
+        6 => array('millï¿½n','millones'),
+       12 => array('billï¿½n','billones'),
+       18 => array('trilï¿½n','trillones'),
+       24 => array('cuatrillï¿½n','cuatrillones'),
+       30 => array('quintillï¿½n','quintillones'),
+       36 => array('sextillï¿½n','sextillones'),
+       42 => array('septillï¿½n','septillones'),
+       48 => array('octallï¿½n','octallones'),
+       54 => array('nonallï¿½n','nonallones'),
+       60 => array('decallï¿½n','decallones'),
         );
     /**
      * The array containing the digits (indexed by the digits themselves).
@@ -242,7 +242,7 @@ class Numbers_Words_Locale_es extends Numbers_Words
                 $ret .= $this->_sep . 'veinte';
             } else {
                 if (($power > 0) and ($d == 1)) {
-                    $ret .= $this->_sep . 'veintiún';
+                    $ret .= $this->_sep . 'veintiï¿½n';
                 } else {
                     $ret .= $this->_sep . 'veinti' . $this->_digits[$d];
                 }

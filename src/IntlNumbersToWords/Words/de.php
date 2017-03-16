@@ -1,4 +1,7 @@
 <?php
+
+namespace IntlNumbersToWords\Words;
+
 /**
  * Numbers_Words
  *
@@ -22,17 +25,13 @@
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
+use IntlNumbersToWords\Numbers;
+
 /**
- *
  * Class for translating numbers into German.
  * @author Piotr Klaban
  * @package Numbers_Words
  */
-
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
 
 /**
  * Class for translating numbers into German.
@@ -43,7 +42,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_de extends Numbers_Words
+class de extends Numbers
 {
 
     // {{{ properties
