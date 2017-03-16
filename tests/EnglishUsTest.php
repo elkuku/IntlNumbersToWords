@@ -1,5 +1,9 @@
 <?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent: */
+
+namespace tests;
+
+use IntlNumbersToWords\Numbers;
+
 /**
  * Numbers_Words class extension to spell numbers in United States English.
  *
@@ -19,11 +23,10 @@
  * @version    SVN: $Id$
  * @link       http://pear.php.net/package/Numbers_Words
  */
-/* vim: set expandtab tabstop=4 shiftwidth=4: */
 
-require_once 'Numbers/Words.php';
+//require_once 'Numbers/Words.php';
 
-class Numbers_Words_EnglishUsTest extends PHPUnit_Framework_TestCase
+class Numbers_Words_EnglishUsTest extends \PHPUnit_Framework_TestCase
 {
     var $handle;
     var $lang = 'en_US';
@@ -38,7 +41,7 @@ class Numbers_Words_EnglishUsTest extends PHPUnit_Framework_TestCase
 
     function setUp()
     {
-        $this->handle = new Numbers_Words();
+        $this->handle = new Numbers();
     }
 
     /**
