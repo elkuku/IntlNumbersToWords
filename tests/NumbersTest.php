@@ -16,11 +16,16 @@ class NumbersTest extends TestCase
         $this->object = new Numbers();
     }
 
-
     function testToWordsObjectLocale()
     {
         $this->object->locale = 'de';
         $this->assertEquals('eins', $this->object->toWords(1));
+    }
+
+    function testToWordsObjectLocale2()
+    {
+        $this->object->locale = 'es_EC';
+        $this->assertEquals('uno', $this->object->toWords(1));
     }
 
     /**
