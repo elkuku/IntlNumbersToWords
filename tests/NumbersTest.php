@@ -1,4 +1,5 @@
 <?php
+
 namespace tests;
 
 use IntlNumbersToWords\Numbers;
@@ -50,10 +51,11 @@ class NumbersTest extends TestCase
     {
         $locales = $this->object->getLocales();
         $this->assertInternalType('array', $locales);
-        $this->assertGreaterThan(27, count($locales));
+        $this->assertEquals(29, count($locales));
         foreach ($locales as $locale) {
             $this->assertEquals(
-                1, preg_match('#^[a-z]{2}(_[A-Z]{2})?$#', $locale)
+                1,
+                preg_match('#^[a-z]{2}(_[A-Z]{2})?$#', $locale)
             );
         }
     }
@@ -69,7 +71,7 @@ class NumbersTest extends TestCase
 
     function testGetLocalesArray()
     {
-        $locales = $this->object->getLocales(array('de', 'en_US'));
+        $locales = $this->object->getLocales(['de', 'en_US']);
         $this->assertInternalType('array', $locales);
         $this->assertEquals(2, count($locales));
         $this->assertContains('de', $locales);
@@ -84,11 +86,11 @@ class NumbersTest extends TestCase
 
         $locales = $this->object->getLocales();
         foreach ($locales as $locale) {
-            $nw = new Numbers();
+            $nw   = new Numbers();
             $word = $nw->toWords(101, $locale);
             $this->assertNotEmpty(
                 $word,
-                'Word for "101" is empty in locale ' . $locale
+                'Word for "101" is empty in locale '.$locale
             );
         }
     }
