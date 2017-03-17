@@ -29,7 +29,7 @@ use IntlNumbersToWords\Numbers;
 
 /**
  * Class for translating numbers into German.
- * @author Piotr Klaban
+ * @author  Piotr Klaban
  * @package Numbers_Words
  */
 
@@ -84,32 +84,32 @@ class de extends Numbers
      * @access private
      */
     var $_exponent = [
-        0 => [''],
-        3 => ['tausend','tausend'],
-        6 => ['Million','Millionen'],
-        9 => ['Milliarde','Milliarden'],
-       12 => ['Billion','Billionen'],
-       15 => ['Billiarde','Billiarden'],
-       18 => ['Trillion','Trillionen'],
-       21 => ['Trilliarde','Trilliarden'],
-       24 => ['Quadrillion','Quadrillionen'],
-       27 => ['Quadrilliarde','Quadrilliarden'],
-       30 => ['Quintillion','Quintillionen'],
-       33 => ['Quintilliarde','Quintilliarden'],
-       36 => ['Sextillion','Sextillionen'],
-       39 => ['Sextilliarde','Sextilliarden'],
-       42 => ['Septillion','Septillionen'],
-       45 => ['Septilliarde','Septilliarden'],
-       48 => ['Oktillion','Oktillionen'], // oder Octillionen
-       51 => ['Oktilliarde','Oktilliarden'],
-       54 => ['Nonillion','Nonillionen'],
-       57 => ['Nonilliarde','Nonilliarden'],
-       60 => ['Dezillion','Dezillionen'],
-       63 => ['Dezilliarde','Dezilliarden'],
-      120 => ['Vigintillion','Vigintillionen'],
-      123 => ['Vigintilliarde','Vigintilliarden'],
-      600 => ['Zentillion','Zentillionen'], // oder Centillion
-      603 => ['Zentilliarde','Zentilliarden']
+        0   => [''],
+        3   => ['tausend', 'tausend'],
+        6   => ['Million', 'Millionen'],
+        9   => ['Milliarde', 'Milliarden'],
+        12  => ['Billion', 'Billionen'],
+        15  => ['Billiarde', 'Billiarden'],
+        18  => ['Trillion', 'Trillionen'],
+        21  => ['Trilliarde', 'Trilliarden'],
+        24  => ['Quadrillion', 'Quadrillionen'],
+        27  => ['Quadrilliarde', 'Quadrilliarden'],
+        30  => ['Quintillion', 'Quintillionen'],
+        33  => ['Quintilliarde', 'Quintilliarden'],
+        36  => ['Sextillion', 'Sextillionen'],
+        39  => ['Sextilliarde', 'Sextilliarden'],
+        42  => ['Septillion', 'Septillionen'],
+        45  => ['Septilliarde', 'Septilliarden'],
+        48  => ['Oktillion', 'Oktillionen'], // oder Octillionen
+        51  => ['Oktilliarde', 'Oktilliarden'],
+        54  => ['Nonillion', 'Nonillionen'],
+        57  => ['Nonilliarde', 'Nonilliarden'],
+        60  => ['Dezillion', 'Dezillionen'],
+        63  => ['Dezilliarde', 'Dezilliarden'],
+        120 => ['Vigintillion', 'Vigintillionen'],
+        123 => ['Vigintilliarde', 'Vigintilliarden'],
+        600 => ['Zentillion', 'Zentillionen'], // oder Centillion
+        603 => ['Zentilliarde', 'Zentilliarden'],
     ];
 
     /**
@@ -118,8 +118,16 @@ class de extends Numbers
      * @access private
      */
     var $_digits = [
-        0 => 'null', 'ein', 'zwei', 'drei', 'vier',
-        'fünf', 'sechs', 'sieben', 'acht', 'neun'
+        0 => 'null',
+        'ein',
+        'zwei',
+        'drei',
+        'vier',
+        'fünf',
+        'sechs',
+        'sieben',
+        'acht',
+        'neun',
     ];
 
     /**
@@ -143,11 +151,11 @@ class de extends Numbers
      * Converts a number to its word representation
      * in German language.
      *
-     * @param integer $num       An integer between -infinity and infinity inclusive :)
-     *                           that need to be converted to words
-     * @param integer $power     The power of ten for the rest of the number to the right.
-     *                           Optional, defaults to 0.
-     * @param integer $powsuffix The power name to be added to the end of the return string.
+     * @param integer $num        An integer between -infinity and infinity inclusive :)
+     *                            that need to be converted to words
+     * @param integer $power      The power of ten for the rest of the number to the right.
+     *                            Optional, defaults to 0.
+     * @param integer $powsuffix  The power name to be added to the end of the return string.
      *                            Used internally. Optional, defaults to ''.
      *
      * @return string  The corresponding word representation
@@ -156,13 +164,13 @@ class de extends Numbers
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0, $powsuffix = '')
+    protected function convertToWords($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 
         // add a minus sign
         if (substr($num, 0, 1) == '-') {
-            $ret = $this->_sep . $this->_minus;
+            $ret = $this->_sep.$this->_minus;
             $num = substr($num, 1);
         }
 
@@ -171,7 +179,7 @@ class de extends Numbers
         $num = preg_replace('/^0+/', '', $num);
 
         if (strlen($num) > 3) {
-            $maxp = strlen($num)-1;
+            $maxp = strlen($num) - 1;
             $curp = $maxp;
             for ($p = $maxp; $p > 0; --$p) { // power
 
@@ -181,9 +189,9 @@ class de extends Numbers
                     $snum = substr($num, $maxp - $curp, $curp - $p + 1);
                     $snum = preg_replace('/^0+/', '', $snum);
                     if ($snum !== '') {
-                        $cursuffix = $this->_exponent[$power][count($this->_exponent[$power])-1];
+                        $cursuffix = $this->_exponent[$power][count($this->_exponent[$power]) - 1];
                         if ($powsuffix != '') {
-                            $cursuffix .= $this->_sep . $powsuffix;
+                            $cursuffix .= $this->_sep.$powsuffix;
                         }
 
                         $ret .= $this->_toWords($snum, $p, $cursuffix);
@@ -197,34 +205,34 @@ class de extends Numbers
                 return $ret;
             }
         } elseif ($num == 0 || $num == '') {
-            return $this->_sep . $this->_digits[0];
+            return $this->_sep.$this->_digits[0];
         }
 
         $h = $t = $d = 0;
 
-        switch(strlen($num)) {
-        case 3:
-            $h = (int)substr($num, -3, 1);
+        switch (strlen($num)) {
+            case 3:
+                $h = (int)substr($num, -3, 1);
 
-        case 2:
-            $t = (int)substr($num, -2, 1);
+            case 2:
+                $t = (int)substr($num, -2, 1);
 
-        case 1:
-            $d = (int)substr($num, -1, 1);
-            break;
+            case 1:
+                $d = (int)substr($num, -1, 1);
+                break;
 
-        case 0:
-            return;
-            break;
+            case 0:
+                return;
+                break;
         }
 
         if ($h) {
-            $ret .= $this->_sep . $this->_digits[$h] . $this->_sep . 'hundert';
+            $ret .= $this->_sep.$this->_digits[$h].$this->_sep.'hundert';
         }
 
         if ($t != 1 && $d > 0) { // add digits only in <0>,<1,9> and <21,inf>
             if ($t > 0) {
-                $ret .= $this->_digits[$d] . 'und';
+                $ret .= $this->_digits[$d].'und';
             } else {
                 $ret .= $this->_digits[$d];
                 if ($d == 1) {
@@ -241,63 +249,63 @@ class de extends Numbers
 
         // ten, twenty etc.
         switch ($t) {
-        case 9:
-        case 8:
-        case 5:
-            $ret .= $this->_sep . $this->_digits[$t] . 'zig';
-            break;
-
-        case 7:
-            $ret .= $this->_sep . 'siebzig';
-            break;
-
-        case 6:
-            $ret .= $this->_sep . 'sechzig';
-            break;
-
-        case 4:
-            $ret .= $this->_sep . 'vierzig';
-            break;
-
-        case 3:
-            $ret .= $this->_sep . 'dreißig';
-            break;
-
-        case 2:
-            $ret .= $this->_sep . 'zwanzig';
-            break;
-
-        case 1:
-            switch ($d) {
-            case 0:
-                $ret .= $this->_sep . 'zehn';
-                break;
-
-            case 1:
-                $ret .= $this->_sep . 'elf';
-                break;
-
-            case 2:
-                $ret .= $this->_sep . 'zwölf';
-                break;
-
-            case 3:
-            case 4:
-            case 5:
-            case 8:
             case 9:
-                $ret .= $this->_sep . $this->_digits[$d] . 'zehn';
-                break;
-
-            case 6:
-                $ret .= $this->_sep . 'sechzehn';
+            case 8:
+            case 5:
+                $ret .= $this->_sep.$this->_digits[$t].'zig';
                 break;
 
             case 7:
-                $ret .= $this->_sep . 'siebzehn';
+                $ret .= $this->_sep.'siebzig';
                 break;
-            }
-            break;
+
+            case 6:
+                $ret .= $this->_sep.'sechzig';
+                break;
+
+            case 4:
+                $ret .= $this->_sep.'vierzig';
+                break;
+
+            case 3:
+                $ret .= $this->_sep.'dreißig';
+                break;
+
+            case 2:
+                $ret .= $this->_sep.'zwanzig';
+                break;
+
+            case 1:
+                switch ($d) {
+                    case 0:
+                        $ret .= $this->_sep.'zehn';
+                        break;
+
+                    case 1:
+                        $ret .= $this->_sep.'elf';
+                        break;
+
+                    case 2:
+                        $ret .= $this->_sep.'zwölf';
+                        break;
+
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 8:
+                    case 9:
+                        $ret .= $this->_sep.$this->_digits[$d].'zehn';
+                        break;
+
+                    case 6:
+                        $ret .= $this->_sep.'sechzehn';
+                        break;
+
+                    case 7:
+                        $ret .= $this->_sep.'siebzehn';
+                        break;
+                }
+                break;
         }
 
         if ($power > 0) {
@@ -310,16 +318,16 @@ class de extends Numbers
             }
 
             if ($power == 3) {
-                $ret .= $this->_sep . $lev[0];
-            } elseif ($d == 1 && ($t+$h) == 0) {
-                $ret .= $this->_sep2 . $lev[0] . $this->_sep2;
+                $ret .= $this->_sep.$lev[0];
+            } elseif ($d == 1 && ($t + $h) == 0) {
+                $ret .= $this->_sep2.$lev[0].$this->_sep2;
             } else {
-                $ret .= $this->_sep2 . $lev[1] . $this->_sep2;
+                $ret .= $this->_sep2.$lev[1].$this->_sep2;
             }
         }
 
         if ($powsuffix != '') {
-            $ret .= $this->_sep . $powsuffix;
+            $ret .= $this->_sep.$powsuffix;
         }
 
         return $ret;
