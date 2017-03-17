@@ -108,23 +108,29 @@ class Numbers
             $locale = 'en_US';
         }
 
-        $className = self::loadLocale($locale, 'convertToWords');
+        $className = $this->loadLocale($locale);
 
-        /* @type Numbers $obj */
+        /* @type Words\en\US $obj */
         $obj = new $className();
 
+        if ($obj instanceof Numbers) {
+            throw new \UnexpectedValueException(
+                sprintf('Class "%s" must extend "AbstractWords" instead of "Numbers" :(', $className)
+            );
+        }
+
         if (!is_int($num)) {
-            $num = $obj->normalizeNumber($num);
+            $num = $this->normalizeNumber($num);
 
             // cast (sanitize) to int without losing precision
-            $num = preg_replace('/(.*?)('.preg_quote($obj->decimalPoint).'.*?)?$/', '$1', $num);
+            $num = preg_replace('/(.*?)('.preg_quote($this->decimalPoint).'.*?)?$/', '$1', $num);
         }
 
         if (empty($options)) {
-            return trim($obj->convertToWords($num));
+            return trim($obj->fromNumber($num));
         }
 
-        return trim($obj->convertToWords($num, $options));
+        return trim($obj->fromNumber($num, $options));
     }
 
     /**
@@ -152,13 +158,13 @@ class Numbers
      */
     public function toCurrency($num, $locale = 'en_US', $intCurr = '', $decimalPoint = null)
     {
-        $className = self::loadLocale($locale, 'toCurrencyWords');
+        $className = $this->loadLocale($locale);
 
         /* @type Numbers $obj */
         $obj = new $className();
 
         if (is_null($decimalPoint)) {
-            $decimalPoint = $obj->decimalPoint;
+            $decimalPoint = $this->decimalPoint;
         }
 
         // round if a float is passed, use Math_BigInteger otherwise
@@ -166,7 +172,7 @@ class Numbers
             $num = round($num, 2);
         }
 
-        $num = $obj->normalizeNumber($num, $decimalPoint);
+        $num = $this->normalizeNumber($num, $decimalPoint);
 
         if (strpos($num, $decimalPoint) === false) {
             return trim($obj->toCurrencyWords($intCurr, $num));
@@ -262,20 +268,15 @@ class Numbers
      *
      * @throws NumbersToWordsException When the class cannot be loaded
      */
-    public function loadLocale($locale, $requiredMethod)
+    public function loadLocale($locale)
     {
+        if ('en_100' == $locale) {
+            $locale = 'en_En100';
+        }
         $className = 'IntlNumbersToWords\\Words\\'.str_replace('_', '\\', $locale);
 
         if (!class_exists($className)) {
             throw new NumbersToWordsException('Unable to load locale class '.$className);
-        }
-
-        $methods = get_class_methods($className);
-
-        if (!in_array($requiredMethod, $methods)) {
-            throw new NumbersToWordsException(
-                "Unable to find method '$requiredMethod' in class '$className'"
-            );
         }
 
         return $className;
@@ -306,15 +307,5 @@ class Numbers
     public function getLanguageName()
     {
         return $this->languageName;
-    }
-
-    /**
-     * @param     $num
-     * @param int $power
-     *
-     * @return string
-     */
-    protected function convertToWords($num, $power = 0){
-        throw new \UnexpectedValueException('Method "convertToWords" must be implemented in child class: '.$this->locale);
     }
 }

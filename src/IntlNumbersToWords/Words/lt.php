@@ -29,10 +29,9 @@
  * @package Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+namespace IntlNumbersToWords\Words;
+
+use IntlNumbersToWords\Numbers;
 
 /**
  * Class for translating numbers into Lithuanian.
@@ -43,7 +42,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_lt extends Numbers_Words
+class lt extends Numbers
 {
 
     // {{{ properties

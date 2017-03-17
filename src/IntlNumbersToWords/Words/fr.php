@@ -22,10 +22,9 @@
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+namespace IntlNumbersToWords\Words;
+
+use IntlNumbersToWords\Numbers;
 
 /**
  * Class for translating numbers into French.
@@ -36,7 +35,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_fr extends Numbers_Words
+class fr extends Numbers
 {
 
     // {{{ properties

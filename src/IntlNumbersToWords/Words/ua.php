@@ -6,11 +6,7 @@
  * @package Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
-require_once "Numbers/Words/Locale/ru.php";
+namespace IntlNumbersToWords\Words;
 
 /**
  * Class for translating numbers into Russian.
@@ -22,7 +18,7 @@ require_once "Numbers/Words/Locale/ru.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_ua extends Numbers_Words_Locale_ru
+class ua extends ru
 {
     /**
      * Locale name

@@ -22,17 +22,9 @@
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
-/**
- * Class for translating numbers into Donald Knuth system, in English language.
- *
- * @author Piotr Klaban
- * @package Numbers_Words
- */
+namespace IntlNumbersToWords\Words\en;
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Donald Knuth system, in English language.
@@ -43,7 +35,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_en_100 extends Numbers_Words
+class En100 extends AbstractWords
 {
 
     // {{{ properties
@@ -146,7 +138,7 @@ class Numbers_Words_Locale_en_100 extends Numbers_Words
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0, $powsuffix = '')
+    function fromNumber($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 
@@ -176,7 +168,7 @@ class Numbers_Words_Locale_en_100 extends Numbers_Words
                             $cursuffix .= $this->_sep . $powsuffix;
                         }
 
-                        $ret .= $this->_toWords($snum, $p, $cursuffix);
+                        $ret .= $this->fromNumber($snum, $p, $cursuffix);
                     }
                     $curp = $p - 1;
                     continue;

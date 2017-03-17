@@ -22,17 +22,9 @@
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
-/**
- * Class for translating numbers into Danish.
- *
- * @author Jesper Veggerby <pear.nosey@veggerby.dk>
- * @package Numbers_Words
- */
+namespace IntlNumbersToWords\Words;
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+use IntlNumbersToWords\Numbers;
 
 /**
  * Class for translating numbers into Danish.
@@ -43,7 +35,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_dk extends Numbers_Words
+class dk extends Numbers
 {
 
     // {{{ properties

@@ -22,6 +22,8 @@
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
+namespace IntlNumbersToWords\Words;
+
 /**
  * Class for translating numbers into Czech.
  *
@@ -32,7 +34,7 @@
 /**
  * Include needed files
  */
-require_once "Numbers/Words.php";
+use IntlNumbersToWords\Numbers;
 
 /**
  * Class for translating numbers into Czech.
@@ -43,7 +45,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_cs extends Numbers_Words
+class cs extends Numbers
 {
 
     // {{{ properties

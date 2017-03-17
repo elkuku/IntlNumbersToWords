@@ -25,7 +25,7 @@ namespace IntlNumbersToWords\Words;
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
-use IntlNumbersToWords\Numbers;
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into German.
@@ -42,7 +42,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class de extends Numbers
+class de extends AbstractWords
 {
 
     // {{{ properties
@@ -164,7 +164,7 @@ class de extends Numbers
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    protected function convertToWords($num, $power = 0, $powsuffix = '')
+    public function fromNumber($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 
@@ -194,7 +194,7 @@ class de extends Numbers
                             $cursuffix .= $this->_sep.$powsuffix;
                         }
 
-                        $ret .= $this->_toWords($snum, $p, $cursuffix);
+                        $ret .= $this->fromNumber($snum, $p, $cursuffix);
                     }
                     $curp = $p - 1;
                     continue;

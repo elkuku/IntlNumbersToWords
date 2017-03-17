@@ -24,14 +24,7 @@ namespace IntlNumbersToWords\Words\en;
  * @version  SVN: $Id$
  * @link     http://pear.php.net/package/Numbers_Words
  */
-use IntlNumbersToWords\Numbers;
-
-/**
- * Class for translating numbers into American English.
- *
- * @author Piotr Klaban
- * @package Numbers_Words
- */
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into American English.
@@ -42,7 +35,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class US extends Numbers
+class US extends AbstractWords
 {
 
     // {{{ properties
@@ -294,7 +287,7 @@ class US extends Numbers
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0, $powsuffix = '')
+    function fromNumber($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 
@@ -324,7 +317,7 @@ class US extends Numbers
                             $cursuffix .= $this->_sep . $powsuffix;
                         }
 
-                        $ret .= $this->_toWords($snum, $p, $cursuffix);
+                        $ret .= $this->fromNumber($snum, $p, $cursuffix);
                     }
                     $curp = $p - 1;
                     continue;

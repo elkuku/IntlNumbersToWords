@@ -25,7 +25,7 @@
 
 namespace IntlNumbersToWords\Words\es;
 
-use IntlNumbersToWords\Numbers;
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Ecuadorian Spanish.
@@ -40,7 +40,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class EC extends Numbers
+class EC extends AbstractWords
 {
     /**
      * Locale name
@@ -173,22 +173,9 @@ class EC extends Numbers
     protected $defaultCurrency = 'USD'; // American dollar
 
     /**
-     * Converts a number to its word representation
-     * in Argentinian Spanish.
-     *
-     * @param float   $num    An float between -infinity and infinity inclusive :)
-     *                        that should be converted to a words representation
-     * @param integer $power  The power of ten for the rest of the number to the right.
-     *                        For example toWords(12,3) should give "doce mil".
-     *                        Optional, defaults to 0.
-     *
-     * @return string  The corresponding word representation
-     *
-     * @access protected
-     * @author Martin Marrese
-     * @since  Numbers_Words 0.16.3
+     * {@inheritdoc}
      */
-    protected function convertToWords($num, $power = 0)
+    public function fromNumber($num, $power = 0, $powSuffix = '')
     {
         // The return string;
         $ret = '';
@@ -202,21 +189,20 @@ class EC extends Numbers
         // strip excessive zero signs
         $num = preg_replace('/^0+/', '', $num);
 
-        $num_tmp = explode('.', $num);
+        $numTmp = explode('.', $num);
 
-        $num = $num_tmp[0];
-        $dec = (@$num_tmp[1]) ? $num_tmp[1] : '';
+        $num = $numTmp[0];
+        $dec = (@$numTmp[1]) ? $numTmp[1] : '';
 
         if (strlen($num) > 6) {
-            $current_power = 6;
             // check for highest power
             if (isset($this->exponent[$power])) {
                 // convert the number above the first 6 digits
                 // with it's corresponding $power.
-                $snum = substr($num, 0, -6);
-                $snum = preg_replace('/^0+/', '', $snum);
-                if ($snum !== '') {
-                    $ret .= $this->convertToWords($snum, $power + 6);
+                $sNum = substr($num, 0, -6);
+                $sNum = preg_replace('/^0+/', '', $sNum);
+                if ($sNum !== '') {
+                    $ret .= $this->fromNumber($sNum, $power + 6);
                 }
             }
             $num = substr($num, -6);
@@ -226,7 +212,6 @@ class EC extends Numbers
         } elseif ($num == 0 || $num == '') {
             return (' '.$this->digits[0]);
         } else {
-            $current_power = strlen($num);
         }
 
         // See if we need "thousands"
@@ -234,7 +219,7 @@ class EC extends Numbers
         if ($thousands == 1) {
             $ret .= $this->sep.'mil';
         } elseif ($thousands > 1) {
-            $ret .= $this->convertToWords($thousands, 3);
+            $ret .= $this->fromNumber($thousands, 3);
         }
 
         // values for digits, tens and hundreds
@@ -349,7 +334,6 @@ class EC extends Numbers
 
         // add digits only if it is a multiple of 10 and not 1x or 2x
         if (($t != 1) and ($t != 2) and ($d > 0)) {
-
             // don't add 'y' for numbers below 10
             if ($t != 0) {
                 // use 'un' instead of 'uno' when there is a suffix ('mil', 'millones', etc...)
@@ -388,7 +372,7 @@ class EC extends Numbers
         }
 
         if ($dec) {
-            $dec = $this->convertToWords(trim($dec));
+            $dec = $this->toWords(trim($dec));
             $ret .= ' con '.trim($dec);
         }
 
@@ -399,7 +383,7 @@ class EC extends Numbers
      * Converts a currency value to its word representation
      * (with monetary units) in Agentinian Spanish language
      *
-     * @param integer         $int_curr         An international currency symbol
+     * @param integer         $intCurr          An international currency symbol
      *                                          as defined by the ISO 4217 standard (three characters)
      * @param integer         $decimal          A money total amount without fraction part (e.g. amount of dollars)
      * @param integer|boolean $fraction         Fractional part of the money amount (e.g. amount of cents)
@@ -412,48 +396,48 @@ class EC extends Numbers
      * @access public
      * @author Martin Marrese
      */
-    function toCurrencyWords($int_curr, $decimal, $fraction = false, $convert_fraction = true)
+    public function toCurrencyWords($intCurr, $decimal, $fraction = false, $convert_fraction = true)
     {
-        $int_curr = strtoupper($int_curr);
-        if (!isset($this->currency_names[$int_curr])) {
-            $int_curr = $this->defaultCurrency;
+        $intCurr = strtoupper($intCurr);
+        if (!isset($this->currency_names[$intCurr])) {
+            $intCurr = $this->defaultCurrency;
         }
 
-        $curr_names = $this->currency_names[$int_curr];
+        $currNames = $this->currency_names[$intCurr];
 
         $lev = ($decimal == 1) ? 0 : 1;
 
         $ret = '';
-        $ret .= trim($this->convertToWords($decimal)).$this->sep;
+        $ret .= trim($this->fromNumber($decimal)).$this->sep;
 
         if ($lev > 0) {
-            if (count($curr_names[0]) > 1) {
-                $ret .= $curr_names[0][$lev];
+            if (count($currNames[0]) > 1) {
+                $ret .= $currNames[0][$lev];
             } else {
-                $ret .= $curr_names[0][0].'s';
+                $ret .= $currNames[0][0].'s';
             }
 
         } else {
-            $ret .= $curr_names[0][0];
+            $ret .= $currNames[0][0];
         }
 
         if ($fraction !== false) {
             if ($convert_fraction) {
-                $ret .= $this->sep.'con'.$this->sep.trim($this->convertToWords($fraction));
+                $ret .= $this->sep.'con'.$this->sep.trim($this->fromNumber($fraction));
             } else {
                 $ret .= $this->sep.'con'.$this->sep.$fraction;
             }
 
             $lev = ($fraction == 1) ? 0 : 1;
             if ($lev > 0) {
-                if (count($curr_names[1]) > 1) {
-                    $ret .= $this->sep.$curr_names[1][$lev];
+                if (count($currNames[1]) > 1) {
+                    $ret .= $this->sep.$currNames[1][$lev];
                 } else {
-                    $ret .= $this->sep.$curr_names[1][0].'s';
+                    $ret .= $this->sep.$currNames[1][0].'s';
                 }
 
             } else {
-                $ret .= $this->sep.$curr_names[1][0];
+                $ret .= $this->sep.$currNames[1][0];
             }
         }
 
