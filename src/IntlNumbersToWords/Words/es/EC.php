@@ -160,7 +160,7 @@ class EC extends Numbers
         'SKK' => [['Slovak koruna'], []],
         'TRL' => [['lira'], ['kurus']],
         'UAH' => [['hryvna'], ['cent']],
-        'USD' => [['dollar'], ['cent']],
+        'USD' => [['dollar', 'dolares'], ['centavo', 'centavos']],
         'YUM' => [['dinars'], ['para']],
         'ZAR' => [['rand'], ['cent']],
     ];
@@ -216,7 +216,7 @@ class EC extends Numbers
                 $snum = substr($num, 0, -6);
                 $snum = preg_replace('/^0+/', '', $snum);
                 if ($snum !== '') {
-                    $ret .= $this->_toWords($snum, $power + 6);
+                    $ret .= $this->convertToWords($snum, $power + 6);
                 }
             }
             $num = substr($num, -6);
@@ -234,7 +234,7 @@ class EC extends Numbers
         if ($thousands == 1) {
             $ret .= $this->sep.'mil';
         } elseif ($thousands > 1) {
-            $ret .= $this->_toWords($thousands, 3);
+            $ret .= $this->convertToWords($thousands, 3);
         }
 
         // values for digits, tens and hundreds
@@ -388,7 +388,7 @@ class EC extends Numbers
         }
 
         if ($dec) {
-            $dec = $this->_toWords(trim($dec));
+            $dec = $this->convertToWords(trim($dec));
             $ret .= ' con '.trim($dec);
         }
 
@@ -422,22 +422,24 @@ class EC extends Numbers
         $curr_names = $this->currency_names[$int_curr];
 
         $lev = ($decimal == 1) ? 0 : 1;
+
+        $ret = '';
+        $ret .= trim($this->convertToWords($decimal)).$this->sep;
+
         if ($lev > 0) {
             if (count($curr_names[0]) > 1) {
-                $ret = $curr_names[0][$lev];
+                $ret .= $curr_names[0][$lev];
             } else {
-                $ret = $curr_names[0][0].'s';
+                $ret .= $curr_names[0][0].'s';
             }
 
         } else {
-            $ret = $curr_names[0][0];
+            $ret .= $curr_names[0][0];
         }
-
-        $ret .= $this->sep.trim($this->_toWords($decimal));
 
         if ($fraction !== false) {
             if ($convert_fraction) {
-                $ret .= $this->sep.'con'.$this->sep.trim($this->_toWords($fraction));
+                $ret .= $this->sep.'con'.$this->sep.trim($this->convertToWords($fraction));
             } else {
                 $ret .= $this->sep.'con'.$this->sep.$fraction;
             }
