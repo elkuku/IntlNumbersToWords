@@ -85,23 +85,23 @@ class Numbers_Words_Locale_it_IT extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array('',''),
-        3 => array('mille','mila'),
-        6 => array('milione','miloni'),
-       12 => array('miliardo','miliardi'),
-       18 => array('trillone','trilloni'),
-       24 => array('quadrilione','quadrilioni'),
-        );
+    var $_exponent = [
+        0 => ['',''],
+        3 => ['mille','mila'],
+        6 => ['milione','miloni'],
+       12 => ['miliardo','miliardi'],
+       18 => ['trillone','trilloni'],
+       24 => ['quadrilione','quadrilioni'],
+    ];
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
       0 => 'zero', 'uno', 'due', 'tre', 'quattro',
        'cinque', 'sei', 'sette', 'otto', 'nove'
-    );
+    ];
 
     /**
      * The word separator
@@ -206,78 +206,78 @@ class Numbers_Words_Locale_it_IT extends Numbers_Words
         }
 
         // decine: venti trenta, etc...
-        switch ($t) {         
+        switch ($t) {
         case 9:
             switch ($d){
-            case 1: 
+            case 1:
             case 8:
-                $ret .= $this->_sep . 'novant' ; 
+                $ret .= $this->_sep . 'novant' ;
                 break;
             default:
-                $ret .= $this->_sep . 'novanta' ; 
+                $ret .= $this->_sep . 'novanta' ;
                 break;
             }
-       
-            break;  
+
+            break;
         case 8:
             switch ($d){
-            case 1: 
+            case 1:
             case 8:
-                $ret .= $this->_sep . 'ottant' ; 
+                $ret .= $this->_sep . 'ottant' ;
                 break;
             default:
-                $ret .= $this->_sep . 'ottanta' ; 
+                $ret .= $this->_sep . 'ottanta' ;
                 break;
             }
-       
-            break;  
+
+            break;
         case 7:
             switch ($d){
-            case 1: 
+            case 1:
             case 8:
-                $ret .= $this->_sep . 'settant' ; 
+                $ret .= $this->_sep . 'settant' ;
                 break;
             default:
-                $ret .= $this->_sep . 'settanta' ; 
+                $ret .= $this->_sep . 'settanta' ;
                 break;
             }
-            break;            
+            break;
         case 6:
             switch ($d){
-            case 1: 
+            case 1:
             case 8:
-                $ret .= $this->_sep . 'sessant' ; 
+                $ret .= $this->_sep . 'sessant' ;
                 break;
             default:
-                $ret .= $this->_sep . 'sessanta' ; 
+                $ret .= $this->_sep . 'sessanta' ;
                 break;
-            }       
+            }
             break;
         case 5:
             switch ($d){
-            case 1: 
+            case 1:
             case 8:
-                $ret .= $this->_sep . 'cinquant' ; 
+                $ret .= $this->_sep . 'cinquant' ;
                 break;
             default:
-                $ret .= $this->_sep . 'cinquanta' ; 
+                $ret .= $this->_sep . 'cinquanta' ;
                 break;
             }
             break;
         case 4:
             switch ($d){
-            case 1: 
+            case 1:
             case 8:
-                $ret .= $this->_sep . 'quarant' ; 
+                $ret .= $this->_sep . 'quarant' ;
                 break;
             default:
-                $ret .= $this->_sep . 'quaranta' ; 
+                $ret .= $this->_sep . 'quaranta' ;
                 break;
             }
             break;
         case 3:
-            switch ($d){    
-            case 1:   
+            switch ($d){
+            case 1:
             case 8:
                 $ret .= $this->_sep . 'trent' ;
                 break;
@@ -291,7 +291,7 @@ class Numbers_Words_Locale_it_IT extends Numbers_Words
             case 0:
                 $ret .= $this->_sep . 'venti';
                 break;
-            case 1: 
+            case 1:
             case 8:
                 $ret .= $this->_sep . 'vent' . $this->_digits[$d];
                 break;
@@ -299,8 +299,8 @@ class Numbers_Words_Locale_it_IT extends Numbers_Words
                 $ret .= $this->_sep . 'venti'  . $this->_digits[$d];
                 break;
             }
-               
-            
+
+
             break;
 
         case 1:

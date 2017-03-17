@@ -67,7 +67,7 @@ class Numbers_Words_Locale_bg extends Numbers_Words
      * @var string
      * @access private
      */
-    var $_misc_strings = array(
+    var $_misc_strings = [
         'deset'=>'десет',           // "ten"
         'edinadeset'=>'единадесет', // "eleven"
         'na'=>'на',                 // liaison particle for 12 to 19
@@ -75,7 +75,7 @@ class Numbers_Words_Locale_bg extends Numbers_Words
         'sta'=>'ста',               // suffix for 2 and 3 hundred
         'stotin'=>'стотин',         // suffix for 4 to 9 hundred
         'hiliadi'=>'хиляди'         // plural form of "thousand"
-    );
+    ];
 
 
     /**
@@ -85,11 +85,11 @@ class Numbers_Words_Locale_bg extends Numbers_Words
      * @var string
      * @access private
      */
-    var $_digits = array(
-        0=>array(1=>"едно", "две", "три", "четири", "пет", "шест", "седем", "осем", "девет"), // neuter
-        1=>array(1=>'един', 'два'),                                                           // masculine
-       -1=>array(1=>'една')                                                                   // feminine
-    );
+    var $_digits = [
+        0=> [1 =>"едно", "две", "три", "четири", "пет", "шест", "седем", "осем", "девет"], // neuter
+        1=> [1 =>'един', 'два'],                                                           // masculine
+       -1=> [1 =>'една']                                                                   // feminine
+    ];
 
     /**
      * A flag, that determines if the _digits array is filled for masculine and feminine genders.
@@ -152,7 +152,7 @@ class Numbers_Words_Locale_bg extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
+    var $_exponent = [
           0 => '',
           3 => 'хиляда',
           6 => 'милион',
@@ -255,7 +255,7 @@ class Numbers_Words_Locale_bg extends Numbers_Words
         297 => 'октононагинтилион',
         300 => 'новемнонагинтилион',
         303 => 'центилион'
-    );
+    ];
     // }}}
 
     // {{{ Numbers_Words_Locale_bg()
@@ -317,7 +317,7 @@ class Numbers_Words_Locale_bg extends Numbers_Words
     function _splitNumber($num)
     {
         if (is_string($num)) {
-            $ret = array();
+            $ret = [];
 
             $strlen = strlen($num);
             $first  = substr($num, 0, $strlen%3);
@@ -363,7 +363,7 @@ class Numbers_Words_Locale_bg extends Numbers_Words
              Both of the above types are optional, so the size of
              the array may vary.
         */
-        $ret = array();
+        $ret = [];
 
         // extract the value of each digit from the three-digit number
         $e = $num%10;                  // ones
@@ -451,7 +451,7 @@ class Numbers_Words_Locale_bg extends Numbers_Words
      */
     function _toWords($num = 0)
     {
-        $ret = array();
+        $ret = [];
 
         $ret_minus = '';
 

@@ -53,14 +53,14 @@ class Numbers_Words_Locale_tr_TR extends Numbers_Words
      * @access public
      */
     var $locale      = 'tr_TR';
-    
+
     /**
      * Language name in English
      * @var string
      * @access public
      */
     var $lang        = 'Turkish';
-    
+
     /**
      * Native language name
      * @var string
@@ -80,31 +80,31 @@ class Numbers_Words_Locale_tr_TR extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('bin'),
-        6 => array('milyon'),
-       12 => array('milyar'),
-       18 => array('trilyon'),
-       24 => array('katrilyon'),
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['bin'],
+        6 => ['milyon'],
+       12 => ['milyar'],
+       18 => ['trilyon'],
+       24 => ['katrilyon'],
+    ];
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-     var $_digits = array(
+     var $_digits = [
       0 => 'sıfır', 'bir', 'iki', 'üç', 'dört',
        'beş', 'altı', 'yedi', 'sekiz', 'dokuz'
-    );
-    
+     ];
+
     /**
      * The word separator
      * @var string
      * @access private
      */
     var $_sep = ' ';
-    
+
     /**
      * The currency names (based on the below links,
      * informations from central bank websites and on encyclopedias)
@@ -115,46 +115,46 @@ class Numbers_Words_Locale_tr_TR extends Numbers_Words
      * @link http://www.shoestring.co.kr/world/p.visa/change.htm Currency names in English
      * @access private
      */
-    var $_currency_names = array(
-      'ALL' => array(array('lek'), array('qindarka')),
-      'AUD' => array(array('Avusturalya doları'), array('sent')),
-      'BAM' => array(array('convertible marka'), array('fenig')),
-      'BGN' => array(array('Bulgar levası'), array('stotinka','stotinki')),
-      'BRL' => array(array('real'), array('centavos')),
-      'BWP' => array(array('Botswana pulası'), array('thebe')),
-      'BYR' => array(array('Belarus rublesi'), array('kopiejka')),
-      'CAD' => array(array('Kanada doları'), array('sent')),
-      'CHF' => array(array('İsveç frankı'), array('rapp')),
-      'CNY' => array(array('Çin yuanı'), array('fen')),
-      'CYP' => array(array('Kıbrıs pound\'u'), array('sent')),
-      'CZK' => array(array('Çek kronu'), array('halerz')),
-      'DKK' => array(array('Danmarka kronu'), array('ore')),
-      'EEK' => array(array('kroon'), array('senti')),
-      'EUR' => array(array('Avro'), array('Avro-sent')),
-      'GBP' => array(array('pound', 'pound'), array('pence', 'pence')),
-      'HKD' => array(array('Hong Kong doları'), array('sent')),
-      'HRK' => array(array('Hırvatistan kunası'), array('lipa')),
-      'HUF' => array(array('Macar forinti'), array('filler')),
-      'ILS' => array(array('yeni sheqel','yeni sheqels'), array('agora','agorot')),
-      'ISK' => array(array('Izlanda kronu'), array('aurar')),
-      'JPY' => array(array('Japon yeni'), array('sen')),
-      'LTL' => array(array('Litvanya litası'), array('sent')),
-      'LVL' => array(array('Letonya latı'), array('sentim')),
-      'MKD' => array(array('Makedonya dinarı'), array('deni')),
-      'MTL' => array(array('Malta lirası'), array('centym')),
-      'NOK' => array(array('Norveç kronu'), array('oere')),
-      'PLN' => array(array('zloty', 'zlotys'), array('grosz')),
-      'ROL' => array(array('Romanya leu'), array('bani')),
-      'RUB' => array(array('Ruble'), array('kopiejka')),
-      'SEK' => array(array('İsveç kronu'), array('oere')),
-      'SIT' => array(array('Tolar'), array('stotinia')),
-      'SKK' => array(array('Slovakya kronu'), array()),
-      'TRY' => array(array('Türk Lirası'), array('kuruş')),
-      'UAH' => array(array('Ukrayna hryvnyası'), array('kopiyka')),
-      'USD' => array(array('ABD Doları'), array('sent')),
-      'YUM' => array(array('dinar'), array('para')),
-      'ZAR' => array(array('Güney Afrika randı'), array('sent'))
-    );
+    var $_currency_names = [
+      'ALL' => [['lek'], ['qindarka']],
+      'AUD' => [['Avusturalya doları'], ['sent']],
+      'BAM' => [['convertible marka'], ['fenig']],
+      'BGN' => [['Bulgar levası'], ['stotinka','stotinki']],
+      'BRL' => [['real'], ['centavos']],
+      'BWP' => [['Botswana pulası'], ['thebe']],
+      'BYR' => [['Belarus rublesi'], ['kopiejka']],
+      'CAD' => [['Kanada doları'], ['sent']],
+      'CHF' => [['İsveç frankı'], ['rapp']],
+      'CNY' => [['Çin yuanı'], ['fen']],
+      'CYP' => [['Kıbrıs pound\'u'], ['sent']],
+      'CZK' => [['Çek kronu'], ['halerz']],
+      'DKK' => [['Danmarka kronu'], ['ore']],
+      'EEK' => [['kroon'], ['senti']],
+      'EUR' => [['Avro'], ['Avro-sent']],
+      'GBP' => [['pound', 'pound'], ['pence', 'pence']],
+      'HKD' => [['Hong Kong doları'], ['sent']],
+      'HRK' => [['Hırvatistan kunası'], ['lipa']],
+      'HUF' => [['Macar forinti'], ['filler']],
+      'ILS' => [['yeni sheqel','yeni sheqels'], ['agora','agorot']],
+      'ISK' => [['Izlanda kronu'], ['aurar']],
+      'JPY' => [['Japon yeni'], ['sen']],
+      'LTL' => [['Litvanya litası'], ['sent']],
+      'LVL' => [['Letonya latı'], ['sentim']],
+      'MKD' => [['Makedonya dinarı'], ['deni']],
+      'MTL' => [['Malta lirası'], ['centym']],
+      'NOK' => [['Norveç kronu'], ['oere']],
+      'PLN' => [['zloty', 'zlotys'], ['grosz']],
+      'ROL' => [['Romanya leu'], ['bani']],
+      'RUB' => [['Ruble'], ['kopiejka']],
+      'SEK' => [['İsveç kronu'], ['oere']],
+      'SIT' => [['Tolar'], ['stotinia']],
+      'SKK' => [['Slovakya kronu'], []],
+      'TRY' => [['Türk Lirası'], ['kuruş']],
+      'UAH' => [['Ukrayna hryvnyası'], ['kopiyka']],
+      'USD' => [['ABD Doları'], ['sent']],
+      'YUM' => [['dinar'], ['para']],
+      'ZAR' => [['Güney Afrika randı'], ['sent']]
+    ];
 
     /**
      * The default currency name
@@ -286,7 +286,7 @@ class Numbers_Words_Locale_tr_TR extends Numbers_Words
             case 2:
                 $ret .= $this->_sep . 'on';
                 break;
-                
+
             break;
         }
 
@@ -313,7 +313,7 @@ class Numbers_Words_Locale_tr_TR extends Numbers_Words
         return $ret;
     }
     // }}}
-    
+
     // {{{ toCurrencyWords()
 
     /**
@@ -351,7 +351,7 @@ class Numbers_Words_Locale_tr_TR extends Numbers_Words
         } else {
             $ret .= $this->_sep . $curr_names[0][0];
         }
-      
+
         if ($fraction !== false) {
             if ($convert_fraction) {
                 $ret .= $this->_sep . trim($this->_toWords($fraction));

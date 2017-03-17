@@ -83,42 +83,42 @@ class Numbers_Words_Locale_en_GB extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('thousand'),
-        6 => array('million'),
-       12 => array('billion'),
-       18 => array('trillion'),
-       24 => array('quadrillion'),
-       30 => array('quintillion'),
-       36 => array('sextillion'),
-       42 => array('septillion'),
-       48 => array('octillion'),
-       54 => array('nonillion'),
-       60 => array('decillion'),
-       66 => array('undecillion'),
-       72 => array('duodecillion'),
-       78 => array('tredecillion'),
-       84 => array('quattuordecillion'),
-       90 => array('quindecillion'),
-       96 => array('sexdecillion'),
-      102 => array('septendecillion'),
-      108 => array('octodecillion'),
-      114 => array('novemdecillion'),
-      120 => array('vigintillion'),
-      192 => array('duotrigintillion'),
-      600 => array('centillion')
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['thousand'],
+        6 => ['million'],
+       12 => ['billion'],
+       18 => ['trillion'],
+       24 => ['quadrillion'],
+       30 => ['quintillion'],
+       36 => ['sextillion'],
+       42 => ['septillion'],
+       48 => ['octillion'],
+       54 => ['nonillion'],
+       60 => ['decillion'],
+       66 => ['undecillion'],
+       72 => ['duodecillion'],
+       78 => ['tredecillion'],
+       84 => ['quattuordecillion'],
+       90 => ['quindecillion'],
+       96 => ['sexdecillion'],
+      102 => ['septendecillion'],
+      108 => ['octodecillion'],
+      114 => ['novemdecillion'],
+      120 => ['vigintillion'],
+      192 => ['duotrigintillion'],
+      600 => ['centillion']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'zero', 'one', 'two', 'three', 'four',
         'five', 'six', 'seven', 'eight', 'nine'
-    );
+    ];
 
     /**
      * The word separator
@@ -137,44 +137,44 @@ class Numbers_Words_Locale_en_GB extends Numbers_Words
      * @link http://www.shoestring.co.kr/world/p.visa/change.htm Currency names in English
      * @access private
      */
-    var $_currency_names = array(
-      'ALL' => array(array('lek'), array('qindarka')),
-      'AUD' => array(array('Australian dollar'), array('cent')),
-      'BAM' => array(array('convertible marka'), array('fenig')),
-      'BGN' => array(array('lev'), array('stotinka')),
-      'BRL' => array(array('real'), array('centavos')),
-      'BYR' => array(array('Belarussian rouble'), array('kopiejka')),
-      'CAD' => array(array('Canadian dollar'), array('cent')),
-      'CHF' => array(array('Swiss franc'), array('rapp')),
-      'CYP' => array(array('Cypriot pound'), array('cent')),
-      'CZK' => array(array('Czech koruna'), array('halerz')),
-      'DKK' => array(array('Danish krone'), array('ore')),
-      'EEK' => array(array('kroon'), array('senti')),
-      'EUR' => array(array('euro'), array('euro-cent')),
-      'GBP' => array(array('pound', 'pounds'), array('pence', 'pence')),
-      'HKD' => array(array('Hong Kong dollar'), array('cent')),
-      'HRK' => array(array('Croatian kuna'), array('lipa')),
-      'HUF' => array(array('forint'), array('filler')),
-      'ILS' => array(array('new sheqel','new sheqels'), array('agora','agorot')),
-      'ISK' => array(array('Icelandic króna'), array('aurar')),
-      'JPY' => array(array('yen'), array('sen')),
-      'LTL' => array(array('litas'), array('cent')),
-      'LVL' => array(array('lat'), array('sentim')),
-      'MKD' => array(array('Macedonian dinar'), array('deni')),
-      'MTL' => array(array('Maltese lira'), array('centym')),
-      'NOK' => array(array('Norwegian krone'), array('oere')),
-      'PLN' => array(array('zloty', 'zlotys'), array('grosz')),
-      'ROL' => array(array('Romanian leu'), array('bani')),
-      'RUB' => array(array('Russian Federation rouble'), array('kopiejka')),
-      'SEK' => array(array('Swedish krona'), array('oere')),
-      'SIT' => array(array('Tolar'), array('stotinia')),
-      'SKK' => array(array('Slovak koruna'), array()),
-      'TRL' => array(array('lira'), array('kuruþ')),
-      'UAH' => array(array('hryvna'), array('cent')),
-      'USD' => array(array('dollar'), array('cent')),
-      'YUM' => array(array('dinars'), array('para')),
-      'ZAR' => array(array('rand'), array('cent'))
-    );
+    var $_currency_names = [
+      'ALL' => [['lek'], ['qindarka']],
+      'AUD' => [['Australian dollar'], ['cent']],
+      'BAM' => [['convertible marka'], ['fenig']],
+      'BGN' => [['lev'], ['stotinka']],
+      'BRL' => [['real'], ['centavos']],
+      'BYR' => [['Belarussian rouble'], ['kopiejka']],
+      'CAD' => [['Canadian dollar'], ['cent']],
+      'CHF' => [['Swiss franc'], ['rapp']],
+      'CYP' => [['Cypriot pound'], ['cent']],
+      'CZK' => [['Czech koruna'], ['halerz']],
+      'DKK' => [['Danish krone'], ['ore']],
+      'EEK' => [['kroon'], ['senti']],
+      'EUR' => [['euro'], ['euro-cent']],
+      'GBP' => [['pound', 'pounds'], ['pence', 'pence']],
+      'HKD' => [['Hong Kong dollar'], ['cent']],
+      'HRK' => [['Croatian kuna'], ['lipa']],
+      'HUF' => [['forint'], ['filler']],
+      'ILS' => [['new sheqel','new sheqels'], ['agora','agorot']],
+      'ISK' => [['Icelandic krï¿½na'], ['aurar']],
+      'JPY' => [['yen'], ['sen']],
+      'LTL' => [['litas'], ['cent']],
+      'LVL' => [['lat'], ['sentim']],
+      'MKD' => [['Macedonian dinar'], ['deni']],
+      'MTL' => [['Maltese lira'], ['centym']],
+      'NOK' => [['Norwegian krone'], ['oere']],
+      'PLN' => [['zloty', 'zlotys'], ['grosz']],
+      'ROL' => [['Romanian leu'], ['bani']],
+      'RUB' => [['Russian Federation rouble'], ['kopiejka']],
+      'SEK' => [['Swedish krona'], ['oere']],
+      'SIT' => [['Tolar'], ['stotinia']],
+      'SKK' => [['Slovak koruna'], []],
+      'TRL' => [['lira'], ['kuruï¿½']],
+      'UAH' => [['hryvna'], ['cent']],
+      'USD' => [['dollar'], ['cent']],
+      'YUM' => [['dinars'], ['para']],
+      'ZAR' => [['rand'], ['cent']]
+    ];
 
     /**
      * The default currency name

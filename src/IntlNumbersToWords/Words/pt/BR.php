@@ -88,7 +88,7 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_contractions = array(
+    var $_contractions = [
         '',
         'onze',
         'doze',
@@ -99,15 +99,15 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
         'dezessete',
         'dezoito',
         'dezenove'
-    );
+    ];
 
-    var $_words = array(
+    var $_words = [
         /**
          * The array containing the digits (indexed by the digits themselves).
          * @var array
          * @access private
          */
-        array(
+        [
             '',         // 0: not displayed
             'um',
             'dois',
@@ -118,14 +118,14 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
             'sete',
             'oito',
             'nove'
-        ),
+        ],
 
         /**
          * The array containing numbers for 10,20,...,90.
          * @var array
          * @access private
          */
-        array(
+        [
             '',         // 0: not displayed
             'dez',
             'vinte',
@@ -136,14 +136,14 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
             'setenta',
             'oitenta',
             'noventa'
-        ),
+        ],
 
         /**
          * The array containing numbers for hundreds.
          * @var array
          * @access private
          */
-        array(
+        [
             '',         // 0: not displayed
             'cento',    // 'cem' is a special case handled in _toWords()
             'duzentos',
@@ -154,15 +154,15 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
             'setecentos',
             'oitocentos',
             'novecentos'
-        ),
-    );
+        ],
+    ];
 
     /**
      * The sufixes for exponents (singular)
      * @var array
      * @access private
      */
-    var $_exponent = array(
+    var $_exponent = [
         '',         // 0: not displayed
         'mil',
         'milhão',
@@ -182,7 +182,7 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
         'quindecilhão',
         'sedecilhão',
         'septendecilhão'
-    );
+    ];
 
     /**
      * The currency names (based on Wikipedia) and plurals
@@ -191,21 +191,21 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
      * @link http://pt.wikipedia.org/wiki/ISO_4217
      * @access private
      */
-    var $_currency_names = array(
-        'BRL' => array(array('real', 'reais'), array('centavo', 'centavos')),
-        'USD' => array(array('dólar', 'dólares'), array('centavo', 'centavos')),
-        'EUR' => array(array('euro', 'euros'), array('centavo', 'centavos')),
-        'GBP' => array(array('libra esterlina', 'libras esterlinas'), array('centavo', 'centavos')),
-        'JPY' => array(array('iene', 'ienes'), array('centavo', 'centavos')),
-        'ARS' => array(array('peso argentino', 'pesos argentinos'), array('centavo', 'centavos')),
-        'MXN' => array(array('peso mexicano', 'pesos mexicanos'), array('centavo', 'centavos')),
-        'UYU' => array(array('peso uruguaio', 'pesos uruguaios'), array('centavo', 'centavos')),
-        'PYG' => array(array('guarani', 'guaranis'), array('centavo', 'centavos')),
-        'BOB' => array(array('boliviano', 'bolivianos'), array('centavo', 'centavos')),
-        'CLP' => array(array('peso chileno', 'pesos chilenos'), array('centavo', 'centavos')),
-        'COP' => array(array('peso colombiano', 'pesos colombianos'), array('centavo', 'centavos')),
-        'CUP' => array(array('peso cubano', 'pesos cubanos'), array('centavo', 'centavos')),
-    );
+    var $_currency_names = [
+        'BRL' => [['real', 'reais'], ['centavo', 'centavos']],
+        'USD' => [['dólar', 'dólares'], ['centavo', 'centavos']],
+        'EUR' => [['euro', 'euros'], ['centavo', 'centavos']],
+        'GBP' => [['libra esterlina', 'libras esterlinas'], ['centavo', 'centavos']],
+        'JPY' => [['iene', 'ienes'], ['centavo', 'centavos']],
+        'ARS' => [['peso argentino', 'pesos argentinos'], ['centavo', 'centavos']],
+        'MXN' => [['peso mexicano', 'pesos mexicanos'], ['centavo', 'centavos']],
+        'UYU' => [['peso uruguaio', 'pesos uruguaios'], ['centavo', 'centavos']],
+        'PYG' => [['guarani', 'guaranis'], ['centavo', 'centavos']],
+        'BOB' => [['boliviano', 'bolivianos'], ['centavo', 'centavos']],
+        'CLP' => [['peso chileno', 'pesos chilenos'], ['centavo', 'centavos']],
+        'COP' => [['peso colombiano', 'pesos colombianos'], ['centavo', 'centavos']],
+        'CUP' => [['peso cubano', 'pesos cubanos'], ['centavo', 'centavos']],
+    ];
 
     /**
      * The default currency name
@@ -231,8 +231,8 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
     function _toWords($num)
     {
         $neg   = 0;
-        $ret   = array();
-        $words = array();
+        $ret   = [];
+        $words = [];
 
         /**
          * Negative ?
@@ -302,7 +302,7 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
         }
 
         /**
-         * In Brazilian Portuguese the last chunck must be separated under 
+         * In Brazilian Portuguese the last chunck must be separated under
          * special conditions.
          */
         if ((count($ret) > 2+$neg)
@@ -334,38 +334,38 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
          * Base Case
          */
         if (!$chunk) {
-            return array();
+            return [];
         }
 
         /**
          * 100 is a special case
          */
         if ($chunk == 100) {
-            return array('cem');
+            return ['cem'];
         }
 
         /**
          * Testing contractions (11~19)
          */
         if (($chunk < 20) && ($chunk > 10)) {
-            return array($this->_contractions[$chunk % 10]);
+            return [$this->_contractions[$chunk % 10]];
         }
 
         $i    = strlen($chunk)-1;
         $n    = (int)$chunk[0];
         $word = $this->_words[$i][$n];
 
-        return array_merge(array($word), $this->_parseChunk(substr($chunk, 1)));
+        return array_merge([$word], $this->_parseChunk(substr($chunk, 1)));
     }
 
     // }}}
     // {{{ _mustSeparate()
 
     /**
-     * In Brazilian Portuguese the last chunk must be separated from the others 
+     * In Brazilian Portuguese the last chunk must be separated from the others
      * when it is a hundred (100, 200, 300 etc.) or less than 100.
      *
-     * @param array $chunks Array of integers that contains all the chunks of 
+     * @param array $chunks Array of integers that contains all the chunks of
      *                      the target number, in reverse order.
      *
      * @return boolean Returns true when last chunk must be separated
@@ -417,12 +417,12 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
     function toCurrencyWords($int_curr, $decimal, $fraction = false, $convert_fraction = true)
     {
         $neg   = 0;
-        $ret   = array();
+        $ret   = [];
         $nodec = false;
 
         /**
          * Negative ?
-         * We can lose the '-' sign if we do the 
+         * We can lose the '-' sign if we do the
          * check after number_format() call (i.e. -0.01)
          */
         if (substr($decimal, 0, 1) == '-') {

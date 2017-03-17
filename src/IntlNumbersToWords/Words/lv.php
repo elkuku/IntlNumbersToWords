@@ -81,25 +81,25 @@ class Numbers_Words_Locale_lv extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('tūkstotis','tūkstoši','tūkstoši'),
-        6 => array('miljons','miljoni','miljons'),
-        9 => array('miljards','miljardi','miljardi'),
-       12 => array('triljons','triljoni','triljoni'),
-       15 => array('kvadriljons','kvadriljoni','kvadriljoni'),
-       18 => array('kvintiljons','kvintiljoni','kvintiljoni')
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['tūkstotis','tūkstoši','tūkstoši'],
+        6 => ['miljons','miljoni','miljons'],
+        9 => ['miljards','miljardi','miljardi'],
+       12 => ['triljons','triljoni','triljoni'],
+       15 => ['kvadriljons','kvadriljoni','kvadriljoni'],
+       18 => ['kvintiljons','kvintiljoni','kvintiljoni']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'nulle', 'viens', 'divi', 'trīs', 'četri',
         'pieci', 'seši', 'septiņi', 'astoņi', 'deviņi'
-    );
+    ];
 
     /**
      * The word separator

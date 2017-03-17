@@ -69,7 +69,7 @@ class Numbers_Words_Locale_fr_BE extends Numbers_Words
      * @var string
      * @access private
      */
-    var $_misc_numbers = array(
+    var $_misc_numbers = [
         10=>'dix',      // 10
             'onze',     // 11
             'douze',    // 12
@@ -85,7 +85,7 @@ class Numbers_Words_Locale_fr_BE extends Numbers_Words
         70=>'septante', // 70
         90=>'nonante',  // 90
        100=>'cent'      // 100
-    );
+    ];
 
 
     /**
@@ -93,7 +93,7 @@ class Numbers_Words_Locale_fr_BE extends Numbers_Words
      * @var string
      * @access private
      */
-    var $_digits = array(1=>"un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf");
+    var $_digits = [1 =>"un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf"];
 
     /**
      * The word for zero.
@@ -149,7 +149,7 @@ class Numbers_Words_Locale_fr_BE extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
+    var $_exponent = [
         0 => '',
         3 => 'mille',
         6 => 'million',
@@ -252,7 +252,7 @@ class Numbers_Words_Locale_fr_BE extends Numbers_Words
       297 => 'octononagintillion',
       300 => 'novemnonagintillion',
       303 => 'centillion'
-        );
+    ];
     // }}}
 
     // {{{ _splitNumber()
@@ -271,7 +271,7 @@ class Numbers_Words_Locale_fr_BE extends Numbers_Words
     function _splitNumber($num)
     {
         if (is_string($num)) {
-            $ret    = array();
+            $ret    = [];
             $strlen = strlen($num);
             $first  = substr($num, 0, $strlen%3);
 

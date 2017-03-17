@@ -84,41 +84,41 @@ class Numbers_Words_Locale_en_100 extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        2 => array('hundred'),
-        4 => array('myriad'),
-        8 => array('myllion'),
-       16 => array('byllion'),
-       32 => array('tryllion'),
-       64 => array('quadryllion'),
-      128 => array('quintyllion'),
-      256 => array('sextyllion'),
-      512 => array('septyllion'),
-     1024 => array('octyllion'),
-     2048 => array('nonyllion'),
-     4096 => array('decyllion'),
-     8192 => array('undecyllion'),
-    16384 => array('duodecyllion'),
-    32768 => array('tredecyllion'),
-    65536 => array('quattuordecyllion'),
-   131072 => array('quindecyllion'),
-   262144 => array('sexdecyllion'),
-   524288 => array('septendecyllion'),
-  1048576 => array('octodecyllion'),
-  2097152 => array('novemdecyllion'),
-  4194304 => array('vigintyllion')
-        );
+    var $_exponent = [
+        0 => [''],
+        2 => ['hundred'],
+        4 => ['myriad'],
+        8 => ['myllion'],
+       16 => ['byllion'],
+       32 => ['tryllion'],
+       64 => ['quadryllion'],
+      128 => ['quintyllion'],
+      256 => ['sextyllion'],
+      512 => ['septyllion'],
+     1024 => ['octyllion'],
+     2048 => ['nonyllion'],
+     4096 => ['decyllion'],
+     8192 => ['undecyllion'],
+    16384 => ['duodecyllion'],
+    32768 => ['tredecyllion'],
+    65536 => ['quattuordecyllion'],
+   131072 => ['quindecyllion'],
+   262144 => ['sexdecyllion'],
+   524288 => ['septendecyllion'],
+  1048576 => ['octodecyllion'],
+  2097152 => ['novemdecyllion'],
+  4194304 => ['vigintyllion']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'zero', 'one', 'two', 'three', 'four',
         'five', 'six', 'seven', 'eight', 'nine'
-    );
+    ];
 
     /**
      * The word separator

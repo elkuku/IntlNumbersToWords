@@ -84,44 +84,44 @@ class Numbers_Words_Locale_sv extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('tusen', 'tusen'),
-        6 => array('miljon','miljoner'),
-        9 => array('miljard','miljarder'),
-       12 => array('biljon','biljoner'),
-       15 => array('biljard','biljarder'),
-       18 => array('triljon','triljoner'),
-       21 => array('triljard','triljarder'),
-       24 => array('kvadriljon','kvadriljoner'),
-       27 => array('kvadriljard','kvadriljarder'),
-       30 => array('kvintiljon','kvintiljoner'),
-       33 => array('kvintiljard','kvintiljarder'),
-       36 => array('sextiljon','sextiljoner'),
-       39 => array('sextiljard','sextiljarder'),
-       42 => array('septiljon','septiljoner'),
-       45 => array('septiljard','septiljarder'),
-       48 => array('oktiljon','oktiljoner'),
-       51 => array('oktiljard','oktiljarder'),
-       54 => array('noniljon','noniljoner'),
-       57 => array('noniljard','noniljarder'),
-       60 => array('dekiljon','dekiljoner'),
-       63 => array('dekiljard','dekiljarder'),
-      120 => array('vigintiljon','vigintiljoner'),
-      123 => array('vigintiljard','vigintiljarder'),
-      600 => array('centiljon','centiljoner'),
-      603 => array('centiljard','centiljarder')
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['tusen', 'tusen'],
+        6 => ['miljon','miljoner'],
+        9 => ['miljard','miljarder'],
+       12 => ['biljon','biljoner'],
+       15 => ['biljard','biljarder'],
+       18 => ['triljon','triljoner'],
+       21 => ['triljard','triljarder'],
+       24 => ['kvadriljon','kvadriljoner'],
+       27 => ['kvadriljard','kvadriljarder'],
+       30 => ['kvintiljon','kvintiljoner'],
+       33 => ['kvintiljard','kvintiljarder'],
+       36 => ['sextiljon','sextiljoner'],
+       39 => ['sextiljard','sextiljarder'],
+       42 => ['septiljon','septiljoner'],
+       45 => ['septiljard','septiljarder'],
+       48 => ['oktiljon','oktiljoner'],
+       51 => ['oktiljard','oktiljarder'],
+       54 => ['noniljon','noniljoner'],
+       57 => ['noniljard','noniljarder'],
+       60 => ['dekiljon','dekiljoner'],
+       63 => ['dekiljard','dekiljarder'],
+      120 => ['vigintiljon','vigintiljoner'],
+      123 => ['vigintiljard','vigintiljarder'],
+      600 => ['centiljon','centiljoner'],
+      603 => ['centiljard','centiljarder']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'noll', 'ett', 'tv�', 'tre', 'fyra',
         'fem', 'sex', 'sju', '�tta', 'nio'
-    );
+    ];
 
     /**
      * The word separator

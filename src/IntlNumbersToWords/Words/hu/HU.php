@@ -51,7 +51,7 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
 {
 
     // {{{ properties
-    
+
     /**
      * Locale name
      * @var string
@@ -72,14 +72,14 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
      * @access public
      */
     var $lang_native = 'Magyar';
-    
+
     /**
      * The word for the minus sign
      * @var string
      * @access private
      */
-    var $_minus = 'Mínusz '; // minus sign
-    
+    var $_minus = 'Mï¿½nusz '; // minus sign
+
     /**
      * The suffixes for exponents (singular and plural)
      * Names based on:
@@ -87,41 +87,41 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('ezer'),
-        6 => array('millió'),
-        9 => array('milliárd'),
-       12 => array('billió'),
-       15 => array('billiárd'),
-       18 => array('trillió'),
-       21 => array('trilliárd'),
-       24 => array('kvadrillió'),
-       27 => array('kvadrilliárd'),
-       30 => array('kvintillió'),
-       33 => array('kvintilliárd'),
-       36 => array('szextillió'),
-       39 => array('szextilliárd'),
-       42 => array('szeptillió'),
-       45 => array('szeptilliárd'),
-       48 => array('oktillió'),
-       51 => array('oktilliárd'),
-       54 => array('nonillió'),
-       57 => array('nonilliárd'),
-       60 => array('decillió'),
-       63 => array('decilliárd'),
-       600 => array('centillió')
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['ezer'],
+        6 => ['milliï¿½'],
+        9 => ['milliï¿½rd'],
+       12 => ['billiï¿½'],
+       15 => ['billiï¿½rd'],
+       18 => ['trilliï¿½'],
+       21 => ['trilliï¿½rd'],
+       24 => ['kvadrilliï¿½'],
+       27 => ['kvadrilliï¿½rd'],
+       30 => ['kvintilliï¿½'],
+       33 => ['kvintilliï¿½rd'],
+       36 => ['szextilliï¿½'],
+       39 => ['szextilliï¿½rd'],
+       42 => ['szeptilliï¿½'],
+       45 => ['szeptilliï¿½rd'],
+       48 => ['oktilliï¿½'],
+       51 => ['oktilliï¿½rd'],
+       54 => ['nonilliï¿½'],
+       57 => ['nonilliï¿½rd'],
+       60 => ['decilliï¿½'],
+       63 => ['decilliï¿½rd'],
+       600 => ['centilliï¿½']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
-        0 => 'nulla', 'egy', 'kettõ', 'három', 'négy',
-        'öt', 'hat', 'hét', 'nyolc', 'kilenc'
-    );
+    var $_digits = [
+        0 => 'nulla', 'egy', 'kettï¿½', 'hï¿½rom', 'nï¿½gy',
+        'ï¿½t', 'hat', 'hï¿½t', 'nyolc', 'kilenc'
+    ];
 
     /**
      * The word separator
@@ -129,7 +129,7 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
      * @access private
      */
     var $_sep = '';
-    
+
     /**
      * The thousands word separator
      * @var string
@@ -147,44 +147,44 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
      * @link http://www.shoestring.co.kr/world/p.visa/change.htm Currency names in English
      * @access private
      */
-    var $_currency_names = array(
-      'ALL' => array(array('lek'), array('qindarka')),
-      'AUD' => array(array('Australian dollar'), array('cent')),
-      'BAM' => array(array('convertible marka'), array('fenig')),
-      'BGN' => array(array('lev'), array('stotinka')),
-      'BRL' => array(array('real'), array('centavos')),
-      'BYR' => array(array('Belarussian rouble'), array('kopiejka')),
-      'CAD' => array(array('Canadian dollar'), array('cent')),
-      'CHF' => array(array('Swiss franc'), array('rapp')),
-      'CYP' => array(array('Cypriot pound'), array('cent')),
-      'CZK' => array(array('Czech koruna'), array('halerz')),
-      'DKK' => array(array('Danish krone'), array('ore')),
-      'EEK' => array(array('kroon'), array('senti')),
-      'EUR' => array(array('euro'), array('euro-cent')),
-      'GBP' => array(array('pound', 'pounds'), array('pence', 'pence')),
-      'HKD' => array(array('Hong Kong dollar'), array('cent')),
-      'HRK' => array(array('Croatian kuna'), array('lipa')),
-      'HUF' => array(array('forint'), array('filler')),
-      'ILS' => array(array('new sheqel','new sheqels'), array('agora','agorot')),
-      'ISK' => array(array('Icelandic króna'), array('aurar')),
-      'JPY' => array(array('yen'), array('sen')),
-      'LTL' => array(array('litas'), array('cent')),
-      'LVL' => array(array('lat'), array('sentim')),
-      'MKD' => array(array('Macedonian dinar'), array('deni')),
-      'MTL' => array(array('Maltese lira'), array('centym')),
-      'NOK' => array(array('Norwegian krone'), array('oere')),
-      'PLN' => array(array('zloty', 'zlotys'), array('grosz')),
-      'ROL' => array(array('Romanian leu'), array('bani')),
-      'RUB' => array(array('Russian Federation rouble'), array('kopiejka')),
-      'SEK' => array(array('Swedish krona'), array('oere')),
-      'SIT' => array(array('Tolar'), array('stotinia')),
-      'SKK' => array(array('Slovak koruna'), array()),
-      'TRL' => array(array('lira'), array('kuruþ')),
-      'UAH' => array(array('hryvna'), array('cent')),
-      'USD' => array(array('dollar'), array('cent')),
-      'YUM' => array(array('dinars'), array('para')),
-      'ZAR' => array(array('rand'), array('cent'))
-    );
+    var $_currency_names = [
+      'ALL' => [['lek'], ['qindarka']],
+      'AUD' => [['Australian dollar'], ['cent']],
+      'BAM' => [['convertible marka'], ['fenig']],
+      'BGN' => [['lev'], ['stotinka']],
+      'BRL' => [['real'], ['centavos']],
+      'BYR' => [['Belarussian rouble'], ['kopiejka']],
+      'CAD' => [['Canadian dollar'], ['cent']],
+      'CHF' => [['Swiss franc'], ['rapp']],
+      'CYP' => [['Cypriot pound'], ['cent']],
+      'CZK' => [['Czech koruna'], ['halerz']],
+      'DKK' => [['Danish krone'], ['ore']],
+      'EEK' => [['kroon'], ['senti']],
+      'EUR' => [['euro'], ['euro-cent']],
+      'GBP' => [['pound', 'pounds'], ['pence', 'pence']],
+      'HKD' => [['Hong Kong dollar'], ['cent']],
+      'HRK' => [['Croatian kuna'], ['lipa']],
+      'HUF' => [['forint'], ['filler']],
+      'ILS' => [['new sheqel','new sheqels'], ['agora','agorot']],
+      'ISK' => [['Icelandic krï¿½na'], ['aurar']],
+      'JPY' => [['yen'], ['sen']],
+      'LTL' => [['litas'], ['cent']],
+      'LVL' => [['lat'], ['sentim']],
+      'MKD' => [['Macedonian dinar'], ['deni']],
+      'MTL' => [['Maltese lira'], ['centym']],
+      'NOK' => [['Norwegian krone'], ['oere']],
+      'PLN' => [['zloty', 'zlotys'], ['grosz']],
+      'ROL' => [['Romanian leu'], ['bani']],
+      'RUB' => [['Russian Federation rouble'], ['kopiejka']],
+      'SEK' => [['Swedish krona'], ['oere']],
+      'SIT' => [['Tolar'], ['stotinia']],
+      'SKK' => [['Slovak koruna'], []],
+      'TRL' => [['lira'], ['kuruï¿½']],
+      'UAH' => [['hryvna'], ['cent']],
+      'USD' => [['dollar'], ['cent']],
+      'YUM' => [['dinars'], ['para']],
+      'ZAR' => [['rand'], ['cent']]
+    ];
 
     /**
      * The default currency name
@@ -213,7 +213,7 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
      * @author Nils Homp
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $options = array(), $power = 0, $powsuffix = '', $gt2000 = false)
+    function _toWords($num, $options = [], $power = 0, $powsuffix = '', $gt2000 = false)
     {
         $chk_gt2000 = true;
 
@@ -225,25 +225,25 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
         /**
          * Return string
          */
-    	$ret = '';        
-        
+    	$ret = '';
+
         // add a minus sign
         if (substr($num, 0, 1) == '-') {
             $ret = $this->_sep . $this->_minus;
             $num = substr($num, 1);
         }
-        
+
         // strip excessive zero signs and spaces
         $num = trim($num);
         $num = preg_replace('/^0+/', '', $num);
-        
+
         if ($chk_gt2000) $gt2000 = $num > 2000;
-        
+
         if (strlen($num) > 3) {
             $maxp = strlen($num)-1;
             $curp = $maxp;
             for ($p = $maxp; $p > 0; --$p) { // power
-            
+
                 // check for highest power
                 if (isset($this->_exponent[$p])) {
                     // send substr from $curp to $p
@@ -254,10 +254,10 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
                         if ($powsuffix != '') {
                             $cursuffix .= $this->_sep . $powsuffix;
                         }
-						
+
                         $ret .= $this->_toWords(
                             $snum,
-                            array('chk_gt2000' => false),
+                            ['chk_gt2000' => false],
                             $p,
                             $cursuffix,
                             $gt2000
@@ -276,9 +276,9 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
         } elseif ($num == 0 || $num == '') {
             return $this->_sep . $this->_digits[0];
         }
-    
+
         $h = $t = $d = 0;
-      
+
         switch(strlen($num)) {
         case 3:
             $h = (int)substr($num, -3, 1);
@@ -294,9 +294,9 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
             return;
             break;
         }
-    
+
         if ($h) {
-            $ret .= $this->_sep . $this->_digits[$h] . $this->_sep . 'száz';
+            $ret .= $this->_sep . $this->_digits[$h] . $this->_sep . 'szï¿½z';
         }
 
         // ten, twenty etc.
@@ -321,9 +321,9 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
         case 2:
             switch ($d) {
             case 0:
-                $ret .= $this->_sep . 'húsz';
-                break;   
-            case 1: 
+                $ret .= $this->_sep . 'hï¿½sz';
+                break;
+            case 1:
             case 2:
             case 3:
             case 4:
@@ -339,9 +339,9 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
         case 1:
             switch ($d) {
             case 0:
-                $ret .= $this->_sep . 'tíz';
-                break;   
-            case 1: 
+                $ret .= $this->_sep . 'tï¿½z';
+                break;
+            case 1:
             case 2:
             case 3:
             case 4:
@@ -359,23 +359,23 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
         if ($d > 0) { // add digits only in <0> and <1,inf)
             $ret .= $this->_sep . $this->_digits[$d];
         }
-  
+
         if ($power > 0) {
             if (isset($this->_exponent[$power])) {
                 $lev = $this->_exponent[$power];
             }
-    
+
             if (!isset($lev) || !is_array($lev)) {
                 return null;
             }
-     
+
             $ret .= $this->_sep . $lev[0];
         }
-    
+
         if ($powsuffix != '') {
             $ret .= $this->_sep . $powsuffix;
         }
-    
+
         return $ret;
     }
     // }}}
@@ -418,7 +418,7 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
         } else {
             $ret .= $this->_sep . $curr_names[0][0];
         }
-      
+
         if ($fraction !== false) {
             if ($convert_fraction) {
                 $ret .= $this->_sep . trim($this->_toWords($fraction));

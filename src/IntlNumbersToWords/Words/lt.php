@@ -81,25 +81,25 @@ class Numbers_Words_Locale_lt extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('tūkstantis','tūkstančiai','tūkstančių'),
-        6 => array('milijonas','milijonai','milijonų'),
-        9 => array('bilijonas','bilijonai','bilijonų'),
-       12 => array('trilijonas','trilijonai','trilijonų'),
-       15 => array('kvadrilijonas','kvadrilijonai','kvadrilijonų'),
-       18 => array('kvintilijonas','kvintilijonai','kvintilijonų')
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['tūkstantis','tūkstančiai','tūkstančių'],
+        6 => ['milijonas','milijonai','milijonų'],
+        9 => ['bilijonas','bilijonai','bilijonų'],
+       12 => ['trilijonas','trilijonai','trilijonų'],
+       15 => ['kvadrilijonas','kvadrilijonai','kvadrilijonų'],
+       18 => ['kvintilijonas','kvintilijonai','kvintilijonų']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'nulis', 'vienas', 'du', 'trys', 'keturi',
         'penki', 'šeši', 'septyni', 'aštuoni', 'devyni'
-    );
+    ];
 
     /**
      * The word separator

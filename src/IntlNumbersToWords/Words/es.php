@@ -82,29 +82,29 @@ class Numbers_Words_Locale_es extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array('',''),
-        3 => array('mil','mil'),
-        6 => array('mill�n','millones'),
-       12 => array('bill�n','billones'),
-       18 => array('tril�n','trillones'),
-       24 => array('cuatrill�n','cuatrillones'),
-       30 => array('quintill�n','quintillones'),
-       36 => array('sextill�n','sextillones'),
-       42 => array('septill�n','septillones'),
-       48 => array('octall�n','octallones'),
-       54 => array('nonall�n','nonallones'),
-       60 => array('decall�n','decallones'),
-        );
+    var $_exponent = [
+        0 => ['',''],
+        3 => ['mil','mil'],
+        6 => ['mill�n','millones'],
+       12 => ['bill�n','billones'],
+       18 => ['tril�n','trillones'],
+       24 => ['cuatrill�n','cuatrillones'],
+       30 => ['quintill�n','quintillones'],
+       36 => ['sextill�n','sextillones'],
+       42 => ['septill�n','septillones'],
+       48 => ['octall�n','octallones'],
+       54 => ['nonall�n','nonallones'],
+       60 => ['decall�n','decallones'],
+    ];
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'cero', 'uno', 'dos', 'tres', 'cuatro',
         'cinco', 'seis', 'siete', 'ocho', 'nueve'
-        );
+    ];
     /**
      * The word separator
      * @var string

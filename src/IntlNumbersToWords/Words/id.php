@@ -75,42 +75,42 @@ class Numbers_Words_Locale_id extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('ribu'),
-        6 => array('juta'),
-        9 => array('milyar'),
-       12 => array('trilyun'),
-       24 => array('quadrillion'),
-       30 => array('quintillion'),
-       36 => array('sextillion'),
-       42 => array('septillion'),
-       48 => array('octillion'),
-       54 => array('nonillion'),
-       60 => array('decillion'),
-       66 => array('undecillion'),
-       72 => array('duodecillion'),
-       78 => array('tredecillion'),
-       84 => array('quattuordecillion'),
-       90 => array('quindecillion'),
-       96 => array('sexdecillion'),
-      102 => array('septendecillion'),
-      108 => array('octodecillion'),
-      114 => array('novemdecillion'),
-      120 => array('vigintillion'),
-      192 => array('duotrigintillion'),
-      600 => array('centillion')
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['ribu'],
+        6 => ['juta'],
+        9 => ['milyar'],
+       12 => ['trilyun'],
+       24 => ['quadrillion'],
+       30 => ['quintillion'],
+       36 => ['sextillion'],
+       42 => ['septillion'],
+       48 => ['octillion'],
+       54 => ['nonillion'],
+       60 => ['decillion'],
+       66 => ['undecillion'],
+       72 => ['duodecillion'],
+       78 => ['tredecillion'],
+       84 => ['quattuordecillion'],
+       90 => ['quindecillion'],
+       96 => ['sexdecillion'],
+      102 => ['septendecillion'],
+      108 => ['octodecillion'],
+      114 => ['novemdecillion'],
+      120 => ['vigintillion'],
+      192 => ['duotrigintillion'],
+      600 => ['centillion']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'nol', 'satu', 'dua', 'tiga', 'empat',
         'lima', 'enam', 'tujuh', 'delapan', 'sembilan'
-    );
+    ];
 
     /**
      * The word separator

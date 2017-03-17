@@ -83,44 +83,44 @@ class de extends Numbers
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('tausend','tausend'),
-        6 => array('Million','Millionen'),
-        9 => array('Milliarde','Milliarden'),
-       12 => array('Billion','Billionen'),
-       15 => array('Billiarde','Billiarden'),
-       18 => array('Trillion','Trillionen'),
-       21 => array('Trilliarde','Trilliarden'),
-       24 => array('Quadrillion','Quadrillionen'),
-       27 => array('Quadrilliarde','Quadrilliarden'),
-       30 => array('Quintillion','Quintillionen'),
-       33 => array('Quintilliarde','Quintilliarden'),
-       36 => array('Sextillion','Sextillionen'),
-       39 => array('Sextilliarde','Sextilliarden'),
-       42 => array('Septillion','Septillionen'),
-       45 => array('Septilliarde','Septilliarden'),
-       48 => array('Oktillion','Oktillionen'), // oder Octillionen
-       51 => array('Oktilliarde','Oktilliarden'),
-       54 => array('Nonillion','Nonillionen'),
-       57 => array('Nonilliarde','Nonilliarden'),
-       60 => array('Dezillion','Dezillionen'),
-       63 => array('Dezilliarde','Dezilliarden'),
-      120 => array('Vigintillion','Vigintillionen'),
-      123 => array('Vigintilliarde','Vigintilliarden'),
-      600 => array('Zentillion','Zentillionen'), // oder Centillion
-      603 => array('Zentilliarde','Zentilliarden')
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['tausend','tausend'],
+        6 => ['Million','Millionen'],
+        9 => ['Milliarde','Milliarden'],
+       12 => ['Billion','Billionen'],
+       15 => ['Billiarde','Billiarden'],
+       18 => ['Trillion','Trillionen'],
+       21 => ['Trilliarde','Trilliarden'],
+       24 => ['Quadrillion','Quadrillionen'],
+       27 => ['Quadrilliarde','Quadrilliarden'],
+       30 => ['Quintillion','Quintillionen'],
+       33 => ['Quintilliarde','Quintilliarden'],
+       36 => ['Sextillion','Sextillionen'],
+       39 => ['Sextilliarde','Sextilliarden'],
+       42 => ['Septillion','Septillionen'],
+       45 => ['Septilliarde','Septilliarden'],
+       48 => ['Oktillion','Oktillionen'], // oder Octillionen
+       51 => ['Oktilliarde','Oktilliarden'],
+       54 => ['Nonillion','Nonillionen'],
+       57 => ['Nonilliarde','Nonilliarden'],
+       60 => ['Dezillion','Dezillionen'],
+       63 => ['Dezilliarde','Dezilliarden'],
+      120 => ['Vigintillion','Vigintillionen'],
+      123 => ['Vigintilliarde','Vigintilliarden'],
+      600 => ['Zentillion','Zentillionen'], // oder Centillion
+      603 => ['Zentilliarde','Zentilliarden']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'null', 'ein', 'zwei', 'drei', 'vier',
         'fünf', 'sechs', 'sieben', 'acht', 'neun'
-    );
+    ];
 
     /**
      * The word separator

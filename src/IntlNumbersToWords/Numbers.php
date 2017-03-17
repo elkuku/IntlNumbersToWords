@@ -80,6 +80,11 @@ class Numbers
     public $decimalPoint = '.';
 
     /**
+     * @var string
+     */
+    protected $languageName = 'English';
+
+    /**
      * Converts a number to its word representation
      *
      * @param integer $num     An integer between -infinity and infinity inclusive :)
@@ -103,7 +108,7 @@ class Numbers
             $locale = 'en_US';
         }
 
-        $classname = self::loadLocale($locale, '_toWords');
+        $classname = self::loadLocale($locale, 'convertToWords');
 
         /* @type Numbers $obj */
         $obj = new $classname;
@@ -116,9 +121,16 @@ class Numbers
         }
 
         if (empty($options)) {
-            return trim($obj->_toWords($num));
+            return trim($obj->convertToWords($num));
         }
-        return trim($obj->_toWords($num, $options));
+        return trim($obj->convertToWords($num, $options));
+    }
+
+    /**
+     * @return string
+     */
+    protected function convertToWords(){
+        throw new \UnexpectedValueException('Method "convertToWords" must be implemented in child class');
     }
 
     /**
@@ -145,7 +157,7 @@ class Numbers
      * @since  PHP 4.2.3
      * @return string
      */
-    function toCurrency($num, $locale = 'en_US', $intCurr = '', $decimalPoint = null)
+    public function toCurrency($num, $locale = 'en_US', $intCurr = '', $decimalPoint = null)
     {
         $ret = $num;
 
@@ -219,12 +231,12 @@ class Numbers
      */
     public function getLocales($locales = null)
     {
-        $ret = array();
+        $ret = [];
         if (isset($locales) && is_string($locales)) {
-            $locales = array($locales);
+            $locales = [$locales];
         }
 
-        $dname = __DIR__ . DIRECTORY_SEPARATOR . 'Words' . DIRECTORY_SEPARATOR;
+        $dname = __DIR__.'/Words/';
 
         $sfiles = glob($dname . '??.php');
         foreach ($sfiles as $fname) {
@@ -238,7 +250,7 @@ class Numbers
 
         $mfiles = glob($dname . '??/??.php');
         foreach ($mfiles as $fname) {
-            $lname = str_replace(array('/', '\\'), '_', substr($fname, -9, 5));
+            $lname = str_replace(['/', '\\'], '_', substr($fname, -9, 5));
             if (is_file($fname) && is_readable($fname)
                 && (count($locales) == 0 || in_array($lname, $locales))
             ) {
@@ -297,6 +309,14 @@ class Numbers
 
         return preg_replace('/[^-'.preg_quote($decimalPoint).'0-9]/', '', $num);
     }
-}
 
-// }}}
+    /**
+     * Get the native language name.
+     *
+     * @return string
+     */
+    public function getLanguageName()
+    {
+        return $this->languageName;
+    }
+}

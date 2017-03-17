@@ -86,58 +86,58 @@ class Numbers_Words_Locale_cs extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('tis�c','tis�ce','tis�c'),
-        6 => array('milion','miliony','milion�'),
-        9 => array('miliarda','miliardy','miliard'),
-       12 => array('bilion','biliony','bilion�'),
-       15 => array('biliarda','biliardy','biliard'),
-       18 => array('trilion','triliony','trilion�'),
-       21 => array('triliarda','triliardy','triliard'),
+    var $_exponent = [
+        0 => [''],
+        3 => ['tis�c','tis�ce','tis�c'],
+        6 => ['milion','miliony','milion�'],
+        9 => ['miliarda','miliardy','miliard'],
+       12 => ['bilion','biliony','bilion�'],
+       15 => ['biliarda','biliardy','biliard'],
+       18 => ['trilion','triliony','trilion�'],
+       21 => ['triliarda','triliardy','triliard'],
 
-       24 => array('kvadrilion','kvadriliony','kvadrilion�'),
-       30 => array('kvintilion','kvintiliony','kvintilion�'),
-       36 => array('sextilion','sextiliony','sextilion�'),
-       42 => array('septilion','septiliony','septilion�'),
+       24 => ['kvadrilion','kvadriliony','kvadrilion�'],
+       30 => ['kvintilion','kvintiliony','kvintilion�'],
+       36 => ['sextilion','sextiliony','sextilion�'],
+       42 => ['septilion','septiliony','septilion�'],
 
-       48 => array('oktilion','oktiliony','oktilion�'),
-       54 => array('nonilion','noniliony','nonilion�'),
-       60 => array('decilion','deciliony','decilion�'),
+       48 => ['oktilion','oktiliony','oktilion�'],
+       54 => ['nonilion','noniliony','nonilion�'],
+       60 => ['decilion','deciliony','decilion�'],
 
-       66 => array('undecilion','undeciliony','undecilion�'),
-       72 => array('duodecilion','duodeciliony','duodecilion�'),
-       78 => array('tredecilion','tredeciliony','tredecilion�'),
-       84 => array('kvatrodecilion','kvatrodeciliony','kvatrodecilion�'),
-       90 => array('kvindecilion','kvindeciliony','kvindecilion�'),
-       96 => array('sexdecilion','sexdeciliony','sexdecilion�'),
-      102 => array('septendecilion','septendeciliony','septendecilion�'),
-      108 => array('oktodecilion','oktodeciliony','oktodecilion�'),
-      114 => array('novemdecilion','novemdeciliony','novemdecilion�'),
-      120 => array('vigintilion','vigintiliony','vigintilion�'),
-      192 => array('duotrigintilion','duotrigintiliony','duotrigintilion�'),
-      600 => array('centilion','centiliony','centilion�')
+       66 => ['undecilion','undeciliony','undecilion�'],
+       72 => ['duodecilion','duodeciliony','duodecilion�'],
+       78 => ['tredecilion','tredeciliony','tredecilion�'],
+       84 => ['kvatrodecilion','kvatrodeciliony','kvatrodecilion�'],
+       90 => ['kvindecilion','kvindeciliony','kvindecilion�'],
+       96 => ['sexdecilion','sexdeciliony','sexdecilion�'],
+      102 => ['septendecilion','septendeciliony','septendecilion�'],
+      108 => ['oktodecilion','oktodeciliony','oktodecilion�'],
+      114 => ['novemdecilion','novemdeciliony','novemdecilion�'],
+      120 => ['vigintilion','vigintiliony','vigintilion�'],
+      192 => ['duotrigintilion','duotrigintiliony','duotrigintilion�'],
+      600 => ['centilion','centiliony','centilion�']
 
-        );
+    ];
 
     /**
      * The array containing the forms of Czech word for "hundred"
      * @var array
      * @access private
      */
-    var $_hundreds = array(
+    var $_hundreds = [
         0 => 'sto', 'st�', 'sta', 'set'
-    );
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'nula', 'jedna', 'dva', 't�i', '�ty�i',
         'p�t', '�est', 'sedm', 'osm', 'dev�t'
-    );
+    ];
 
     /**
      * The word separator

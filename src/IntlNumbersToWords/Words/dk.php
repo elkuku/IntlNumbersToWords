@@ -82,35 +82,35 @@ class Numbers_Words_Locale_dk extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('tusind','tusinde'),
-        6 => array('million','millioner'),
-        9 => array('milliard','milliarder'),
-       12 => array('billion','billioner'),
-       15 => array('billiard','billiarder'),
-       18 => array('trillion','trillioner'),
-       21 => array('trilliard','trilliarder'),
-       24 => array('quadrillion','quadrillioner'),
-       30 => array('quintillion','quintillioner'),
-       36 => array('sextillion','sextillioner'),
-       42 => array('septillion','septillioner'),
-       48 => array('octillion','octillioner'),
-       54 => array('nonillion','nonillioner'),
-       60 => array('decillion','decillioner'),
-      120 => array('vigintillion','vigintillioner'),
-      600 => array('centillion','centillioner')
-        );
+    var $_exponent = [
+        0 => [''],
+        3 => ['tusind','tusinde'],
+        6 => ['million','millioner'],
+        9 => ['milliard','milliarder'],
+       12 => ['billion','billioner'],
+       15 => ['billiard','billiarder'],
+       18 => ['trillion','trillioner'],
+       21 => ['trilliard','trilliarder'],
+       24 => ['quadrillion','quadrillioner'],
+       30 => ['quintillion','quintillioner'],
+       36 => ['sextillion','sextillioner'],
+       42 => ['septillion','septillioner'],
+       48 => ['octillion','octillioner'],
+       54 => ['nonillion','nonillioner'],
+       60 => ['decillion','decillioner'],
+      120 => ['vigintillion','vigintillioner'],
+      600 => ['centillion','centillioner']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'nul', 'en', 'to', 'tre', 'fire',
         'fem', 'seks', 'syv', 'otte', 'ni'
-    );
+    ];
 
     /**
      * The word separator
@@ -127,22 +127,22 @@ class Numbers_Words_Locale_dk extends Numbers_Words
      * @link http://da.wikipedia.org/wiki/Valuta
      * @access private
      */
-    var $_currency_names = array(
-      'AUD' => array(array('australsk dollar', 'australske dollars'), array('cent')),
-      'CAD' => array(array('canadisk dollar', 'canadisk dollars'), array('cent')),
-      'CHF' => array(array('schweitzer franc'), array('rappen')),
-      'CYP' => array(array('cypriotisk pund', 'cypriotiske pund'), array('cent')),
-      'CZK' => array(array('tjekkisk koruna'), array('halerz')),
-      'DKK' => array(array('krone', 'kroner'), array('�re')),
-      'EUR' => array(array('euro'), array('euro-cent')),
-      'GBP' => array(array('pund'), array('pence')),
-      'HKD' => array(array('Hong Kong dollar', 'Hong Kong dollars'), array('cent')),
-      'JPY' => array(array('yen'), array('sen')),
-      'NOK' => array(array('norsk krone', 'norske kroner'), array('�re')),
-      'PLN' => array(array('zloty', 'zlotys'), array('grosz')),
-      'SEK' => array(array('svensk krone', 'svenske kroner'), array('�re')),
-      'USD' => array(array('dollar', 'dollars'), array('cent'))
-    );
+    var $_currency_names = [
+      'AUD' => [['australsk dollar', 'australske dollars'], ['cent']],
+      'CAD' => [['canadisk dollar', 'canadisk dollars'], ['cent']],
+      'CHF' => [['schweitzer franc'], ['rappen']],
+      'CYP' => [['cypriotisk pund', 'cypriotiske pund'], ['cent']],
+      'CZK' => [['tjekkisk koruna'], ['halerz']],
+      'DKK' => [['krone', 'kroner'], ['�re']],
+      'EUR' => [['euro'], ['euro-cent']],
+      'GBP' => [['pund'], ['pence']],
+      'HKD' => [['Hong Kong dollar', 'Hong Kong dollars'], ['cent']],
+      'JPY' => [['yen'], ['sen']],
+      'NOK' => [['norsk krone', 'norske kroner'], ['�re']],
+      'PLN' => [['zloty', 'zlotys'], ['grosz']],
+      'SEK' => [['svensk krone', 'svenske kroner'], ['�re']],
+      'USD' => [['dollar', 'dollars'], ['cent']]
+    ];
 
     /**
      * The default currency name

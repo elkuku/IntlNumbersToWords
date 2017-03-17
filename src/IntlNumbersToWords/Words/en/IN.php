@@ -85,24 +85,24 @@ class Numbers_Words_Locale_en_IN extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array(''),
-        3 => array('Thousand'),
-        5 => array('Lakh'),
-        7 => array('Crore'),
-        9 => array('Hundred Crore'),
-       11 => array('Thousand Crore')
-    );
+    var $_exponent = [
+        0 => [''],
+        3 => ['Thousand'],
+        5 => ['Lakh'],
+        7 => ['Crore'],
+        9 => ['Hundred Crore'],
+       11 => ['Thousand Crore']
+    ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'Zero', 'One', 'Two', 'Three', 'Four',
         'Five', 'Six', 'Seven', 'Eight', 'Nine'
-    );
+    ];
 
     /**
      * The word separator
@@ -121,45 +121,45 @@ class Numbers_Words_Locale_en_IN extends Numbers_Words
      * @link http://www.shoestring.co.kr/world/p.visa/change.htm Currency names in English
      * @access private
      */
-    var $_currency_names = array(
-      'ALL' => array(array('lek'), array('qindarka')),
-      'AUD' => array(array('Australian dollar'), array('cent')),
-      'BAM' => array(array('convertible marka'), array('fenig')),
-      'BGN' => array(array('lev'), array('stotinka')),
-      'BRL' => array(array('real'), array('centavos')),
-      'BYR' => array(array('Belarussian rouble'), array('kopiejka')),
-      'CAD' => array(array('Canadian dollar'), array('cent')),
-      'CHF' => array(array('Swiss franc'), array('rapp')),
-      'CYP' => array(array('Cypriot pound'), array('cent')),
-      'CZK' => array(array('Czech koruna'), array('halerz')),
-      'DKK' => array(array('Danish krone'), array('ore')),
-      'EEK' => array(array('kroon'), array('senti')),
-      'EUR' => array(array('euro'), array('euro-cent')),
-      'GBP' => array(array('pound', 'pounds'), array('pence', 'pence')),
-      'HKD' => array(array('Hong Kong dollar'), array('cent')),
-      'HRK' => array(array('Croatian kuna'), array('lipa')),
-      'HUF' => array(array('forint'), array('filler')),
-      'ILS' => array(array('new sheqel','new sheqels'), array('agora','agorot')),
-      'INR' => array(array('Indian Rupees'), array('Paise')),
-      'ISK' => array(array('Icelandic króna'), array('aurar')),
-      'JPY' => array(array('yen'), array('sen')),
-      'LTL' => array(array('litas'), array('cent')),
-      'LVL' => array(array('lat'), array('sentim')),
-      'MKD' => array(array('Macedonian dinar'), array('deni')),
-      'MTL' => array(array('Maltese lira'), array('centym')),
-      'NOK' => array(array('Norwegian krone'), array('oere')),
-      'PLN' => array(array('zloty', 'zlotys'), array('grosz')),
-      'ROL' => array(array('Romanian leu'), array('bani')),
-      'RUB' => array(array('Russian Federation rouble'), array('kopiejka')),
-      'SEK' => array(array('Swedish krona'), array('oere')),
-      'SIT' => array(array('Tolar'), array('stotinia')),
-      'SKK' => array(array('Slovak koruna'), array()),
-      'TRL' => array(array('lira'), array('kuruþ')),
-      'UAH' => array(array('hryvna'), array('cent')),
-      'USD' => array(array('dollar'), array('cent')),
-      'YUM' => array(array('dinars'), array('para')),
-      'ZAR' => array(array('rand'), array('cent'))
-    );
+    var $_currency_names = [
+      'ALL' => [['lek'], ['qindarka']],
+      'AUD' => [['Australian dollar'], ['cent']],
+      'BAM' => [['convertible marka'], ['fenig']],
+      'BGN' => [['lev'], ['stotinka']],
+      'BRL' => [['real'], ['centavos']],
+      'BYR' => [['Belarussian rouble'], ['kopiejka']],
+      'CAD' => [['Canadian dollar'], ['cent']],
+      'CHF' => [['Swiss franc'], ['rapp']],
+      'CYP' => [['Cypriot pound'], ['cent']],
+      'CZK' => [['Czech koruna'], ['halerz']],
+      'DKK' => [['Danish krone'], ['ore']],
+      'EEK' => [['kroon'], ['senti']],
+      'EUR' => [['euro'], ['euro-cent']],
+      'GBP' => [['pound', 'pounds'], ['pence', 'pence']],
+      'HKD' => [['Hong Kong dollar'], ['cent']],
+      'HRK' => [['Croatian kuna'], ['lipa']],
+      'HUF' => [['forint'], ['filler']],
+      'ILS' => [['new sheqel','new sheqels'], ['agora','agorot']],
+      'INR' => [['Indian Rupees'], ['Paise']],
+      'ISK' => [['Icelandic krï¿½na'], ['aurar']],
+      'JPY' => [['yen'], ['sen']],
+      'LTL' => [['litas'], ['cent']],
+      'LVL' => [['lat'], ['sentim']],
+      'MKD' => [['Macedonian dinar'], ['deni']],
+      'MTL' => [['Maltese lira'], ['centym']],
+      'NOK' => [['Norwegian krone'], ['oere']],
+      'PLN' => [['zloty', 'zlotys'], ['grosz']],
+      'ROL' => [['Romanian leu'], ['bani']],
+      'RUB' => [['Russian Federation rouble'], ['kopiejka']],
+      'SEK' => [['Swedish krona'], ['oere']],
+      'SIT' => [['Tolar'], ['stotinia']],
+      'SKK' => [['Slovak koruna'], []],
+      'TRL' => [['lira'], ['kuruï¿½']],
+      'UAH' => [['hryvna'], ['cent']],
+      'USD' => [['dollar'], ['cent']],
+      'YUM' => [['dinars'], ['para']],
+      'ZAR' => [['rand'], ['cent']]
+    ];
 
     /**
      * The default currency name

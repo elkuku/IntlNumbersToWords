@@ -81,24 +81,24 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
      * @var string
      * @access private
      */
-    var $_numbers = array(
+    var $_numbers = [
         'zero',        // 0
-        array(         // 1
-          array(           // masculine
+        [         // 1
+          [           // masculine
             'un',              // article
             'unu',             // noun
-          ),
-          array(           // feminine
+          ],
+          [           // feminine
             'o',               // article
             'una',             // noun
-          ),
+          ],
           'un',            // neutral
           'unu',           // abstract (stand-alone cardinal)
-        ),
-        array(         //  2
+        ],
+        [         //  2
           'doi',           // masculine and abstract
           'două',          // feminine and neutral
-        ),
+        ],
         'trei',        //  3
         'patru',       //  4
         'cinci',       //  5
@@ -108,10 +108,10 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
         'nouă',        //  9
         'zece',        // 10
         'unsprezece',  // 11
-        array(         // 12
+        [         // 12
           'doisprezece',   // masculine and abstract
           'douăsprezece',  // feminine and abstract
-        ),
+        ],
         'treisprezece',   // 13
         'paisprezece',    // 14
         'cincisprezece',  // 15
@@ -127,7 +127,7 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
         70=>'șaptezeci',  // 70
         80=>'optzeci',    // 80
         90=>'nouăzeci',   // 90
-    );
+    ];
 
     /**
      * The word for infinity.
@@ -142,7 +142,7 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
      * @access private
      */
     var $_and = 'și';
-    
+
     /**
      * The word separator.
      * @var string
@@ -154,68 +154,68 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
      * Some currency names (as nouns, see {@link _toWords()} in Romanian
      * @access private
      */
-    var $_currency_names = array(
-        'AUD' => array(
-            array('dolar australian', 'dolari australieni', Numbers_Words::GENDER_MASCULINE),
-            array('cent', 'cenți', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'CAD' => array(
-            array('dolar canadian', 'dolari canadieni', Numbers_Words::GENDER_MASCULINE),
-            array('cent', 'cenți', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'CHF' => array(
-            array('franc elvețian', 'franci elvețieni', Numbers_Words::GENDER_MASCULINE),
-            array('cent', 'cenți', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'CZK' => array(
-            array('coroană cehă', 'coroane cehe', Numbers_Words::GENDER_FEMININE),
-            array('haler', 'haleri', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'EUR' => array(
-            array('euro', 'euro', Numbers_Words::GENDER_MASCULINE),
-            array('cent', 'cenți', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'GBP' => array(
-            array('liră sterlină', 'lire sterline', Numbers_Words::GENDER_FEMININE),
-            array('penny', 'penny', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'HUF' => array(
-            array('forint', 'forinți', Numbers_Words::GENDER_MASCULINE),
-            array('filer', 'fileri', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'JPY' => array(
-            array('yen', 'yeni', Numbers_Words::GENDER_MASCULINE),
-            array('sen', 'seni', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'PLN' => array(
-            array('zlot', 'zloți', Numbers_Words::GENDER_MASCULINE),
-            array('gros', 'grosi', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'ROL' => array(
-            array('leu', 'lei', Numbers_Words::GENDER_MASCULINE),
-            array('ban', 'bani', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'RON' => array(
-            array('leu', 'lei', Numbers_Words::GENDER_MASCULINE),
-            array('ban', 'bani', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'RUB' => array(
-            array('rublă', 'ruble', Numbers_Words::GENDER_FEMININE),
-            array('copeică', 'copeici', Numbers_Words::GENDER_FEMININE),
-        ),
-        'SKK' => array(
-            array('coroană slovacă', 'coroane slovace', Numbers_Words::GENDER_FEMININE),
-            array('haler', 'haleri', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'TRL' => array(
-            array('liră turcească', 'lire turcești', Numbers_Words::GENDER_FEMININE),
-            array('kuruș', 'kuruși', Numbers_Words::GENDER_MASCULINE),
-        ),
-        'USD' => array(
-            array('dolar american', 'dolari americani', Numbers_Words::GENDER_MASCULINE),
-            array('cent', 'cenți', Numbers_Words::GENDER_MASCULINE),
-        ),
-    );
+    var $_currency_names = [
+        'AUD' => [
+            ['dolar australian', 'dolari australieni', Numbers_Words::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'CAD' => [
+            ['dolar canadian', 'dolari canadieni', Numbers_Words::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'CHF' => [
+            ['franc elvețian', 'franci elvețieni', Numbers_Words::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'CZK' => [
+            ['coroană cehă', 'coroane cehe', Numbers_Words::GENDER_FEMININE],
+            ['haler', 'haleri', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'EUR' => [
+            ['euro', 'euro', Numbers_Words::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'GBP' => [
+            ['liră sterlină', 'lire sterline', Numbers_Words::GENDER_FEMININE],
+            ['penny', 'penny', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'HUF' => [
+            ['forint', 'forinți', Numbers_Words::GENDER_MASCULINE],
+            ['filer', 'fileri', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'JPY' => [
+            ['yen', 'yeni', Numbers_Words::GENDER_MASCULINE],
+            ['sen', 'seni', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'PLN' => [
+            ['zlot', 'zloți', Numbers_Words::GENDER_MASCULINE],
+            ['gros', 'grosi', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'ROL' => [
+            ['leu', 'lei', Numbers_Words::GENDER_MASCULINE],
+            ['ban', 'bani', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'RON' => [
+            ['leu', 'lei', Numbers_Words::GENDER_MASCULINE],
+            ['ban', 'bani', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'RUB' => [
+            ['rublă', 'ruble', Numbers_Words::GENDER_FEMININE],
+            ['copeică', 'copeici', Numbers_Words::GENDER_FEMININE],
+        ],
+        'SKK' => [
+            ['coroană slovacă', 'coroane slovace', Numbers_Words::GENDER_FEMININE],
+            ['haler', 'haleri', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'TRL' => [
+            ['liră turcească', 'lire turcești', Numbers_Words::GENDER_FEMININE],
+            ['kuruș', 'kuruși', Numbers_Words::GENDER_MASCULINE],
+        ],
+        'USD' => [
+            ['dolar american', 'dolari americani', Numbers_Words::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+        ],
+    ];
 
     /**
      * The default currency name
@@ -241,111 +241,111 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
+    var $_exponent = [
         0 => '',
-        2 => array('sută','sute',Numbers_Words::GENDER_FEMININE),
-        3 => array('mie','mii',Numbers_Words::GENDER_FEMININE),
-        6 => array('milion','milioane',Numbers_Words::GENDER_NEUTER),
-        9 => array('miliard','miliarde',Numbers_Words::GENDER_NEUTER),
-       12 => array('trilion','trilioane',Numbers_Words::GENDER_NEUTER),
-       15 => array('cvadrilion','cvadrilioane',Numbers_Words::GENDER_NEUTER),
-       18 => array('cvintilion','cvintilioane',Numbers_Words::GENDER_NEUTER),
-       21 => array('sextilion','sextilioane',Numbers_Words::GENDER_NEUTER),
-       24 => array('septilion','septilioane',Numbers_Words::GENDER_NEUTER),
-       27 => array('octilion','octilioane',Numbers_Words::GENDER_NEUTER),
-       30 => array('nonilion','nonilioane',Numbers_Words::GENDER_NEUTER),
-       33 => array('decilion','decilioane',Numbers_Words::GENDER_NEUTER),
-       36 => array('undecilion','undecilioane',Numbers_Words::GENDER_NEUTER),
-       39 => array('dodecilion','dodecilioane',Numbers_Words::GENDER_NEUTER),
-       42 => array('tredecilion','tredecilioane',Numbers_Words::GENDER_NEUTER),
-       45 => array('cvadrodecilion','cvadrodecilioane',Numbers_Words::GENDER_NEUTER),
-       48 => array('cvindecilion','cvindecilioane',Numbers_Words::GENDER_NEUTER),
-       51 => array('sexdecilion','sexdecilioane',Numbers_Words::GENDER_NEUTER),
-       54 => array('septdecilion','septdecilioane',Numbers_Words::GENDER_NEUTER),
-       57 => array('octodecilion','octodecilioane',Numbers_Words::GENDER_NEUTER),
-       60 => array('novemdecilion','novemdecilioane',Numbers_Words::GENDER_NEUTER),
-       63 => array('vigintilion','vigintilioane',Numbers_Words::GENDER_NEUTER),
-       66 => array('unvigintilion','unvigintilioane',Numbers_Words::GENDER_NEUTER),
-       69 => array('dovigintilion','dovigintilioane',Numbers_Words::GENDER_NEUTER),
-       72 => array('trevigintilion','trevigintilioane',Numbers_Words::GENDER_NEUTER),
-       75 => array('cvadrovigintilion','cvadrovigintilioane',Numbers_Words::GENDER_NEUTER),
-       78 => array('cvinvigintilion','cvinvigintilioane',Numbers_Words::GENDER_NEUTER),
-       81 => array('sexvigintilion','sexvigintilioane',Numbers_Words::GENDER_NEUTER),
-       84 => array('septvigintilion','septvigintilioane',Numbers_Words::GENDER_NEUTER),
-       87 => array('octvigintilion','octvigintilioane',Numbers_Words::GENDER_NEUTER),
-       90 => array('novemvigintilion','novemvigintilioane',Numbers_Words::GENDER_NEUTER),
-       93 => array('trigintilion','trigintilioane',Numbers_Words::GENDER_NEUTER),
-       96 => array('untrigintilion','untrigintilioane',Numbers_Words::GENDER_NEUTER),
-       99 => array('dotrigintilion','dotrigintilioane',Numbers_Words::GENDER_NEUTER),
-      102 => array('trestrigintilion','trestrigintilioane',Numbers_Words::GENDER_NEUTER),
-      105 => array('cvadrotrigintilion','cvadrotrigintilioane',Numbers_Words::GENDER_NEUTER),
-      108 => array('cvintrigintilion','cvintrigintilioane',Numbers_Words::GENDER_NEUTER),
-      111 => array('sextrigintilion','sextrigintilioane',Numbers_Words::GENDER_NEUTER),
-      114 => array('septentrigintilion','septentrigintilioane',Numbers_Words::GENDER_NEUTER),
-      117 => array('octotrigintilion','octotrigintilioane',Numbers_Words::GENDER_NEUTER),
-      120 => array('novemtrigintilion','novemtrigintilioane',Numbers_Words::GENDER_NEUTER),
-      123 => array('cvadragintilion','cvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      126 => array('uncvadragintilion','uncvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      129 => array('docvadragintilion','docvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      132 => array('trecvadragintilion','trecvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      135 => array('cvadrocvadragintilion','cvadrocvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      138 => array('cvincvadragintilion','cvincvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      141 => array('sexcvadragintilion','sexcvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      144 => array('septencvadragintilion','septencvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      147 => array('octocvadragintilion','octocvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      150 => array('novemcvadragintilion','novemcvadragintilioane',Numbers_Words::GENDER_NEUTER),
-      153 => array('cvincvagintilion','cvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      156 => array('uncvincvagintilion','uncvincvagilioane',Numbers_Words::GENDER_NEUTER),
-      159 => array('docvincvagintilion','docvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      162 => array('trecvincvagintilion','trecvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      165 => array('cvadrocvincvagintilion','cvadrocvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      168 => array('cvincvincvagintilion','cvincvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      171 => array('sexcvincvagintilion','sexcvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      174 => array('septencvincvagintilion','septencvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      177 => array('octocvincvagintilion','octocvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      180 => array('novemcvincvagintilion','novemcvincvagintilioane',Numbers_Words::GENDER_NEUTER),
-      183 => array('sexagintilion','sexagintilioane',Numbers_Words::GENDER_NEUTER),
-      186 => array('unsexagintilion','unsexagintilioane',Numbers_Words::GENDER_NEUTER),
-      189 => array('dosexagintilion','dosexagintilioane',Numbers_Words::GENDER_NEUTER),
-      192 => array('tresexagintilion','tresexagintilioane',Numbers_Words::GENDER_NEUTER),
-      195 => array('cvadrosexagintilion','cvadrosexagintilioane',Numbers_Words::GENDER_NEUTER),
-      198 => array('cvinsexagintilion','cvinsexagintilioane',Numbers_Words::GENDER_NEUTER),
-      201 => array('sexsexagintilion','sexsexagintilioane',Numbers_Words::GENDER_NEUTER),
-      204 => array('septensexagintilion','septensexagintilioane',Numbers_Words::GENDER_NEUTER),
-      207 => array('octosexagintilion','octosexagintilioane',Numbers_Words::GENDER_NEUTER),
-      210 => array('novemsexagintilion','novemsexagintilioane',Numbers_Words::GENDER_NEUTER),
-      213 => array('septuagintilion','septuagintilioane',Numbers_Words::GENDER_NEUTER),
-      216 => array('unseptuagintilion','unseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      219 => array('doseptuagintilion','doseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      222 => array('treseptuagintilion','treseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      225 => array('cvadroseptuagintilion','cvadroseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      228 => array('cvinseptuagintilion','cvinseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      231 => array('sexseptuagintilion','sexseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      234 => array('septenseptuagintilion','septenseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      237 => array('octoseptuagintilion','octoseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      240 => array('novemseptuagintilion','novemseptuagintilioane',Numbers_Words::GENDER_NEUTER),
-      243 => array('octogintilion','octogintilioane',Numbers_Words::GENDER_NEUTER),
-      246 => array('unoctogintilion','unoctogintilioane',Numbers_Words::GENDER_NEUTER),
-      249 => array('dooctogintilion','dooctogintilioane',Numbers_Words::GENDER_NEUTER),
-      252 => array('treoctogintilion','treoctogintilioane',Numbers_Words::GENDER_NEUTER),
-      255 => array('cvadrooctogintilion','cvadrooctogintilioane',Numbers_Words::GENDER_NEUTER),
-      258 => array('cvinoctogintilion','cvinoctogintilioane',Numbers_Words::GENDER_NEUTER),
-      261 => array('sexoctogintilion','sexoctogintilioane',Numbers_Words::GENDER_NEUTER),
-      264 => array('septoctogintilion','septoctogintilioane',Numbers_Words::GENDER_NEUTER),
-      267 => array('octooctogintilion','octooctogintilioane',Numbers_Words::GENDER_NEUTER),
-      270 => array('novemoctogintilion','novemoctogintilioane',Numbers_Words::GENDER_NEUTER),
-      273 => array('nonagintilion','nonagintilioane',Numbers_Words::GENDER_NEUTER),
-      276 => array('unnonagintilion','unnonagintilioane',Numbers_Words::GENDER_NEUTER),
-      279 => array('dononagintilion','dononagintilioane',Numbers_Words::GENDER_NEUTER),
-      282 => array('trenonagintilion','trenonagintilioane',Numbers_Words::GENDER_NEUTER),
-      285 => array('cvadrononagintilion','cvadrononagintilioane',Numbers_Words::GENDER_NEUTER),
-      288 => array('cvinnonagintilion','cvinnonagintilioane',Numbers_Words::GENDER_NEUTER),
-      291 => array('sexnonagintilion','sexnonagintilioane',Numbers_Words::GENDER_NEUTER),
-      294 => array('septennonagintilion','septennonagintilioane',Numbers_Words::GENDER_NEUTER),
-      297 => array('octononagintilion','octononagintilioane',Numbers_Words::GENDER_NEUTER),
-      300 => array('novemnonagintilion','novemnonagintilioane',Numbers_Words::GENDER_NEUTER),
-      303 => array('centilion','centilioane',Numbers_Words::GENDER_NEUTER),
-    );
+        2 => ['sută','sute',Numbers_Words::GENDER_FEMININE],
+        3 => ['mie','mii',Numbers_Words::GENDER_FEMININE],
+        6 => ['milion','milioane',Numbers_Words::GENDER_NEUTER],
+        9 => ['miliard','miliarde',Numbers_Words::GENDER_NEUTER],
+       12 => ['trilion','trilioane',Numbers_Words::GENDER_NEUTER],
+       15 => ['cvadrilion','cvadrilioane',Numbers_Words::GENDER_NEUTER],
+       18 => ['cvintilion','cvintilioane',Numbers_Words::GENDER_NEUTER],
+       21 => ['sextilion','sextilioane',Numbers_Words::GENDER_NEUTER],
+       24 => ['septilion','septilioane',Numbers_Words::GENDER_NEUTER],
+       27 => ['octilion','octilioane',Numbers_Words::GENDER_NEUTER],
+       30 => ['nonilion','nonilioane',Numbers_Words::GENDER_NEUTER],
+       33 => ['decilion','decilioane',Numbers_Words::GENDER_NEUTER],
+       36 => ['undecilion','undecilioane',Numbers_Words::GENDER_NEUTER],
+       39 => ['dodecilion','dodecilioane',Numbers_Words::GENDER_NEUTER],
+       42 => ['tredecilion','tredecilioane',Numbers_Words::GENDER_NEUTER],
+       45 => ['cvadrodecilion','cvadrodecilioane',Numbers_Words::GENDER_NEUTER],
+       48 => ['cvindecilion','cvindecilioane',Numbers_Words::GENDER_NEUTER],
+       51 => ['sexdecilion','sexdecilioane',Numbers_Words::GENDER_NEUTER],
+       54 => ['septdecilion','septdecilioane',Numbers_Words::GENDER_NEUTER],
+       57 => ['octodecilion','octodecilioane',Numbers_Words::GENDER_NEUTER],
+       60 => ['novemdecilion','novemdecilioane',Numbers_Words::GENDER_NEUTER],
+       63 => ['vigintilion','vigintilioane',Numbers_Words::GENDER_NEUTER],
+       66 => ['unvigintilion','unvigintilioane',Numbers_Words::GENDER_NEUTER],
+       69 => ['dovigintilion','dovigintilioane',Numbers_Words::GENDER_NEUTER],
+       72 => ['trevigintilion','trevigintilioane',Numbers_Words::GENDER_NEUTER],
+       75 => ['cvadrovigintilion','cvadrovigintilioane',Numbers_Words::GENDER_NEUTER],
+       78 => ['cvinvigintilion','cvinvigintilioane',Numbers_Words::GENDER_NEUTER],
+       81 => ['sexvigintilion','sexvigintilioane',Numbers_Words::GENDER_NEUTER],
+       84 => ['septvigintilion','septvigintilioane',Numbers_Words::GENDER_NEUTER],
+       87 => ['octvigintilion','octvigintilioane',Numbers_Words::GENDER_NEUTER],
+       90 => ['novemvigintilion','novemvigintilioane',Numbers_Words::GENDER_NEUTER],
+       93 => ['trigintilion','trigintilioane',Numbers_Words::GENDER_NEUTER],
+       96 => ['untrigintilion','untrigintilioane',Numbers_Words::GENDER_NEUTER],
+       99 => ['dotrigintilion','dotrigintilioane',Numbers_Words::GENDER_NEUTER],
+      102 => ['trestrigintilion','trestrigintilioane',Numbers_Words::GENDER_NEUTER],
+      105 => ['cvadrotrigintilion','cvadrotrigintilioane',Numbers_Words::GENDER_NEUTER],
+      108 => ['cvintrigintilion','cvintrigintilioane',Numbers_Words::GENDER_NEUTER],
+      111 => ['sextrigintilion','sextrigintilioane',Numbers_Words::GENDER_NEUTER],
+      114 => ['septentrigintilion','septentrigintilioane',Numbers_Words::GENDER_NEUTER],
+      117 => ['octotrigintilion','octotrigintilioane',Numbers_Words::GENDER_NEUTER],
+      120 => ['novemtrigintilion','novemtrigintilioane',Numbers_Words::GENDER_NEUTER],
+      123 => ['cvadragintilion','cvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      126 => ['uncvadragintilion','uncvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      129 => ['docvadragintilion','docvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      132 => ['trecvadragintilion','trecvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      135 => ['cvadrocvadragintilion','cvadrocvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      138 => ['cvincvadragintilion','cvincvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      141 => ['sexcvadragintilion','sexcvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      144 => ['septencvadragintilion','septencvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      147 => ['octocvadragintilion','octocvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      150 => ['novemcvadragintilion','novemcvadragintilioane',Numbers_Words::GENDER_NEUTER],
+      153 => ['cvincvagintilion','cvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      156 => ['uncvincvagintilion','uncvincvagilioane',Numbers_Words::GENDER_NEUTER],
+      159 => ['docvincvagintilion','docvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      162 => ['trecvincvagintilion','trecvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      165 => ['cvadrocvincvagintilion','cvadrocvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      168 => ['cvincvincvagintilion','cvincvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      171 => ['sexcvincvagintilion','sexcvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      174 => ['septencvincvagintilion','septencvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      177 => ['octocvincvagintilion','octocvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      180 => ['novemcvincvagintilion','novemcvincvagintilioane',Numbers_Words::GENDER_NEUTER],
+      183 => ['sexagintilion','sexagintilioane',Numbers_Words::GENDER_NEUTER],
+      186 => ['unsexagintilion','unsexagintilioane',Numbers_Words::GENDER_NEUTER],
+      189 => ['dosexagintilion','dosexagintilioane',Numbers_Words::GENDER_NEUTER],
+      192 => ['tresexagintilion','tresexagintilioane',Numbers_Words::GENDER_NEUTER],
+      195 => ['cvadrosexagintilion','cvadrosexagintilioane',Numbers_Words::GENDER_NEUTER],
+      198 => ['cvinsexagintilion','cvinsexagintilioane',Numbers_Words::GENDER_NEUTER],
+      201 => ['sexsexagintilion','sexsexagintilioane',Numbers_Words::GENDER_NEUTER],
+      204 => ['septensexagintilion','septensexagintilioane',Numbers_Words::GENDER_NEUTER],
+      207 => ['octosexagintilion','octosexagintilioane',Numbers_Words::GENDER_NEUTER],
+      210 => ['novemsexagintilion','novemsexagintilioane',Numbers_Words::GENDER_NEUTER],
+      213 => ['septuagintilion','septuagintilioane',Numbers_Words::GENDER_NEUTER],
+      216 => ['unseptuagintilion','unseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      219 => ['doseptuagintilion','doseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      222 => ['treseptuagintilion','treseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      225 => ['cvadroseptuagintilion','cvadroseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      228 => ['cvinseptuagintilion','cvinseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      231 => ['sexseptuagintilion','sexseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      234 => ['septenseptuagintilion','septenseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      237 => ['octoseptuagintilion','octoseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      240 => ['novemseptuagintilion','novemseptuagintilioane',Numbers_Words::GENDER_NEUTER],
+      243 => ['octogintilion','octogintilioane',Numbers_Words::GENDER_NEUTER],
+      246 => ['unoctogintilion','unoctogintilioane',Numbers_Words::GENDER_NEUTER],
+      249 => ['dooctogintilion','dooctogintilioane',Numbers_Words::GENDER_NEUTER],
+      252 => ['treoctogintilion','treoctogintilioane',Numbers_Words::GENDER_NEUTER],
+      255 => ['cvadrooctogintilion','cvadrooctogintilioane',Numbers_Words::GENDER_NEUTER],
+      258 => ['cvinoctogintilion','cvinoctogintilioane',Numbers_Words::GENDER_NEUTER],
+      261 => ['sexoctogintilion','sexoctogintilioane',Numbers_Words::GENDER_NEUTER],
+      264 => ['septoctogintilion','septoctogintilioane',Numbers_Words::GENDER_NEUTER],
+      267 => ['octooctogintilion','octooctogintilioane',Numbers_Words::GENDER_NEUTER],
+      270 => ['novemoctogintilion','novemoctogintilioane',Numbers_Words::GENDER_NEUTER],
+      273 => ['nonagintilion','nonagintilioane',Numbers_Words::GENDER_NEUTER],
+      276 => ['unnonagintilion','unnonagintilioane',Numbers_Words::GENDER_NEUTER],
+      279 => ['dononagintilion','dononagintilioane',Numbers_Words::GENDER_NEUTER],
+      282 => ['trenonagintilion','trenonagintilioane',Numbers_Words::GENDER_NEUTER],
+      285 => ['cvadrononagintilion','cvadrononagintilioane',Numbers_Words::GENDER_NEUTER],
+      288 => ['cvinnonagintilion','cvinnonagintilioane',Numbers_Words::GENDER_NEUTER],
+      291 => ['sexnonagintilion','sexnonagintilioane',Numbers_Words::GENDER_NEUTER],
+      294 => ['septennonagintilion','septennonagintilioane',Numbers_Words::GENDER_NEUTER],
+      297 => ['octononagintilion','octononagintilioane',Numbers_Words::GENDER_NEUTER],
+      300 => ['novemnonagintilion','novemnonagintilioane',Numbers_Words::GENDER_NEUTER],
+      303 => ['centilion','centilioane',Numbers_Words::GENDER_NEUTER],
+    ];
     // }}}
 
     // {{{ _splitNumber()
@@ -364,7 +364,7 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
     function _splitNumber($num)
     {
         if (is_string($num)) {
-            $ret    = array();
+            $ret    = [];
             $strlen = strlen($num);
             $first  = substr($num, 0, $strlen%3);
 
@@ -396,19 +396,19 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
     function _get_number_inflection_for_gender($number_atom, $noun, $as_noun=false)
     {
         if (!is_array($number_atom)) {
-            $num_names=array(
+            $num_names= [
                 $number_atom,
                 $number_atom,
                 $number_atom,
                 $number_atom,
-            );
+            ];
         } elseif (count($number_atom)==2) {
-            $num_names=array(
+            $num_names= [
                 $number_atom[0],
                 $number_atom[1],
                 $number_atom[1],
                 $number_atom[0],
-            );
+            ];
         } else {
             $num_names=$number_atom;
         }
@@ -511,7 +511,7 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
     function _showDigitsGroup($num, $noun, $force_noun=false, $force_plural=false)
     {
         $ret = '';
-        
+
         // extract the value of each digit from the three-digit number
         $u = $num%10;                  // ones
         $uz = $num%100;                // ones+tens
@@ -577,10 +577,10 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
      * @access protected
      * @author Bogdan Stăncescu <bogdan@moongate.ro>
      */
-    function _toWords($num = 0, $noun = array())
+    function _toWords($num = 0, $noun = [])
     {
         if (empty($noun)) {
-          $noun=array(NULL, NULL, Numbers_Words::GENDER_ABSTRACT);
+          $noun= [NULL, NULL, Numbers_Words::GENDER_ABSTRACT];
         }
 
         $ret = '';
@@ -626,7 +626,7 @@ class Numbers_Words_Locale_ro_RO extends Numbers_Words
             // what is the corresponding exponent for the current group
             $pow = $sizeof_numgroups-$i;
 
-            $valid_groups=array();
+            $valid_groups= [];
 
             // skip processment for empty groups
             if ($number=='000') {

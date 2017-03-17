@@ -84,29 +84,29 @@ class Numbers_Words_Locale_es_VE extends Numbers_Words
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0 => array('',''),
-        3 => array('mil','mil'),
-        6 => array('millón','millones'),
-       12 => array('billón','billones'),
-       18 => array('trilón','trillones'),
-       24 => array('cuatrillón','cuatrillones'),
-       30 => array('quintillón','quintillones'),
-       36 => array('sextillón','sextillones'),
-       42 => array('septillón','septillones'),
-       48 => array('octallón','octallones'),
-       54 => array('nonallón','nonallones'),
-       60 => array('decallón','decallones'),
-        );
+    var $_exponent = [
+        0 => ['',''],
+        3 => ['mil','mil'],
+        6 => ['millón','millones'],
+       12 => ['billón','billones'],
+       18 => ['trilón','trillones'],
+       24 => ['cuatrillón','cuatrillones'],
+       30 => ['quintillón','quintillones'],
+       36 => ['sextillón','sextillones'],
+       42 => ['septillón','septillones'],
+       48 => ['octallón','octallones'],
+       54 => ['nonallón','nonallones'],
+       60 => ['decallón','decallones'],
+    ];
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    var $_digits = [
         0 => 'cero', 'un', 'dos', 'tres', 'cuatro',
         'cinco', 'seis', 'siete', 'ocho', 'nueve'
-        );
+    ];
     /**
      * The word separator
      * @var string
@@ -124,47 +124,47 @@ class Numbers_Words_Locale_es_VE extends Numbers_Words
      * @link http://www.shoestring.co.kr/world/p.visa/change.htm Currency names in English
      * @access private
      */
-    var $_currency_names = array(
-		'ALL' => array(array('lek'), array('qindarka')),
-		'AUD' => array(array('dólar australiano', 'dólares australianos'), array('centavo')),
-		'ARS' => array(array('peso'), array ('centavo')),
-		'BAM' => array(array('convertible marka'), array('fenig')),
-		'BGN' => array(array('lev'), array('stotinka')),
-		'BRL' => array(array('real','reales'), array('centavo')),
-		'BYR' => array(array('rublo bielorruso', 'rublos bielorrusos'), array('kopek', 'kopeks')),
-		'CAD' => array(array('dólar canadiense', 'dólares canadienses'), array('centavo')),
-		'CHF' => array(array('Swiss franc'), array('rapp')),
-		'CYP' => array(array('Cypriot pound'), array('cent')),
-		'CZK' => array(array('Czech koruna'), array('halerz')),
-		'DKK' => array(array('Danish krone'), array('ore')),
-		'EEK' => array(array('kroon'), array('senti')),
-		'EUR' => array(array('euro'), array('centavo')),
-		'GBP' => array(array('libra'), array('peñique')),
-		'HKD' => array(array('dólar de hong kong', 'dólares de hong kong'), array('centavo')),
-		'HRK' => array(array('Croatian kuna'), array('lipa')),
-		'HUF' => array(array('forint'), array('filler')),
-		'ILS' => array(array('new sheqel','new sheqels'), array('agora','agorot')),
-		'ISK' => array(array('Icelandic króna'), array('aurar')),
-		'JPY' => array(array('yen', 'yenes'), array('sen')),
-		'LTL' => array(array('litas'), array('cent')),
-		'LVL' => array(array('lat'), array('sentim')),
-		'MKD' => array(array('denar macedonio', 'denares macedonios'), array('deni')),
-		'MTL' => array(array('lira maltesa'), array('céntimo')),
-		'MXN' => array(array('peso'), array ('centavo')),
-		'NOK' => array(array('Norwegian krone'), array('oere')),
-		'PLN' => array(array('zloty', 'zlotys'), array('grosz')),
-		'ROL' => array(array('Romanian leu'), array('bani')),
-		'RUB' => array(array('rublo ruso', 'rublos rusos'), array('kopek')),
-		'SEK' => array(array('Swedish krona'), array('oere')),
-		'SIT' => array(array('Tolar'), array('stotinia')),
-		'SKK' => array(array('Slovak koruna'), array()),
-		'TRL' => array(array('lira'), array('kuruþ')),
-		'UAH' => array(array('hryvna'), array('cent')),
-		'USD' => array(array('dólar', 'dólares'), array('centavo')),
-		'VEB' => array(array('bolívar', 'bolívares'), array('céntimo')),
-		'YUM' => array(array('dinar', 'dinares'), array('para')),
-		'ZAR' => array(array('rand'), array('cent'))
-		);
+    var $_currency_names = [
+		'ALL' => [['lek'], ['qindarka']],
+		'AUD' => [['dólar australiano', 'dólares australianos'], ['centavo']],
+		'ARS' => [['peso'], ['centavo']],
+		'BAM' => [['convertible marka'], ['fenig']],
+		'BGN' => [['lev'], ['stotinka']],
+		'BRL' => [['real','reales'], ['centavo']],
+		'BYR' => [['rublo bielorruso', 'rublos bielorrusos'], ['kopek', 'kopeks']],
+		'CAD' => [['dólar canadiense', 'dólares canadienses'], ['centavo']],
+		'CHF' => [['Swiss franc'], ['rapp']],
+		'CYP' => [['Cypriot pound'], ['cent']],
+		'CZK' => [['Czech koruna'], ['halerz']],
+		'DKK' => [['Danish krone'], ['ore']],
+		'EEK' => [['kroon'], ['senti']],
+		'EUR' => [['euro'], ['centavo']],
+		'GBP' => [['libra'], ['peñique']],
+		'HKD' => [['dólar de hong kong', 'dólares de hong kong'], ['centavo']],
+		'HRK' => [['Croatian kuna'], ['lipa']],
+		'HUF' => [['forint'], ['filler']],
+		'ILS' => [['new sheqel','new sheqels'], ['agora','agorot']],
+		'ISK' => [['Icelandic króna'], ['aurar']],
+		'JPY' => [['yen', 'yenes'], ['sen']],
+		'LTL' => [['litas'], ['cent']],
+		'LVL' => [['lat'], ['sentim']],
+		'MKD' => [['denar macedonio', 'denares macedonios'], ['deni']],
+		'MTL' => [['lira maltesa'], ['céntimo']],
+		'MXN' => [['peso'], ['centavo']],
+		'NOK' => [['Norwegian krone'], ['oere']],
+		'PLN' => [['zloty', 'zlotys'], ['grosz']],
+		'ROL' => [['Romanian leu'], ['bani']],
+		'RUB' => [['rublo ruso', 'rublos rusos'], ['kopek']],
+		'SEK' => [['Swedish krona'], ['oere']],
+		'SIT' => [['Tolar'], ['stotinia']],
+		'SKK' => [['Slovak koruna'], []],
+		'TRL' => [['lira'], ['kuruþ']],
+		'UAH' => [['hryvna'], ['cent']],
+		'USD' => [['dólar', 'dólares'], ['centavo']],
+		'VEB' => [['bolívar', 'bolívares'], ['céntimo']],
+		'YUM' => [['dinar', 'dinares'], ['para']],
+		'ZAR' => [['rand'], ['cent']]
+    ];
 
     /**
      * The default currency name
@@ -366,7 +366,7 @@ class Numbers_Words_Locale_es_VE extends Numbers_Words
             } else {
                 if (($power > 0) and ($d == 1)) {
                     $ret .= $this->_sep.'un';
-                    
+
                 } else {
                     $ret .= $this->_sep.$this->_digits[$d];
                 }
@@ -400,7 +400,7 @@ class Numbers_Words_Locale_es_VE extends Numbers_Words
 
         return $ret;
     }
-    
+
 
     /**
      * Converts a currency value to its word representation
@@ -439,7 +439,7 @@ class Numbers_Words_Locale_es_VE extends Numbers_Words
         } else {
             $ret = $curr_names[0][0];
         }
-        $ret = $this->_sep . ucfirst(trim($this->_toWords($decimal) ." " . $ret)); 
+        $ret = $this->_sep . ucfirst(trim($this->_toWords($decimal) ." " . $ret));
 
         if ($fraction !== false) {
             if ($convert_fraction) {
@@ -461,6 +461,6 @@ class Numbers_Words_Locale_es_VE extends Numbers_Words
             }
         }
         return $ret;
-        
+
     }
 }

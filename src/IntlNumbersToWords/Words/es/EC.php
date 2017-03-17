@@ -47,54 +47,55 @@ class EC extends Numbers
      * @var string
      * @access public
      */
-    var $locale = 'es_EC';
+    public $locale = 'es_EC';
 
     /**
      * Language name in English
      * @var string
      * @access public
      */
-    var $lang = 'Spanish';
-
-    /**
-     * Native language name
-     * @var string
-     * @access public
-     */
-    var $lang_native = 'Español';
+    public $lang = 'Spanish';
 
     /**
      * The word for the minus sign
      * @var string
      * @access private
      */
-    var $_minus = 'menos';
+    public $minus = 'menos';
+
+    /**
+     * Native language name
+     * @var string
+     * @access public
+     */
+    protected $languageName = 'Español';
 
     /**
      * The sufixes for exponents (singular and plural)
      * @var array
      * @access private
      */
-    var $_exponent = array(
-        0  => array('', ''),
-        3  => array('mil', 'mil'),
-        6  => array('millón', 'millones'),
-        12 => array('billón', 'billones'),
-        18 => array('trilón', 'trillones'),
-        24 => array('cuatrillón', 'cuatrillones'),
-        30 => array('quintillón', 'quintillones'),
-        36 => array('sextillón', 'sextillones'),
-        42 => array('septillón', 'septillones'),
-        48 => array('octallón', 'octallones'),
-        54 => array('nonallón', 'nonallones'),
-        60 => array('decallón', 'decallones'),
-    );
+    protected $exponent = [
+        0  => ['', ''],
+        3  => ['mil', 'mil'],
+        6  => ['millón', 'millones'],
+        12 => ['billón', 'billones'],
+        18 => ['trilón', 'trillones'],
+        24 => ['cuatrillón', 'cuatrillones'],
+        30 => ['quintillón', 'quintillones'],
+        36 => ['sextillón', 'sextillones'],
+        42 => ['septillón', 'septillones'],
+        48 => ['octallón', 'octallones'],
+        54 => ['nonallón', 'nonallones'],
+        60 => ['decallón', 'decallones'],
+    ];
+
     /**
      * The array containing the digits (indexed by the digits themselves).
      * @var array
      * @access private
      */
-    var $_digits = array(
+    protected $digits = [
         0 => 'cero',
         'uno',
         'dos',
@@ -105,13 +106,14 @@ class EC extends Numbers
         'siete',
         'ocho',
         'nueve',
-    );
+    ];
+
     /**
      * The word separator
      * @var string
      * @access private
      */
-    var $_sep = ' ';
+    protected $sep = ' ';
 
     /**
      * The currency names (based on the below links,
@@ -123,52 +125,52 @@ class EC extends Numbers
      * @link   http://www.shoestring.co.kr/world/p.visa/change.htm Currency names in English
      * @access private
      */
-    var $_currency_names = array(
-        'ALL' => array(array('lek'), array('qindarka')),
-        'AUD' => array(array('Australian dollar'), array('cent')),
-        'ARS' => array(array('Peso'), array('centavo')),
-        'BAM' => array(array('convertible marka'), array('fenig')),
-        'BGN' => array(array('lev'), array('stotinka')),
-        'BRL' => array(array('real'), array('centavos')),
-        'BYR' => array(array('Belarussian rouble'), array('kopiejka')),
-        'CAD' => array(array('Canadian dollar'), array('cent')),
-        'CHF' => array(array('Swiss franc'), array('rapp')),
-        'CYP' => array(array('Cypriot pound'), array('cent')),
-        'CZK' => array(array('Czech koruna'), array('halerz')),
-        'DKK' => array(array('Danish krone'), array('ore')),
-        'EEK' => array(array('kroon'), array('senti')),
-        'EUR' => array(array('euro'), array('euro-cent')),
-        'GBP' => array(array('pound', 'pounds'), array('pence')),
-        'HKD' => array(array('Hong Kong dollar'), array('cent')),
-        'HRK' => array(array('Croatian kuna'), array('lipa')),
-        'HUF' => array(array('forint'), array('filler')),
-        'ILS' => array(array('new sheqel', 'new sheqels'), array('agora', 'agorot')),
-        'ISK' => array(array('Icelandic krona'), array('aurar')),
-        'JPY' => array(array('yen'), array('sen')),
-        'LTL' => array(array('litas'), array('cent')),
-        'LVL' => array(array('lat'), array('sentim')),
-        'MKD' => array(array('Macedonian dinar'), array('deni')),
-        'MTL' => array(array('Maltese lira'), array('centym')),
-        'NOK' => array(array('Norwegian krone'), array('oere')),
-        'PLN' => array(array('zloty', 'zlotys'), array('grosz')),
-        'ROL' => array(array('Romanian leu'), array('bani')),
-        'RUB' => array(array('Russian Federation rouble'), array('kopiejka')),
-        'SEK' => array(array('Swedish krona'), array('oere')),
-        'SIT' => array(array('Tolar'), array('stotinia')),
-        'SKK' => array(array('Slovak koruna'), array()),
-        'TRL' => array(array('lira'), array('kurus')),
-        'UAH' => array(array('hryvna'), array('cent')),
-        'USD' => array(array('dollar'), array('cent')),
-        'YUM' => array(array('dinars'), array('para')),
-        'ZAR' => array(array('rand'), array('cent')),
-    );
+    protected $currency_names = [
+        'ALL' => [['lek'], ['qindarka']],
+        'AUD' => [['Australian dollar'], ['cent']],
+        'ARS' => [['Peso'], ['centavo']],
+        'BAM' => [['convertible marka'], ['fenig']],
+        'BGN' => [['lev'], ['stotinka']],
+        'BRL' => [['real'], ['centavos']],
+        'BYR' => [['Belarussian rouble'], ['kopiejka']],
+        'CAD' => [['Canadian dollar'], ['cent']],
+        'CHF' => [['Swiss franc'], ['rapp']],
+        'CYP' => [['Cypriot pound'], ['cent']],
+        'CZK' => [['Czech koruna'], ['halerz']],
+        'DKK' => [['Danish krone'], ['ore']],
+        'EEK' => [['kroon'], ['senti']],
+        'EUR' => [['euro'], ['euro-cent']],
+        'GBP' => [['pound', 'pounds'], ['pence']],
+        'HKD' => [['Hong Kong dollar'], ['cent']],
+        'HRK' => [['Croatian kuna'], ['lipa']],
+        'HUF' => [['forint'], ['filler']],
+        'ILS' => [['new sheqel', 'new sheqels'], ['agora', 'agorot']],
+        'ISK' => [['Icelandic krona'], ['aurar']],
+        'JPY' => [['yen'], ['sen']],
+        'LTL' => [['litas'], ['cent']],
+        'LVL' => [['lat'], ['sentim']],
+        'MKD' => [['Macedonian dinar'], ['deni']],
+        'MTL' => [['Maltese lira'], ['centym']],
+        'NOK' => [['Norwegian krone'], ['oere']],
+        'PLN' => [['zloty', 'zlotys'], ['grosz']],
+        'ROL' => [['Romanian leu'], ['bani']],
+        'RUB' => [['Russian Federation rouble'], ['kopiejka']],
+        'SEK' => [['Swedish krona'], ['oere']],
+        'SIT' => [['Tolar'], ['stotinia']],
+        'SKK' => [['Slovak koruna'], []],
+        'TRL' => [['lira'], ['kurus']],
+        'UAH' => [['hryvna'], ['cent']],
+        'USD' => [['dollar'], ['cent']],
+        'YUM' => [['dinars'], ['para']],
+        'ZAR' => [['rand'], ['cent']],
+    ];
 
     /**
      * The default currency name
      * @var string
      * @access public
      */
-    var $def_currency = 'USD'; // American dollar
+    protected $defaultCurrency = 'USD'; // American dollar
 
     /**
      * Converts a number to its word representation
@@ -186,14 +188,14 @@ class EC extends Numbers
      * @author Martin Marrese
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0)
+    protected function convertToWords($num, $power = 0)
     {
         // The return string;
         $ret = '';
 
         // add a the word for the minus sign if necessary
         if (substr($num, 0, 1) == '-') {
-            $ret = $this->_sep.$this->_minus;
+            $ret = $this->sep.$this->minus;
             $num = substr($num, 1);
         }
 
@@ -208,7 +210,7 @@ class EC extends Numbers
         if (strlen($num) > 6) {
             $current_power = 6;
             // check for highest power
-            if (isset($this->_exponent[$power])) {
+            if (isset($this->exponent[$power])) {
                 // convert the number above the first 6 digits
                 // with it's corresponding $power.
                 $snum = substr($num, 0, -6);
@@ -222,7 +224,7 @@ class EC extends Numbers
                 return $ret;
             }
         } elseif ($num == 0 || $num == '') {
-            return (' '.$this->_digits[0]);
+            return (' '.$this->digits[0]);
         } else {
             $current_power = strlen($num);
         }
@@ -230,7 +232,7 @@ class EC extends Numbers
         // See if we need "thousands"
         $thousands = floor($num / 1000);
         if ($thousands == 1) {
-            $ret .= $this->_sep.'mil';
+            $ret .= $this->sep.'mil';
         } elseif ($thousands > 1) {
             $ret .= $this->_toWords($thousands, 3);
         }
@@ -244,9 +246,9 @@ class EC extends Numbers
         switch ($h) {
             case 1:
                 if (($d == 0) and ($t == 0)) { // is it's '100' use 'cien'
-                    $ret .= $this->_sep.'cien';
+                    $ret .= $this->sep.'cien';
                 } else {
-                    $ret .= $this->_sep.'ciento';
+                    $ret .= $this->sep.'ciento';
                 }
                 break;
             case 2:
@@ -254,57 +256,57 @@ class EC extends Numbers
             case 4:
             case 6:
             case 8:
-                $ret .= $this->_sep.$this->_digits[$h].'cientos';
+                $ret .= $this->sep.$this->digits[$h].'cientos';
                 break;
             case 5:
-                $ret .= $this->_sep.'quinientos';
+                $ret .= $this->sep.'quinientos';
                 break;
             case 7:
-                $ret .= $this->_sep.'setecientos';
+                $ret .= $this->sep.'setecientos';
                 break;
             case 9:
-                $ret .= $this->_sep.'novecientos';
+                $ret .= $this->sep.'novecientos';
                 break;
         }
 
         // decenas: veinte, treinta, etc...
         switch ($t) {
             case 9:
-                $ret .= $this->_sep.'noventa';
+                $ret .= $this->sep.'noventa';
                 break;
 
             case 8:
-                $ret .= $this->_sep.'ochenta';
+                $ret .= $this->sep.'ochenta';
                 break;
 
             case 7:
-                $ret .= $this->_sep.'setenta';
+                $ret .= $this->sep.'setenta';
                 break;
 
             case 6:
-                $ret .= $this->_sep.'sesenta';
+                $ret .= $this->sep.'sesenta';
                 break;
 
             case 5:
-                $ret .= $this->_sep.'cincuenta';
+                $ret .= $this->sep.'cincuenta';
                 break;
 
             case 4:
-                $ret .= $this->_sep.'cuarenta';
+                $ret .= $this->sep.'cuarenta';
                 break;
 
             case 3:
-                $ret .= $this->_sep.'treinta';
+                $ret .= $this->sep.'treinta';
                 break;
 
             case 2:
                 if ($d == 0) {
-                    $ret .= $this->_sep.'veinte';
+                    $ret .= $this->sep.'veinte';
                 } else {
                     if (($power > 0) and ($d == 1)) {
-                        $ret .= $this->_sep.'veintiún';
+                        $ret .= $this->sep.'veintiún';
                     } else {
-                        $ret .= $this->_sep.'veinti'.$this->_digits[$d];
+                        $ret .= $this->sep.'veinti'.$this->digits[$d];
                     }
                 }
                 break;
@@ -312,34 +314,34 @@ class EC extends Numbers
             case 1:
                 switch ($d) {
                     case 0:
-                        $ret .= $this->_sep.'diez';
+                        $ret .= $this->sep.'diez';
                         break;
 
                     case 1:
-                        $ret .= $this->_sep.'once';
+                        $ret .= $this->sep.'once';
                         break;
 
                     case 2:
-                        $ret .= $this->_sep.'doce';
+                        $ret .= $this->sep.'doce';
                         break;
 
                     case 3:
-                        $ret .= $this->_sep.'trece';
+                        $ret .= $this->sep.'trece';
                         break;
 
                     case 4:
-                        $ret .= $this->_sep.'catorce';
+                        $ret .= $this->sep.'catorce';
                         break;
 
                     case 5:
-                        $ret .= $this->_sep.'quince';
+                        $ret .= $this->sep.'quince';
                         break;
 
                     case 6:
                     case 7:
                     case 9:
                     case 8:
-                        $ret .= $this->_sep.'dieci'.$this->_digits[$d];
+                        $ret .= $this->sep.'dieci'.$this->digits[$d];
                         break;
                 }
                 break;
@@ -352,22 +354,22 @@ class EC extends Numbers
             if ($t != 0) {
                 // use 'un' instead of 'uno' when there is a suffix ('mil', 'millones', etc...)
                 if (($power > 0) and ($d == 1)) {
-                    $ret .= $this->_sep.' y un';
+                    $ret .= $this->sep.' y un';
                 } else {
-                    $ret .= $this->_sep.'y '.$this->_digits[$d];
+                    $ret .= $this->sep.'y '.$this->digits[$d];
                 }
             } else {
                 if (($power > 0) and ($d == 1)) {
-                    $ret .= $this->_sep.'un';
+                    $ret .= $this->sep.'un';
                 } else {
-                    $ret .= $this->_sep.$this->_digits[$d];
+                    $ret .= $this->sep.$this->digits[$d];
                 }
             }
         }
 
         if ($power > 0) {
-            if (isset($this->_exponent[$power])) {
-                $lev = $this->_exponent[$power];
+            if (isset($this->exponent[$power])) {
+                $lev = $this->exponent[$power];
             }
 
             if (!isset($lev) || !is_array($lev)) {
@@ -381,7 +383,7 @@ class EC extends Numbers
                 $suffix = $lev[1];
             }
             if ($num != 0) {
-                $ret .= $this->_sep.$suffix;
+                $ret .= $this->sep.$suffix;
             }
         }
 
@@ -413,11 +415,11 @@ class EC extends Numbers
     function toCurrencyWords($int_curr, $decimal, $fraction = false, $convert_fraction = true)
     {
         $int_curr = strtoupper($int_curr);
-        if (!isset($this->_currency_names[$int_curr])) {
-            $int_curr = $this->def_currency;
+        if (!isset($this->currency_names[$int_curr])) {
+            $int_curr = $this->defaultCurrency;
         }
 
-        $curr_names = $this->_currency_names[$int_curr];
+        $curr_names = $this->currency_names[$int_curr];
 
         $lev = ($decimal == 1) ? 0 : 1;
         if ($lev > 0) {
@@ -431,25 +433,25 @@ class EC extends Numbers
             $ret = $curr_names[0][0];
         }
 
-        $ret .= $this->_sep.trim($this->_toWords($decimal));
+        $ret .= $this->sep.trim($this->_toWords($decimal));
 
         if ($fraction !== false) {
             if ($convert_fraction) {
-                $ret .= $this->_sep.'con'.$this->_sep.trim($this->_toWords($fraction));
+                $ret .= $this->sep.'con'.$this->sep.trim($this->_toWords($fraction));
             } else {
-                $ret .= $this->_sep.'con'.$this->_sep.$fraction;
+                $ret .= $this->sep.'con'.$this->sep.$fraction;
             }
 
             $lev = ($fraction == 1) ? 0 : 1;
             if ($lev > 0) {
                 if (count($curr_names[1]) > 1) {
-                    $ret .= $this->_sep.$curr_names[1][$lev];
+                    $ret .= $this->sep.$curr_names[1][$lev];
                 } else {
-                    $ret .= $this->_sep.$curr_names[1][0].'s';
+                    $ret .= $this->sep.$curr_names[1][0].'s';
                 }
 
             } else {
-                $ret .= $this->_sep.$curr_names[1][0];
+                $ret .= $this->sep.$curr_names[1][0];
             }
         }
 
