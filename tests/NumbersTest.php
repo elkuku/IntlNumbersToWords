@@ -5,25 +5,38 @@ namespace tests;
 use IntlNumbersToWords\Numbers;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class NumbersTest
+ * @package tests
+ */
 class NumbersTest extends TestCase
 {
     /**
      * @var Numbers
      */
-    var $object;
+    protected $object;
 
-    function setUp()
+    /**
+     * Setup
+     */
+    public function setUp()
     {
         $this->object = new Numbers();
     }
 
-    function testToWordsObjectLocale()
+    /**
+     * Test method
+     */
+    public function testToWordsObjectLocale()
     {
         $this->object->locale = 'de';
         $this->assertEquals('eins', $this->object->toWords(1));
     }
 
-    function testToWordsObjectLocale2()
+    /**
+     * Test method
+     */
+    public function testToWordsObjectLocale2()
     {
         $this->object->locale = 'es_EC';
         $this->assertEquals('uno', $this->object->toWords(1));
@@ -33,7 +46,7 @@ class NumbersTest extends TestCase
      * @expectedException \IntlNumbersToWords\Exception\NumbersToWordsException
      * @expectedExceptionMessage Unable to load locale class IntlNumbersToWords\Words\doesnotexist
      */
-    function testToWordsInvalidLocale()
+    public function testToWordsInvalidLocale()
     {
         $this->object->toWords(1, 'doesnotexist');
     }
@@ -42,12 +55,15 @@ class NumbersTest extends TestCase
      * @expectedException \IntlNumbersToWords\Exception\NumbersToWordsException
      * @expectedExceptionMessage Unable to load locale class IntlNumbersToWords\Words\doesnotexist
      */
-    function testToCurrencyInvalidLocale()
+    public function testToCurrencyInvalidLocale()
     {
         $this->object->toCurrency(1, 'doesnotexist');
     }
 
-    function testGetLocales()
+    /**
+     * Test method
+     */
+    public function testGetLocales()
     {
         $locales = $this->object->getLocales();
         $this->assertInternalType('array', $locales);
@@ -60,7 +76,10 @@ class NumbersTest extends TestCase
         }
     }
 
-    function testGetLocalesString()
+    /**
+     * Test method
+     */
+    public function testGetLocalesString()
     {
         $locales = $this->object->getLocales('de');
         $this->assertInternalType('array', $locales);
@@ -69,7 +88,10 @@ class NumbersTest extends TestCase
     }
 
 
-    function testGetLocalesArray()
+    /**
+     * Test method
+     */
+    public function testGetLocalesArray()
     {
         $locales = $this->object->getLocales(['de', 'en_US']);
         $this->assertInternalType('array', $locales);
@@ -78,7 +100,10 @@ class NumbersTest extends TestCase
         $this->assertContains('en_US', $locales);
     }
 
-    function testAllLocales()
+    /**
+     * Test method
+     */
+    public function testAllLocales()
     {
         $this->markTestIncomplete(
             'This test has not been implemented yet.'
@@ -97,11 +122,10 @@ class NumbersTest extends TestCase
 
     /**
      * @expectedException \IntlNumbersToWords\Exception\NumbersToWordsException
-     * @expectedExceptionMessage Unable to find method 'doesnotexist' in class 'IntlNumbersToWords\Words\de'
+     * @expectedExceptionMessage Unable to load locale class IntlNumbersToWords\Words\doesnotexist
      */
-    function testLoadLocaleMethodMissing()
+    public function testLoadLocaleMissing()
     {
-        $this->object->loadLocale('de', 'doesnotexist');
+        $this->object->loadLocale('doesnotexist');
     }
-
 }

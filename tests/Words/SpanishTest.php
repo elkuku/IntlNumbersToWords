@@ -20,16 +20,18 @@
  * @link       http://pear.php.net/package/Numbers_Words
  */
 
-require_once 'Numbers/Words.php';
+namespace tests;
 
-class Numbers_Words_SpanishTest extends PHPUnit_Framework_TestCase
+use IntlNumbersToWords\Numbers;
+use PHPUnit\Framework\TestCase;
+
+class SpanishTest extends TestCase
 {
-
     var $handle;
 
     function setUp()
     {
-        $this->handle = new Numbers_Words();
+        $this->handle = new Numbers();
     }
 
     /**

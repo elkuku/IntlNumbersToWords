@@ -1,5 +1,10 @@
 <?php
+namespace tests;
+
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent: */
+use IntlNumbersToWords\Numbers;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Numbers_Words class extension to spell numbers in Polish.
  *
@@ -20,15 +25,13 @@
  * @link      http://pear.php.net/package/Numbers_Words
  */
 
-require_once 'Numbers/Words.php';
-
-class Numbers_Words_PolishTest extends PHPUnit_Framework_TestCase
+class PolishTest extends TestCase
 {
     var $handle;
 
     function setUp()
     {
-        $this->handle = new Numbers_Words();
+        $this->handle = new Numbers();
     }
 
     /**

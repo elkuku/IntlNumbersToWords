@@ -1,4 +1,6 @@
 <?php
+namespace tests;
+
 
 namespace tests;
 
@@ -25,25 +27,14 @@ use PHPUnit\Framework\TestCase;
  * @link       http://pear.php.net/package/Numbers_Words
  */
 
-//require_once 'Numbers/Words.php';
-
-class Numbers_Words_EnglishUsTest extends TestCase
+class EnglishUsTest extends TestCase
 {
     /**
      * @var Numbers
      */
     var $handle;
-    var $lang = 'en_US';
 
-    public static function main()
-    {
-        /*
-        require_once 'PHPUnit/TextUI/TestRunner.php';
-        PHPUnit_TextUI_TestRunner::run(
-            new PHPUnit_Framework_TestSuite('Numbers_Words_EnglishUsTest')
-        );
-        */
-    }
+    var $lang = 'en_US';
 
     function setUp()
     {

@@ -1,5 +1,10 @@
 <?php
+namespace tests;
+
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent: */
+use IntlNumbersToWords\Numbers;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Numbers_Words class extension to spell numbers in British English.
  *
@@ -20,24 +25,14 @@
  * @link      http://pear.php.net/package/Numbers_Words
  */
 
-require_once 'Numbers/Words.php';
-
-class Numbers_Words_EnglishGbTest extends PHPUnit_Framework_TestCase
+class EnglishGbTest extends TestCase
 {
     var $handle;
     var $lang = 'en_GB';
 
-    public static function main()
-    {
-        require_once 'PHPUnit/TextUI/TestRunner.php';
-        PHPUnit_TextUI_TestRunner::run(
-            new PHPUnit_Framework_TestSuite('Numbers_Words_EnglishGbTest')
-        );
-    }
-
     function setUp()
     {
-        $this->handle = new Numbers_Words();
+        $this->handle = new Numbers();
     }
 
     /**
@@ -138,7 +133,7 @@ class Numbers_Words_EnglishGbTest extends PHPUnit_Framework_TestCase
             $this->assertEquals($word, $this->handle->toWords($number, $this->lang));
         }
     }
-    
+
     /**
     * en_GB (old version) and en_US differentiate in their millions/billions/trillions
     * because en_GB once used the long scale, and en_US the short scale.
@@ -158,6 +153,6 @@ class Numbers_Words_EnglishGbTest extends PHPUnit_Framework_TestCase
         $number = '3000000000000' > PHP_INT_SIZE? '3000000000000' : 3000000000000;
 
         $this->assertEquals('three billion', $this->handle->toWords($number, $this->lang));
-    
+
     }
 }

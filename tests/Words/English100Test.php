@@ -1,7 +1,11 @@
 <?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent: */
+namespace tests;
+
+use IntlNumbersToWords\Numbers;
+use PHPUnit\Framework\TestCase;
+
 /**
- * Numbers_Words class extension to spell numbers in 
+ * Numbers_Words class extension to spell numbers in
  * Donald Knuth system - English.
  *
  * PHP versions 4 and 5
@@ -21,24 +25,14 @@
  * @link       http://pear.php.net/package/Numbers_Words
  */
 
-require_once 'Numbers/Words.php';
-
-class Numbers_Words_English100Test extends PHPUnit_Framework_TestCase
+class Numbers_Words_English100Test extends TestCase
 {
     var $handle;
     var $lang = 'en_100';
 
-    public static function main()
-    {
-        require_once 'PHPUnit/TextUI/TestRunner.php';
-        PHPUnit_TextUI_TestRunner::run(
-            new PHPUnit_Framework_TestSuite('Numbers_Words_English100Test')
-        );
-    }
-
     function setUp()
     {
-        $this->handle = new Numbers_Words();
+        $this->handle = new Numbers();
     }
 
     /**
@@ -139,7 +133,7 @@ class Numbers_Words_English100Test extends PHPUnit_Framework_TestCase
             $this->assertEquals($word, $this->handle->toWords($number, $this->lang));
         }
     }
-    
+
     /**
     * Test *yllions and *ylliards
     */
@@ -156,6 +150,6 @@ class Numbers_Words_English100Test extends PHPUnit_Framework_TestCase
         foreach ($morers as $number => $word) {
             $this->assertEquals($word, $this->handle->toWords($number, $this->lang));
         }
-    
+
     }
 }

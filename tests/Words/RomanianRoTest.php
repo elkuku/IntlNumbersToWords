@@ -1,4 +1,6 @@
 <?php
+namespace tests;
+
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 //
 // +----------------------------------------------------------------------+
@@ -20,23 +22,18 @@
 // Numbers_Words class extension to spell numbers in Romanian.
 //
 
-require_once 'Numbers/Words.php';
+use IntlNumbersToWords\Numbers;
+use PHPUnit\Framework\TestCase;
 
-class Numbers_Words_RomanianRoTest extends PHPUnit_Framework_TestCase
+class RomanianRoTest extends TestCase
 {
     var $handle;
-    var $lang = 'ro_RO';
 
-    public static function main()
-    {
-        PHPUnit_TextUI_TestRunner::run(
-            new PHPUnit_Framework_TestSuite('Numbers_Words_RomanianRoTest')
-        );
-    }
+    var $lang = 'ro_RO';
 
     function setUp()
     {
-        $this->handle = new Numbers_Words();
+        $this->handle = new Numbers();
     }
 
     /**

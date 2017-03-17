@@ -1,5 +1,9 @@
 <?php
+namespace tests;
+
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent: */
+use PHPUnit\Framework\TestCase;
+
 /**
  * Numbers_Words class extension to spell numbers in French.
  *
@@ -20,23 +24,13 @@
  * @link       http://pear.php.net/package/Numbers_Words
  */
 
-require_once 'Numbers/Words.php';
-
-class Numbers_Words_FrenchTest extends PHPUnit_Framework_TestCase
+class FrenchTest extends TestCase
 {
     var $handle;
 
-    public static function main()
-    {
-        require_once 'PHPUnit/TextUI/TestRunner.php';
-        PHPUnit_TextUI_TestRunner::run(
-            new PHPUnit_Framework_TestSuite('Numbers_Words_FrenchTest')
-        );
-    }
-
     function setUp()
     {
-        $this->handle = new Numbers_Words();
+        $this->handle = new Numbers();
     }
 
     /**
