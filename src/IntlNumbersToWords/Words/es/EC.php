@@ -36,6 +36,7 @@ use IntlNumbersToWords\Numbers;
  * @package  Numbers_Words
  * @author   Xavier Noguer   <xnoguer.php@gmail.com>
  * @author   Martin Marrese  <mmare@mecon.gov.ar>
+ * @author   Nikolai Plath   <der.el.kuku@gmail.com>
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
