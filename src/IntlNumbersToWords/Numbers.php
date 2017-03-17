@@ -108,10 +108,10 @@ class Numbers
             $locale = 'en_US';
         }
 
-        $classname = self::loadLocale($locale, 'convertToWords');
+        $className = self::loadLocale($locale, 'convertToWords');
 
         /* @type Numbers $obj */
-        $obj = new $classname;
+        $obj = new $className();
 
         if (!is_int($num)) {
             $num = $obj->normalizeNumber($num);
@@ -123,30 +123,24 @@ class Numbers
         if (empty($options)) {
             return trim($obj->convertToWords($num));
         }
-        return trim($obj->convertToWords($num, $options));
-    }
 
-    /**
-     * @return string
-     */
-    protected function convertToWords(){
-        throw new \UnexpectedValueException('Method "convertToWords" must be implemented in child class');
+        return trim($obj->convertToWords($num, $options));
     }
 
     /**
      * Converts a currency value to word representation (1.02 => one dollar two cents)
      * If the number has not any fraction part, the "cents" number is omitted.
      *
-     * @param float  $num      A float/integer/string number representing currency value
+     * @param float  $num          A float/integer/string number representing currency value
      *
-     * @param string $locale   Language name abbreviation. Optional. Defaults to en_US.
+     * @param string $locale       Language name abbreviation. Optional. Defaults to en_US.
      *
-     * @param string $intCurr  International currency symbol
+     * @param string $intCurr      International currency symbol
      *                         as defined by the ISO 4217 standard (three characters).
      *                         E.g. 'EUR', 'USD', 'PLN'. Optional.
      *                         Defaults to $def_currency defined in the language class.
      *
-     * @param string $decimalPoint  Decimal mark symbol
+     * @param string $decimalPoint Decimal mark symbol
      *                         E.g. '.', ','. Optional.
      *                         Defaults to $decimalPoint defined in the language class.
      *
@@ -155,16 +149,13 @@ class Numbers
      * @access public
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  PHP 4.2.3
-     * @return string
      */
     public function toCurrency($num, $locale = 'en_US', $intCurr = '', $decimalPoint = null)
     {
-        $ret = $num;
-
-        $classname = self::loadLocale($locale, 'toCurrencyWords');
+        $className = self::loadLocale($locale, 'toCurrencyWords');
 
         /* @type Numbers $obj */
-        $obj = new $classname;
+        $obj = new $className();
 
         if (is_null($decimalPoint)) {
             $decimalPoint = $obj->decimalPoint;
@@ -190,21 +181,21 @@ class Numbers
             $currency[1] .= '0';
         } elseif ($len > 2) {
             // get the 3rd digit after the comma
-            $round_digit = substr($currency[1], 2, 1);
+            $roundDigit = substr($currency[1], 2, 1);
 
             // cut everything after the 2nd digit
             $currency[1] = substr($currency[1], 0, 2);
 
-            if ($round_digit >= 5) {
+            if ($roundDigit >= 5) {
                 // round up without losing precision
                 include_once "Math/BigInteger.php";
 
                 $int = new Math_BigInteger(join($currency));
                 $int = $int->add(new Math_BigInteger(1));
-                $int_str = $int->toString();
+                $intStr = $int->toString();
 
-                $currency[0] = substr($int_str, 0, -2);
-                $currency[1] = substr($int_str, -2);
+                $currency[0] = substr($intStr, 0, -2);
+                $currency[1] = substr($intStr, -2);
 
                 // check if the rounded decimal part became zero
                 if ($currency[1] == '00') {
@@ -223,11 +214,9 @@ class Numbers
      *                       Optional searched language name abbreviation.
      *                       Default: all available locales.
      *
-     * @return array   The available locales (optionaly only the requested ones)
+     * @return array   The available locales (optionally only the requested ones)
      * @author Piotr Klaban <makler@man.torun.pl>
      * @author Bertrand Gugger, bertrand at toggg dot com
-     *
-     * @return mixed[] Array of locale names ("de_DE", "en")
      */
     public function getLocales($locales = null)
     {
@@ -238,7 +227,7 @@ class Numbers
 
         $dname = __DIR__.'/Words/';
 
-        $sfiles = glob($dname . '??.php');
+        $sfiles = glob($dname.'??.php');
         foreach ($sfiles as $fname) {
             $lname = substr($fname, -6, 2);
             if (is_file($fname) && is_readable($fname)
@@ -248,7 +237,7 @@ class Numbers
             }
         }
 
-        $mfiles = glob($dname . '??/??.php');
+        $mfiles = glob($dname.'??/??.php');
         foreach ($mfiles as $fname) {
             $lname = str_replace(['/', '\\'], '_', substr($fname, -9, 5));
             if (is_file($fname) && is_readable($fname)
@@ -259,6 +248,7 @@ class Numbers
         }
 
         sort($ret);
+
         return $ret;
     }
 
@@ -274,34 +264,32 @@ class Numbers
      */
     public function loadLocale($locale, $requiredMethod)
     {
-        $localeToPath = str_replace('_', '\\', $locale);
-        $classname = 'IntlNumbersToWords\\Words\\' . $localeToPath;
-        if (!class_exists($classname)) {
-            throw new NumbersToWordsException(
-                'Unable to load locale class ' . $classname
-            );
+        $className = 'IntlNumbersToWords\\Words\\'.str_replace('_', '\\', $locale);
+
+        if (!class_exists($className)) {
+            throw new NumbersToWordsException('Unable to load locale class '.$className);
         }
 
-        $methods = get_class_methods($classname);
+        $methods = get_class_methods($className);
 
         if (!in_array($requiredMethod, $methods)) {
             throw new NumbersToWordsException(
-                "Unable to find method '$requiredMethod' in class '$classname'"
+                "Unable to find method '$requiredMethod' in class '$className'"
             );
         }
 
-        return $classname;
+        return $className;
     }
 
     /**
      * Removes redundant spaces, thousands separators, etc.
      *
-     * @param string $num            Some number
-     * @param string $decimalPoint   The decimal mark, e.g. "." or ","
+     * @param string $num          Some number
+     * @param string $decimalPoint The decimal mark, e.g. "." or ","
      *
      * @return string Number
      */
-    function normalizeNumber($num, $decimalPoint = null)
+    public function normalizeNumber($num, $decimalPoint = null)
     {
         if (is_null($decimalPoint)) {
             $decimalPoint = $this->decimalPoint;
@@ -318,5 +306,15 @@ class Numbers
     public function getLanguageName()
     {
         return $this->languageName;
+    }
+
+    /**
+     * @param     $num
+     * @param int $power
+     *
+     * @return string
+     */
+    protected function convertToWords($num, $power = 0){
+        throw new \UnexpectedValueException('Method "convertToWords" must be implemented in child class');
     }
 }
