@@ -315,6 +315,6 @@ class Numbers
      * @return string
      */
     protected function convertToWords($num, $power = 0){
-        throw new \UnexpectedValueException('Method "convertToWords" must be implemented in child class');
+        throw new \UnexpectedValueException('Method "convertToWords" must be implemented in child class: '.$this->locale);
     }
 }
