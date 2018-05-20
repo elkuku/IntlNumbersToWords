@@ -31,10 +31,9 @@
  * @package Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+namespace IntlNumbersToWords\Words\it;
+
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Italian.
@@ -48,7 +47,7 @@ require_once "Numbers/Words.php";
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
-class Numbers_Words_Locale_it_IT extends Numbers_Words
+class IT extends AbstractWords
 {
     // {{{ properties
 
@@ -127,7 +126,7 @@ class Numbers_Words_Locale_it_IT extends Numbers_Words
      * @author Filippo Beltramini
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0)
+    function fromNumber($num, $power = 0, $powSuffix = '')
     {
         // The return string;
         $ret = '';
@@ -151,7 +150,7 @@ class Numbers_Words_Locale_it_IT extends Numbers_Words
                 $snum = substr($num, 0, -6);
                 $snum = preg_replace('/^0+/', '', $snum);
                 if ($snum !== '') {
-                    $ret .= $this->_toWords($snum, $power + 6);
+                    $ret .= $this->fromNumber($snum, $power + 6);
                 }
             }
             $num = substr($num, -6);
@@ -170,7 +169,7 @@ class Numbers_Words_Locale_it_IT extends Numbers_Words
         if ($thousands == 1) {
             $ret .= $this->_sep . 'mille' . $this->_sep;
         } elseif ($thousands > 1) {
-            $ret .= $this->_toWords($thousands, 3) . $this->_sep;//. 'mil' . $this->_sep;
+            $ret .= $this->fromNumber($thousands, 3) . $this->_sep;//. 'mil' . $this->_sep;
         }
 
         // values for digits, tens and hundreds
@@ -389,5 +388,4 @@ class Numbers_Words_Locale_it_IT extends Numbers_Words
 
         return $ret;
     }
-    // }}}
 }

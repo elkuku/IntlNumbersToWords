@@ -24,7 +24,7 @@
 
 namespace IntlNumbersToWords\Words;
 
-use IntlNumbersToWords\Numbers;
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Danish.
@@ -35,7 +35,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class dk extends Numbers
+class dk extends AbstractWords
 {
 
     // {{{ properties
@@ -163,7 +163,7 @@ class dk extends Numbers
      * @author Jesper Veggerby <pear.nosey@veggerby.dk>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0, $powsuffix = '')
+    function fromNumber($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 

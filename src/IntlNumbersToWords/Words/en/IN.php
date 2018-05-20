@@ -29,10 +29,9 @@
  * @package Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+namespace IntlNumbersToWords\Words\en;
+
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Indian English.
@@ -43,7 +42,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_en_IN extends Numbers_Words
+class IN extends AbstractWords
 {
 
     // {{{ properties
@@ -188,7 +187,7 @@ class Numbers_Words_Locale_en_IN extends Numbers_Words
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0, $powsuffix = '')
+    function fromNumber($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 
@@ -218,7 +217,7 @@ class Numbers_Words_Locale_en_IN extends Numbers_Words
                             $cursuffix .= $this->_sep . $powsuffix;
                         }
 
-                        $ret .= $this->_toWords($snum, $p, $cursuffix);
+                        $ret .= $this->fromNumber($snum, $p, $cursuffix);
                     }
                     $curp = $p - 1;
                     continue;
@@ -413,5 +412,4 @@ class Numbers_Words_Locale_en_IN extends Numbers_Words
         return $ret;
     }
     // }}}
-
 }

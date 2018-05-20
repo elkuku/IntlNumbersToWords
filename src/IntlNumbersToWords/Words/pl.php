@@ -35,7 +35,7 @@
 
 namespace IntlNumbersToWords\Words;
 
-use IntlNumbersToWords\Numbers;
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Polish.
@@ -46,7 +46,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class pl extends Numbers
+class pl extends AbstractWords
 {
 
     // {{{ properties
@@ -226,7 +226,7 @@ class pl extends Numbers
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0, $powsuffix = '')
+    function fromNumber($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 
@@ -256,7 +256,7 @@ class pl extends Numbers
                             $cursuffix .= $this->_sep . $powsuffix;
                         }
 
-                        $ret .= $this->_toWords($snum, $p, $cursuffix);
+                        $ret .= $this->fromNumber($snum, $p, $cursuffix);
                     }
                     $curp = $p - 1;
                     continue;

@@ -24,7 +24,7 @@
 
 namespace IntlNumbersToWords\Words;
 
-use IntlNumbersToWords\Numbers;
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Spanish (Castellano).
@@ -37,7 +37,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class es extends Numbers
+class es extends AbstractWords
 {
     // {{{ properties
 
@@ -121,8 +121,8 @@ class es extends Numbers
      * @author Xavier Noguer
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0)
-    {
+    public function fromNumber($num, $power = 0, $powSuffix = '')
+   {
         // The return string;
         $ret = '';
 
@@ -164,7 +164,7 @@ class es extends Numbers
         if ($thousands == 1) {
             $ret .= $this->_sep . 'mil';
         } elseif ($thousands > 1) {
-            $ret .= $this->_toWords($thousands, 3);
+            $ret .= $this->fromNumber($thousands, 3);
         }
 
         // values for digits, tens and hundreds

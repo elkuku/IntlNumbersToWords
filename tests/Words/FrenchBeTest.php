@@ -2,6 +2,8 @@
 namespace tests;
 
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent: */
+
+use IntlNumbersToWords\Numbers;
 use PHPUnit\Framework\TestCase;
 
 /**

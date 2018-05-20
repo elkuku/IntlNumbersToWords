@@ -24,7 +24,7 @@
 
 namespace IntlNumbersToWords\Words;
 
-use IntlNumbersToWords\Numbers;
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into French.
@@ -35,7 +35,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class fr extends Numbers
+class fr extends AbstractWords
 {
 
     // {{{ properties
@@ -396,7 +396,7 @@ class fr extends Numbers
      * @author Kouber Saparev <kouber@php.net>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num = 0)
+    function fromNumber($num = 0, $power = 0, $powSuffix = '')
     {
         $ret = '';
 

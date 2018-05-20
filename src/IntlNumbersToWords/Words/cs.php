@@ -34,7 +34,8 @@ namespace IntlNumbersToWords\Words;
 /**
  * Include needed files
  */
-use IntlNumbersToWords\Numbers;
+
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Czech.
@@ -45,7 +46,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class cs extends Numbers
+class cs extends AbstractWords
 {
 
     // {{{ properties
@@ -168,7 +169,7 @@ class cs extends Numbers
      * @author Petr 'PePa' Pavel <petr.pavel@pepa.info>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0, $powsuffix = '')
+	public function fromNumber($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 
@@ -342,5 +343,4 @@ class cs extends Numbers
 
         return $ret;
     }
-    // }}}
 }

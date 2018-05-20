@@ -30,10 +30,9 @@
  * @package Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+namespace IntlNumbersToWords\Words\es;
+
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Argentinian Spanish.
@@ -47,7 +46,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_es_MX extends Numbers_Words
+class MX extends AbstractWords
 {
     // {{{ properties
 
@@ -190,7 +189,7 @@ class Numbers_Words_Locale_es_MX extends Numbers_Words
      * @author Martin Marrese
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $power = 0)
+    function fromNumber($num, $power = 0, $powSuffix = '')
     {
         // The return string;
         $ret = '';
@@ -219,7 +218,7 @@ class Numbers_Words_Locale_es_MX extends Numbers_Words
                 $snum = substr($num, 0, -6);
                 $snum = preg_replace('/^0+/', '', $snum);
                 if ($snum !== '') {
-                    $ret .= $this->_toWords($snum, $power + 6);
+                    $ret .= $this->fromNumber($snum, $power + 6);
                 }
             }
             $num = substr($num, -6);
@@ -238,7 +237,7 @@ class Numbers_Words_Locale_es_MX extends Numbers_Words
         if ($thousands == 1) {
             $ret .= $this->_sep . 'mil';
         } elseif ($thousands > 1) {
-            $ret .= $this->_toWords($thousands, 3);
+            $ret .= $this->fromNumber($thousands, 3);
         }
 
         // values for digits, tens and hundreds
@@ -393,7 +392,7 @@ class Numbers_Words_Locale_es_MX extends Numbers_Words
         }
 
         if ($dec) {
-            $dec  = $this->_toWords(trim($dec));
+            $dec  = $this->fromNumber(trim($dec));
             $ret .= ' con ' . trim($dec);
         }
 

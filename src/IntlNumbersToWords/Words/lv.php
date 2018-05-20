@@ -31,7 +31,7 @@
 
 namespace IntlNumbersToWords\Words;
 
-use IntlNumbersToWords\Numbers;
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Latvian.
@@ -42,7 +42,7 @@ use IntlNumbersToWords\Numbers;
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class lv extends Numbers
+class lv extends AbstractWords
 {
 
     // {{{ properties
@@ -134,7 +134,7 @@ class lv extends Numbers
      * @author Andrius Virbičianskas <a@ndri.us>
      * @since  Numbers_Words 0.16.4
      */
-    function _toWords($num, $power = 0, $powsuffix = '')
+    function fromNumber($num, $power = 0, $powsuffix = '')
     {
         $ret = '';
 
@@ -164,7 +164,7 @@ class lv extends Numbers
                             $cursuffix .= $this->_sep . $powsuffix;
                         }
 
-                        $ret .= $this->_toWords($snum, $p, $cursuffix);
+                        $ret .= $this->fromNumber($snum, $p, $cursuffix);
                     }
                     $curp = $p - 1;
                     continue;

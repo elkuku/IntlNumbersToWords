@@ -33,10 +33,9 @@
  * @package Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+namespace IntlNumbersToWords\Words\hu;
+
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Hungarian.
@@ -47,7 +46,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_hu_HU extends Numbers_Words
+class HU extends AbstractWords
 {
 
     // {{{ properties
@@ -213,7 +212,7 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
      * @author Nils Homp
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num, $options = [], $power = 0, $powsuffix = '', $gt2000 = false)
+    function fromNumber($num, $options = [], $power = 0, $powsuffix = '', $gt2000 = false)
     {
         $chk_gt2000 = true;
 
@@ -255,7 +254,7 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
                             $cursuffix .= $this->_sep . $powsuffix;
                         }
 
-                        $ret .= $this->_toWords(
+                        $ret .= $this->fromNumber(
                             $snum,
                             ['chk_gt2000' => false],
                             $p,
@@ -438,6 +437,4 @@ class Numbers_Words_Locale_hu_HU extends Numbers_Words
         }
         return $ret;
     }
-    // }}}
-
 }

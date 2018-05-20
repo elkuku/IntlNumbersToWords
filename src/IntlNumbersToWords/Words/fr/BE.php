@@ -23,10 +23,10 @@
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+namespace IntlNumbersToWords\Words\fr;
+
+use IntlNumbersToWords\AbstractWords;
+
 
 /**
  * Class for translating numbers into French (Belgium).
@@ -38,7 +38,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_fr_BE extends Numbers_Words
+class BE extends AbstractWords
 {
 
     // {{{ properties
@@ -383,7 +383,7 @@ class Numbers_Words_Locale_fr_BE extends Numbers_Words
      * @author Kouber Saparev <kouber@php.net>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num = 0)
+    function fromNumber($num = 0, $power = 0, $powSuffix = '')
     {
         $ret = '';
 

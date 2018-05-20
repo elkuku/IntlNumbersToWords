@@ -109,8 +109,8 @@ class Numbers
         }
 
         $className = $this->loadLocale($locale);
-
-        /* @type Words\en\US $obj */
+        //echo $className."\n";
+        /* @type AbstractWords $obj */
         $obj = new $className();
 
         if ($obj instanceof Numbers) {
@@ -227,8 +227,16 @@ class Numbers
     public function getLocales($locales = null)
     {
         $ret = [];
-        if (isset($locales) && is_string($locales)) {
-            $locales = [$locales];
+        if (isset($locales))
+        {
+        	if (is_string($locales))
+	        {
+		        $locales = [$locales];
+	        }
+        }
+        else
+        {
+	        $locales = [];
         }
 
         $dname = __DIR__.'/Words/';
@@ -262,7 +270,6 @@ class Numbers
      * Load the given locale and return class name
      *
      * @param string $locale         Locale key, e.g. "de" or "en_US"
-     * @param string $requiredMethod Method that this class needs to have
      *
      * @return string Locale class name
      *

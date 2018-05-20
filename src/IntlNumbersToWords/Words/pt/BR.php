@@ -1,6 +1,4 @@
 <?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-
 /**
  * Numbers_Words
  *
@@ -22,10 +20,9 @@
  * @link     http://pear.php.net/package/Numbers_Words
  */
 
-/**
- * Include needed files
- */
-require_once "Numbers/Words.php";
+namespace IntlNumbersToWords\Words\pt;
+
+use IntlNumbersToWords\AbstractWords;
 
 /**
  * Class for translating numbers into Brazilian Portuguese. This class complies
@@ -37,7 +34,7 @@ require_once "Numbers/Words.php";
  * @license  PHP 3.01 http://www.php.net/license/3_01.txt
  * @link     http://pear.php.net/package/Numbers_Words
  */
-class Numbers_Words_Locale_pt_BR extends Numbers_Words
+class BR extends AbstractWords
 {
     /**
      * Locale name
@@ -228,7 +225,7 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
      * @author Igor Feghali <ifeghali@php.net>
      * @since  Numbers_Words 0.16.3
      */
-    function _toWords($num)
+	public function fromNumber($num, $power = 0, $powSuffix = '')
     {
         $neg   = 0;
         $ret   = [];
@@ -454,7 +451,7 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
             /**
              * Word representation of decimal
              */
-            $ret[] = $this->_toWords($num);
+            $ret[] = $this->fromNumber($num);
 
             /**
              * Special case.
@@ -505,7 +502,7 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
              * Word representation of fraction
              */
             if ($convert_fraction) {
-                $ret[] = $this->_toWords($num);
+                $ret[] = $this->fromNumber($num);
             } else {
                 $ret[] = $num;
             }
@@ -538,5 +535,4 @@ class Numbers_Words_Locale_pt_BR extends Numbers_Words
 
         return implode(' ', $ret);
     }
-    // }}}
 }

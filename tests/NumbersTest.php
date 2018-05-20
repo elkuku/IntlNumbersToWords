@@ -83,7 +83,7 @@ class NumbersTest extends TestCase
     {
         $locales = $this->object->getLocales('de');
         $this->assertInternalType('array', $locales);
-        $this->assertEquals(1, count($locales));
+        $this->assertCount(1, $locales);
         $this->assertContains('de', $locales);
     }
 
@@ -95,7 +95,7 @@ class NumbersTest extends TestCase
     {
         $locales = $this->object->getLocales(['de', 'en_US']);
         $this->assertInternalType('array', $locales);
-        $this->assertEquals(2, count($locales));
+        $this->assertCount(2, $locales);
         $this->assertContains('de', $locales);
         $this->assertContains('en_US', $locales);
     }
@@ -105,8 +105,11 @@ class NumbersTest extends TestCase
      */
     public function testAllLocales()
     {
+    	/*
+    	 *
+    	 */
         $this->markTestIncomplete(
-            'This test has not been implemented yet.'
+            'temporary disabled.'
         );
 
         $locales = $this->object->getLocales();
