@@ -25,6 +25,7 @@
 namespace IntlNumbersToWords\Words\ro;
 
 use IntlNumbersToWords\AbstractWords;
+use IntlNumbersToWords\Numbers;
 
 /**
  * Class for translating numbers into Romanian (Romania) with the correct diacritical signs (commas).
@@ -155,64 +156,64 @@ class RO extends AbstractWords
      */
     var $_currency_names = [
         'AUD' => [
-            ['dolar australian', 'dolari australieni', Numbers_Words::GENDER_MASCULINE],
-            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+            ['dolar australian', 'dolari australieni', Numbers::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers::GENDER_MASCULINE],
         ],
         'CAD' => [
-            ['dolar canadian', 'dolari canadieni', Numbers_Words::GENDER_MASCULINE],
-            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+            ['dolar canadian', 'dolari canadieni', Numbers::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers::GENDER_MASCULINE],
         ],
         'CHF' => [
-            ['franc elvețian', 'franci elvețieni', Numbers_Words::GENDER_MASCULINE],
-            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+            ['franc elvețian', 'franci elvețieni', Numbers::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers::GENDER_MASCULINE],
         ],
         'CZK' => [
-            ['coroană cehă', 'coroane cehe', Numbers_Words::GENDER_FEMININE],
-            ['haler', 'haleri', Numbers_Words::GENDER_MASCULINE],
+            ['coroană cehă', 'coroane cehe', Numbers::GENDER_FEMININE],
+            ['haler', 'haleri', Numbers::GENDER_MASCULINE],
         ],
         'EUR' => [
-            ['euro', 'euro', Numbers_Words::GENDER_MASCULINE],
-            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+            ['euro', 'euro', Numbers::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers::GENDER_MASCULINE],
         ],
         'GBP' => [
-            ['liră sterlină', 'lire sterline', Numbers_Words::GENDER_FEMININE],
-            ['penny', 'penny', Numbers_Words::GENDER_MASCULINE],
+            ['liră sterlină', 'lire sterline', Numbers::GENDER_FEMININE],
+            ['penny', 'penny', Numbers::GENDER_MASCULINE],
         ],
         'HUF' => [
-            ['forint', 'forinți', Numbers_Words::GENDER_MASCULINE],
-            ['filer', 'fileri', Numbers_Words::GENDER_MASCULINE],
+            ['forint', 'forinți', Numbers::GENDER_MASCULINE],
+            ['filer', 'fileri', Numbers::GENDER_MASCULINE],
         ],
         'JPY' => [
-            ['yen', 'yeni', Numbers_Words::GENDER_MASCULINE],
-            ['sen', 'seni', Numbers_Words::GENDER_MASCULINE],
+            ['yen', 'yeni', Numbers::GENDER_MASCULINE],
+            ['sen', 'seni', Numbers::GENDER_MASCULINE],
         ],
         'PLN' => [
-            ['zlot', 'zloți', Numbers_Words::GENDER_MASCULINE],
-            ['gros', 'grosi', Numbers_Words::GENDER_MASCULINE],
+            ['zlot', 'zloți', Numbers::GENDER_MASCULINE],
+            ['gros', 'grosi', Numbers::GENDER_MASCULINE],
         ],
         'ROL' => [
-            ['leu', 'lei', Numbers_Words::GENDER_MASCULINE],
-            ['ban', 'bani', Numbers_Words::GENDER_MASCULINE],
+            ['leu', 'lei', Numbers::GENDER_MASCULINE],
+            ['ban', 'bani', Numbers::GENDER_MASCULINE],
         ],
         'RON' => [
-            ['leu', 'lei', Numbers_Words::GENDER_MASCULINE],
-            ['ban', 'bani', Numbers_Words::GENDER_MASCULINE],
+            ['leu', 'lei', Numbers::GENDER_MASCULINE],
+            ['ban', 'bani', Numbers::GENDER_MASCULINE],
         ],
         'RUB' => [
-            ['rublă', 'ruble', Numbers_Words::GENDER_FEMININE],
-            ['copeică', 'copeici', Numbers_Words::GENDER_FEMININE],
+            ['rublă', 'ruble', Numbers::GENDER_FEMININE],
+            ['copeică', 'copeici', Numbers::GENDER_FEMININE],
         ],
         'SKK' => [
-            ['coroană slovacă', 'coroane slovace', Numbers_Words::GENDER_FEMININE],
-            ['haler', 'haleri', Numbers_Words::GENDER_MASCULINE],
+            ['coroană slovacă', 'coroane slovace', Numbers::GENDER_FEMININE],
+            ['haler', 'haleri', Numbers::GENDER_MASCULINE],
         ],
         'TRL' => [
-            ['liră turcească', 'lire turcești', Numbers_Words::GENDER_FEMININE],
-            ['kuruș', 'kuruși', Numbers_Words::GENDER_MASCULINE],
+            ['liră turcească', 'lire turcești', Numbers::GENDER_FEMININE],
+            ['kuruș', 'kuruși', Numbers::GENDER_MASCULINE],
         ],
         'USD' => [
-            ['dolar american', 'dolari americani', Numbers_Words::GENDER_MASCULINE],
-            ['cent', 'cenți', Numbers_Words::GENDER_MASCULINE],
+            ['dolar american', 'dolari americani', Numbers::GENDER_MASCULINE],
+            ['cent', 'cenți', Numbers::GENDER_MASCULINE],
         ],
     ];
 
@@ -242,108 +243,108 @@ class RO extends AbstractWords
      */
     var $_exponent = [
         0 => '',
-        2 => ['sută','sute',Numbers_Words::GENDER_FEMININE],
-        3 => ['mie','mii',Numbers_Words::GENDER_FEMININE],
-        6 => ['milion','milioane',Numbers_Words::GENDER_NEUTER],
-        9 => ['miliard','miliarde',Numbers_Words::GENDER_NEUTER],
-       12 => ['trilion','trilioane',Numbers_Words::GENDER_NEUTER],
-       15 => ['cvadrilion','cvadrilioane',Numbers_Words::GENDER_NEUTER],
-       18 => ['cvintilion','cvintilioane',Numbers_Words::GENDER_NEUTER],
-       21 => ['sextilion','sextilioane',Numbers_Words::GENDER_NEUTER],
-       24 => ['septilion','septilioane',Numbers_Words::GENDER_NEUTER],
-       27 => ['octilion','octilioane',Numbers_Words::GENDER_NEUTER],
-       30 => ['nonilion','nonilioane',Numbers_Words::GENDER_NEUTER],
-       33 => ['decilion','decilioane',Numbers_Words::GENDER_NEUTER],
-       36 => ['undecilion','undecilioane',Numbers_Words::GENDER_NEUTER],
-       39 => ['dodecilion','dodecilioane',Numbers_Words::GENDER_NEUTER],
-       42 => ['tredecilion','tredecilioane',Numbers_Words::GENDER_NEUTER],
-       45 => ['cvadrodecilion','cvadrodecilioane',Numbers_Words::GENDER_NEUTER],
-       48 => ['cvindecilion','cvindecilioane',Numbers_Words::GENDER_NEUTER],
-       51 => ['sexdecilion','sexdecilioane',Numbers_Words::GENDER_NEUTER],
-       54 => ['septdecilion','septdecilioane',Numbers_Words::GENDER_NEUTER],
-       57 => ['octodecilion','octodecilioane',Numbers_Words::GENDER_NEUTER],
-       60 => ['novemdecilion','novemdecilioane',Numbers_Words::GENDER_NEUTER],
-       63 => ['vigintilion','vigintilioane',Numbers_Words::GENDER_NEUTER],
-       66 => ['unvigintilion','unvigintilioane',Numbers_Words::GENDER_NEUTER],
-       69 => ['dovigintilion','dovigintilioane',Numbers_Words::GENDER_NEUTER],
-       72 => ['trevigintilion','trevigintilioane',Numbers_Words::GENDER_NEUTER],
-       75 => ['cvadrovigintilion','cvadrovigintilioane',Numbers_Words::GENDER_NEUTER],
-       78 => ['cvinvigintilion','cvinvigintilioane',Numbers_Words::GENDER_NEUTER],
-       81 => ['sexvigintilion','sexvigintilioane',Numbers_Words::GENDER_NEUTER],
-       84 => ['septvigintilion','septvigintilioane',Numbers_Words::GENDER_NEUTER],
-       87 => ['octvigintilion','octvigintilioane',Numbers_Words::GENDER_NEUTER],
-       90 => ['novemvigintilion','novemvigintilioane',Numbers_Words::GENDER_NEUTER],
-       93 => ['trigintilion','trigintilioane',Numbers_Words::GENDER_NEUTER],
-       96 => ['untrigintilion','untrigintilioane',Numbers_Words::GENDER_NEUTER],
-       99 => ['dotrigintilion','dotrigintilioane',Numbers_Words::GENDER_NEUTER],
-      102 => ['trestrigintilion','trestrigintilioane',Numbers_Words::GENDER_NEUTER],
-      105 => ['cvadrotrigintilion','cvadrotrigintilioane',Numbers_Words::GENDER_NEUTER],
-      108 => ['cvintrigintilion','cvintrigintilioane',Numbers_Words::GENDER_NEUTER],
-      111 => ['sextrigintilion','sextrigintilioane',Numbers_Words::GENDER_NEUTER],
-      114 => ['septentrigintilion','septentrigintilioane',Numbers_Words::GENDER_NEUTER],
-      117 => ['octotrigintilion','octotrigintilioane',Numbers_Words::GENDER_NEUTER],
-      120 => ['novemtrigintilion','novemtrigintilioane',Numbers_Words::GENDER_NEUTER],
-      123 => ['cvadragintilion','cvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      126 => ['uncvadragintilion','uncvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      129 => ['docvadragintilion','docvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      132 => ['trecvadragintilion','trecvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      135 => ['cvadrocvadragintilion','cvadrocvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      138 => ['cvincvadragintilion','cvincvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      141 => ['sexcvadragintilion','sexcvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      144 => ['septencvadragintilion','septencvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      147 => ['octocvadragintilion','octocvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      150 => ['novemcvadragintilion','novemcvadragintilioane',Numbers_Words::GENDER_NEUTER],
-      153 => ['cvincvagintilion','cvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      156 => ['uncvincvagintilion','uncvincvagilioane',Numbers_Words::GENDER_NEUTER],
-      159 => ['docvincvagintilion','docvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      162 => ['trecvincvagintilion','trecvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      165 => ['cvadrocvincvagintilion','cvadrocvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      168 => ['cvincvincvagintilion','cvincvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      171 => ['sexcvincvagintilion','sexcvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      174 => ['septencvincvagintilion','septencvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      177 => ['octocvincvagintilion','octocvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      180 => ['novemcvincvagintilion','novemcvincvagintilioane',Numbers_Words::GENDER_NEUTER],
-      183 => ['sexagintilion','sexagintilioane',Numbers_Words::GENDER_NEUTER],
-      186 => ['unsexagintilion','unsexagintilioane',Numbers_Words::GENDER_NEUTER],
-      189 => ['dosexagintilion','dosexagintilioane',Numbers_Words::GENDER_NEUTER],
-      192 => ['tresexagintilion','tresexagintilioane',Numbers_Words::GENDER_NEUTER],
-      195 => ['cvadrosexagintilion','cvadrosexagintilioane',Numbers_Words::GENDER_NEUTER],
-      198 => ['cvinsexagintilion','cvinsexagintilioane',Numbers_Words::GENDER_NEUTER],
-      201 => ['sexsexagintilion','sexsexagintilioane',Numbers_Words::GENDER_NEUTER],
-      204 => ['septensexagintilion','septensexagintilioane',Numbers_Words::GENDER_NEUTER],
-      207 => ['octosexagintilion','octosexagintilioane',Numbers_Words::GENDER_NEUTER],
-      210 => ['novemsexagintilion','novemsexagintilioane',Numbers_Words::GENDER_NEUTER],
-      213 => ['septuagintilion','septuagintilioane',Numbers_Words::GENDER_NEUTER],
-      216 => ['unseptuagintilion','unseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      219 => ['doseptuagintilion','doseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      222 => ['treseptuagintilion','treseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      225 => ['cvadroseptuagintilion','cvadroseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      228 => ['cvinseptuagintilion','cvinseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      231 => ['sexseptuagintilion','sexseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      234 => ['septenseptuagintilion','septenseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      237 => ['octoseptuagintilion','octoseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      240 => ['novemseptuagintilion','novemseptuagintilioane',Numbers_Words::GENDER_NEUTER],
-      243 => ['octogintilion','octogintilioane',Numbers_Words::GENDER_NEUTER],
-      246 => ['unoctogintilion','unoctogintilioane',Numbers_Words::GENDER_NEUTER],
-      249 => ['dooctogintilion','dooctogintilioane',Numbers_Words::GENDER_NEUTER],
-      252 => ['treoctogintilion','treoctogintilioane',Numbers_Words::GENDER_NEUTER],
-      255 => ['cvadrooctogintilion','cvadrooctogintilioane',Numbers_Words::GENDER_NEUTER],
-      258 => ['cvinoctogintilion','cvinoctogintilioane',Numbers_Words::GENDER_NEUTER],
-      261 => ['sexoctogintilion','sexoctogintilioane',Numbers_Words::GENDER_NEUTER],
-      264 => ['septoctogintilion','septoctogintilioane',Numbers_Words::GENDER_NEUTER],
-      267 => ['octooctogintilion','octooctogintilioane',Numbers_Words::GENDER_NEUTER],
-      270 => ['novemoctogintilion','novemoctogintilioane',Numbers_Words::GENDER_NEUTER],
-      273 => ['nonagintilion','nonagintilioane',Numbers_Words::GENDER_NEUTER],
-      276 => ['unnonagintilion','unnonagintilioane',Numbers_Words::GENDER_NEUTER],
-      279 => ['dononagintilion','dononagintilioane',Numbers_Words::GENDER_NEUTER],
-      282 => ['trenonagintilion','trenonagintilioane',Numbers_Words::GENDER_NEUTER],
-      285 => ['cvadrononagintilion','cvadrononagintilioane',Numbers_Words::GENDER_NEUTER],
-      288 => ['cvinnonagintilion','cvinnonagintilioane',Numbers_Words::GENDER_NEUTER],
-      291 => ['sexnonagintilion','sexnonagintilioane',Numbers_Words::GENDER_NEUTER],
-      294 => ['septennonagintilion','septennonagintilioane',Numbers_Words::GENDER_NEUTER],
-      297 => ['octononagintilion','octononagintilioane',Numbers_Words::GENDER_NEUTER],
-      300 => ['novemnonagintilion','novemnonagintilioane',Numbers_Words::GENDER_NEUTER],
-      303 => ['centilion','centilioane',Numbers_Words::GENDER_NEUTER],
+        2 => ['sută','sute',Numbers::GENDER_FEMININE],
+        3 => ['mie','mii',Numbers::GENDER_FEMININE],
+        6 => ['milion','milioane',Numbers::GENDER_NEUTER],
+        9 => ['miliard','miliarde',Numbers::GENDER_NEUTER],
+       12 => ['trilion','trilioane',Numbers::GENDER_NEUTER],
+       15 => ['cvadrilion','cvadrilioane',Numbers::GENDER_NEUTER],
+       18 => ['cvintilion','cvintilioane',Numbers::GENDER_NEUTER],
+       21 => ['sextilion','sextilioane',Numbers::GENDER_NEUTER],
+       24 => ['septilion','septilioane',Numbers::GENDER_NEUTER],
+       27 => ['octilion','octilioane',Numbers::GENDER_NEUTER],
+       30 => ['nonilion','nonilioane',Numbers::GENDER_NEUTER],
+       33 => ['decilion','decilioane',Numbers::GENDER_NEUTER],
+       36 => ['undecilion','undecilioane',Numbers::GENDER_NEUTER],
+       39 => ['dodecilion','dodecilioane',Numbers::GENDER_NEUTER],
+       42 => ['tredecilion','tredecilioane',Numbers::GENDER_NEUTER],
+       45 => ['cvadrodecilion','cvadrodecilioane',Numbers::GENDER_NEUTER],
+       48 => ['cvindecilion','cvindecilioane',Numbers::GENDER_NEUTER],
+       51 => ['sexdecilion','sexdecilioane',Numbers::GENDER_NEUTER],
+       54 => ['septdecilion','septdecilioane',Numbers::GENDER_NEUTER],
+       57 => ['octodecilion','octodecilioane',Numbers::GENDER_NEUTER],
+       60 => ['novemdecilion','novemdecilioane',Numbers::GENDER_NEUTER],
+       63 => ['vigintilion','vigintilioane',Numbers::GENDER_NEUTER],
+       66 => ['unvigintilion','unvigintilioane',Numbers::GENDER_NEUTER],
+       69 => ['dovigintilion','dovigintilioane',Numbers::GENDER_NEUTER],
+       72 => ['trevigintilion','trevigintilioane',Numbers::GENDER_NEUTER],
+       75 => ['cvadrovigintilion','cvadrovigintilioane',Numbers::GENDER_NEUTER],
+       78 => ['cvinvigintilion','cvinvigintilioane',Numbers::GENDER_NEUTER],
+       81 => ['sexvigintilion','sexvigintilioane',Numbers::GENDER_NEUTER],
+       84 => ['septvigintilion','septvigintilioane',Numbers::GENDER_NEUTER],
+       87 => ['octvigintilion','octvigintilioane',Numbers::GENDER_NEUTER],
+       90 => ['novemvigintilion','novemvigintilioane',Numbers::GENDER_NEUTER],
+       93 => ['trigintilion','trigintilioane',Numbers::GENDER_NEUTER],
+       96 => ['untrigintilion','untrigintilioane',Numbers::GENDER_NEUTER],
+       99 => ['dotrigintilion','dotrigintilioane',Numbers::GENDER_NEUTER],
+      102 => ['trestrigintilion','trestrigintilioane',Numbers::GENDER_NEUTER],
+      105 => ['cvadrotrigintilion','cvadrotrigintilioane',Numbers::GENDER_NEUTER],
+      108 => ['cvintrigintilion','cvintrigintilioane',Numbers::GENDER_NEUTER],
+      111 => ['sextrigintilion','sextrigintilioane',Numbers::GENDER_NEUTER],
+      114 => ['septentrigintilion','septentrigintilioane',Numbers::GENDER_NEUTER],
+      117 => ['octotrigintilion','octotrigintilioane',Numbers::GENDER_NEUTER],
+      120 => ['novemtrigintilion','novemtrigintilioane',Numbers::GENDER_NEUTER],
+      123 => ['cvadragintilion','cvadragintilioane',Numbers::GENDER_NEUTER],
+      126 => ['uncvadragintilion','uncvadragintilioane',Numbers::GENDER_NEUTER],
+      129 => ['docvadragintilion','docvadragintilioane',Numbers::GENDER_NEUTER],
+      132 => ['trecvadragintilion','trecvadragintilioane',Numbers::GENDER_NEUTER],
+      135 => ['cvadrocvadragintilion','cvadrocvadragintilioane',Numbers::GENDER_NEUTER],
+      138 => ['cvincvadragintilion','cvincvadragintilioane',Numbers::GENDER_NEUTER],
+      141 => ['sexcvadragintilion','sexcvadragintilioane',Numbers::GENDER_NEUTER],
+      144 => ['septencvadragintilion','septencvadragintilioane',Numbers::GENDER_NEUTER],
+      147 => ['octocvadragintilion','octocvadragintilioane',Numbers::GENDER_NEUTER],
+      150 => ['novemcvadragintilion','novemcvadragintilioane',Numbers::GENDER_NEUTER],
+      153 => ['cvincvagintilion','cvincvagintilioane',Numbers::GENDER_NEUTER],
+      156 => ['uncvincvagintilion','uncvincvagilioane',Numbers::GENDER_NEUTER],
+      159 => ['docvincvagintilion','docvincvagintilioane',Numbers::GENDER_NEUTER],
+      162 => ['trecvincvagintilion','trecvincvagintilioane',Numbers::GENDER_NEUTER],
+      165 => ['cvadrocvincvagintilion','cvadrocvincvagintilioane',Numbers::GENDER_NEUTER],
+      168 => ['cvincvincvagintilion','cvincvincvagintilioane',Numbers::GENDER_NEUTER],
+      171 => ['sexcvincvagintilion','sexcvincvagintilioane',Numbers::GENDER_NEUTER],
+      174 => ['septencvincvagintilion','septencvincvagintilioane',Numbers::GENDER_NEUTER],
+      177 => ['octocvincvagintilion','octocvincvagintilioane',Numbers::GENDER_NEUTER],
+      180 => ['novemcvincvagintilion','novemcvincvagintilioane',Numbers::GENDER_NEUTER],
+      183 => ['sexagintilion','sexagintilioane',Numbers::GENDER_NEUTER],
+      186 => ['unsexagintilion','unsexagintilioane',Numbers::GENDER_NEUTER],
+      189 => ['dosexagintilion','dosexagintilioane',Numbers::GENDER_NEUTER],
+      192 => ['tresexagintilion','tresexagintilioane',Numbers::GENDER_NEUTER],
+      195 => ['cvadrosexagintilion','cvadrosexagintilioane',Numbers::GENDER_NEUTER],
+      198 => ['cvinsexagintilion','cvinsexagintilioane',Numbers::GENDER_NEUTER],
+      201 => ['sexsexagintilion','sexsexagintilioane',Numbers::GENDER_NEUTER],
+      204 => ['septensexagintilion','septensexagintilioane',Numbers::GENDER_NEUTER],
+      207 => ['octosexagintilion','octosexagintilioane',Numbers::GENDER_NEUTER],
+      210 => ['novemsexagintilion','novemsexagintilioane',Numbers::GENDER_NEUTER],
+      213 => ['septuagintilion','septuagintilioane',Numbers::GENDER_NEUTER],
+      216 => ['unseptuagintilion','unseptuagintilioane',Numbers::GENDER_NEUTER],
+      219 => ['doseptuagintilion','doseptuagintilioane',Numbers::GENDER_NEUTER],
+      222 => ['treseptuagintilion','treseptuagintilioane',Numbers::GENDER_NEUTER],
+      225 => ['cvadroseptuagintilion','cvadroseptuagintilioane',Numbers::GENDER_NEUTER],
+      228 => ['cvinseptuagintilion','cvinseptuagintilioane',Numbers::GENDER_NEUTER],
+      231 => ['sexseptuagintilion','sexseptuagintilioane',Numbers::GENDER_NEUTER],
+      234 => ['septenseptuagintilion','septenseptuagintilioane',Numbers::GENDER_NEUTER],
+      237 => ['octoseptuagintilion','octoseptuagintilioane',Numbers::GENDER_NEUTER],
+      240 => ['novemseptuagintilion','novemseptuagintilioane',Numbers::GENDER_NEUTER],
+      243 => ['octogintilion','octogintilioane',Numbers::GENDER_NEUTER],
+      246 => ['unoctogintilion','unoctogintilioane',Numbers::GENDER_NEUTER],
+      249 => ['dooctogintilion','dooctogintilioane',Numbers::GENDER_NEUTER],
+      252 => ['treoctogintilion','treoctogintilioane',Numbers::GENDER_NEUTER],
+      255 => ['cvadrooctogintilion','cvadrooctogintilioane',Numbers::GENDER_NEUTER],
+      258 => ['cvinoctogintilion','cvinoctogintilioane',Numbers::GENDER_NEUTER],
+      261 => ['sexoctogintilion','sexoctogintilioane',Numbers::GENDER_NEUTER],
+      264 => ['septoctogintilion','septoctogintilioane',Numbers::GENDER_NEUTER],
+      267 => ['octooctogintilion','octooctogintilioane',Numbers::GENDER_NEUTER],
+      270 => ['novemoctogintilion','novemoctogintilioane',Numbers::GENDER_NEUTER],
+      273 => ['nonagintilion','nonagintilioane',Numbers::GENDER_NEUTER],
+      276 => ['unnonagintilion','unnonagintilioane',Numbers::GENDER_NEUTER],
+      279 => ['dononagintilion','dononagintilioane',Numbers::GENDER_NEUTER],
+      282 => ['trenonagintilion','trenonagintilioane',Numbers::GENDER_NEUTER],
+      285 => ['cvadrononagintilion','cvadrononagintilioane',Numbers::GENDER_NEUTER],
+      288 => ['cvinnonagintilion','cvinnonagintilioane',Numbers::GENDER_NEUTER],
+      291 => ['sexnonagintilion','sexnonagintilioane',Numbers::GENDER_NEUTER],
+      294 => ['septennonagintilion','septennonagintilioane',Numbers::GENDER_NEUTER],
+      297 => ['octononagintilion','octononagintilioane',Numbers::GENDER_NEUTER],
+      300 => ['novemnonagintilion','novemnonagintilioane',Numbers::GENDER_NEUTER],
+      303 => ['centilion','centilioane',Numbers::GENDER_NEUTER],
     ];
     // }}}
 
@@ -433,7 +434,7 @@ class RO extends AbstractWords
      */
     function _get_noun_declension_for_number($plural_rule, $noun)
     {
-        if ($noun[2]==Numbers_Words::GENDER_ABSTRACT) {
+        if ($noun[2]==Numbers::GENDER_ABSTRACT) {
             // Nothing for abstract count
             return "";
         }
@@ -539,7 +540,7 @@ class RO extends AbstractWords
             }
         }
 
-        if ($noun[2]==Numbers_Words::GENDER_ABSTRACT) {
+        if ($noun[2]==Numbers::GENDER_ABSTRACT) {
             return $ret;
         }
 
@@ -565,9 +566,9 @@ class RO extends AbstractWords
      * 0 => the singular form
      * 1 => the plural form
      * 2 => the noun's gender, as one of the following constants:
-     *      - Numbers_Words::GENDER_MASCULINE for masculine nouns
-     *      - Numbers_Words::GENDER_FEMININE for feminine nouns
-     *      - Numbers_Words::GENDER_NEUTER for neuter nouns
+     *      - Numbers::GENDER_MASCULINE for masculine nouns
+     *      - Numbers::GENDER_FEMININE for feminine nouns
+     *      - Numbers::GENDER_NEUTER for neuter nouns
      *
      * @param integer $num An integer (or its string representation) between 9.99*-10^302
      *                        and 9.99*10^302 (999 centillions) that need to be converted to words
@@ -579,7 +580,7 @@ class RO extends AbstractWords
     function _toWords($num = 0, $noun = [])
     {
         if (empty($noun)) {
-          $noun= [NULL, NULL, Numbers_Words::GENDER_ABSTRACT];
+          $noun= [NULL, NULL, Numbers::GENDER_ABSTRACT];
         }
 
         $ret = '';
@@ -587,7 +588,7 @@ class RO extends AbstractWords
         // check if $num is a valid non-zero number
         if (!$num || preg_match('/^-?0+$/', $num) || !preg_match('/^-?\d+$/', $num)) {
             $ret = $this->_numbers[0];
-            if ($noun[2]!=Numbers_Words::GENDER_ABSTRACT) {
+            if ($noun[2]!=Numbers::GENDER_ABSTRACT) {
                 $ret .= $this->_sep.$this->_get_noun_declension_for_number('f',$noun);
             }
             return $ret;
@@ -602,7 +603,7 @@ class RO extends AbstractWords
         // One is a special case
         if (abs($num)==1) {
             $ret = $this->_get_number_inflection_for_gender($this->_numbers[1], $noun);
-            if ($noun[2]!=Numbers_Words::GENDER_ABSTRACT) {
+            if ($noun[2]!=Numbers::GENDER_ABSTRACT) {
                 $ret .= $this->_sep.$this->_get_noun_declension_for_number('o',$noun);
             }
             return $ret;
@@ -699,11 +700,11 @@ class RO extends AbstractWords
     /**
      * Converts a number to its word representation.
      *
-     * @param integer $num An integer between -infinity and infinity inclusive :)
+     * @param integer $num       An integer between -infinity and infinity inclusive :)
      *                           that need to be converted to words
-     * @param integer $power The power of ten for the rest of the number to the right.
+     * @param integer $power     The power of ten for the rest of the number to the right.
      *                           Optional, defaults to 0.
-     * @param string $powSuffix The power name to be added to the end of the return string.
+     * @param string  $powSuffix The power name to be added to the end of the return string.
      *                           Used internally. Optional, defaults to ''.
      *
      * @return string  The corresponding word representation
@@ -711,7 +712,7 @@ class RO extends AbstractWords
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    public function fromNumber($num, $power = 0, $powSuffix = '')
+    public function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string
     {
         // TODO: Implement fromNumber() method.
     }

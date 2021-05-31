@@ -30,7 +30,7 @@ class Numbers_Words_English100Test extends TestCase
     var $handle;
     var $lang = 'en_100';
 
-    function setUp()
+    function setUp(): void
     {
         $this->handle = new Numbers();
     }

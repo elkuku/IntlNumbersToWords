@@ -155,7 +155,7 @@ class de extends AbstractWords
      *                            that need to be converted to words
      * @param integer $power      The power of ten for the rest of the number to the right.
      *                            Optional, defaults to 0.
-     * @param integer $powsuffix  The power name to be added to the end of the return string.
+     * @param string  $powSuffix  The power name to be added to the end of the return string.
      *                            Used internally. Optional, defaults to ''.
      *
      * @return string  The corresponding word representation
@@ -164,7 +164,7 @@ class de extends AbstractWords
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    public function fromNumber($num, $power = 0, $powsuffix = '')
+    public function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string
     {
         $ret = '';
 
@@ -190,8 +190,8 @@ class de extends AbstractWords
                     $snum = preg_replace('/^0+/', '', $snum);
                     if ($snum !== '') {
                         $cursuffix = $this->_exponent[$power][count($this->_exponent[$power]) - 1];
-                        if ($powsuffix != '') {
-                            $cursuffix .= $this->_sep.$powsuffix;
+                        if ($powSuffix != '') {
+                            $cursuffix .= $this->_sep.$powSuffix;
                         }
 
                         $ret .= $this->fromNumber($snum, $p, $cursuffix);
@@ -222,8 +222,7 @@ class de extends AbstractWords
                 break;
 
             case 0:
-                return;
-                break;
+                return '';
         }
 
         if ($h) {
@@ -276,35 +275,14 @@ class de extends AbstractWords
                 break;
 
             case 1:
-                switch ($d) {
-                    case 0:
-                        $ret .= $this->_sep.'zehn';
-                        break;
-
-                    case 1:
-                        $ret .= $this->_sep.'elf';
-                        break;
-
-                    case 2:
-                        $ret .= $this->_sep.'zwölf';
-                        break;
-
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 8:
-                    case 9:
-                        $ret .= $this->_sep.$this->_digits[$d].'zehn';
-                        break;
-
-                    case 6:
-                        $ret .= $this->_sep.'sechzehn';
-                        break;
-
-                    case 7:
-                        $ret .= $this->_sep.'siebzehn';
-                        break;
-                }
+                $ret .= match ($d) {
+                    0 => $this->_sep.'zehn',
+                    1 => $this->_sep.'elf',
+                    2 => $this->_sep.'zwölf',
+                    3, 4, 5, 8, 9 => $this->_sep.$this->_digits[$d].'zehn',
+                    6 => $this->_sep.'sechzehn',
+                    7 => $this->_sep.'siebzehn',
+                };
                 break;
         }
 
@@ -314,7 +292,7 @@ class de extends AbstractWords
             }
 
             if (!isset($lev) || !is_array($lev)) {
-                return null;
+                return '';
             }
 
             if ($power == 3) {
@@ -326,11 +304,10 @@ class de extends AbstractWords
             }
         }
 
-        if ($powsuffix != '') {
-            $ret .= $this->_sep.$powsuffix;
+        if ($powSuffix != '') {
+            $ret .= $this->_sep.$powSuffix;
         }
 
         return $ret;
     }
-    // }}}
 }

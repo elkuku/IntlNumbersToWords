@@ -388,7 +388,7 @@ class fr extends AbstractWords
      * Converts a number to its word representation
      * in French language.
      *
-     * @param integer $num An integer (or its string representation) between 9.99*-10^302
+     * @param integer $num    An integer (or its string representation) between 9.99*-10^302
      *                        and 9.99*10^302 (999 centillions) that need to be converted to words
      *
      * @return string  The corresponding word representation
@@ -396,7 +396,7 @@ class fr extends AbstractWords
      * @author Kouber Saparev <kouber@php.net>
      * @since  Numbers_Words 0.16.3
      */
-    function fromNumber($num = 0, $power = 0, $powSuffix = '')
+    function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string
     {
         $ret = '';
 

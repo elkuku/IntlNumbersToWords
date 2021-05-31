@@ -29,7 +29,8 @@ class ItalianTest extends TestCase
 {
     protected $handle;
 
-    public function setUp() {
+    public function setUp(): void
+    {
         $this->handle = new Numbers();
     }
     /**

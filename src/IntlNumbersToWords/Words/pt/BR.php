@@ -225,7 +225,7 @@ class BR extends AbstractWords
      * @author Igor Feghali <ifeghali@php.net>
      * @since  Numbers_Words 0.16.3
      */
-	public function fromNumber($num, $power = 0, $powSuffix = '')
+	public function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string
     {
         $neg   = 0;
         $ret   = [];
@@ -380,9 +380,16 @@ class BR extends AbstractWords
          * (first chunk in array but last logical chunk)
          */
         reset($chunks);
-        do {
-            list(,$chunk) = each($chunks);
-        } while ($chunk === '000');
+
+        // do {
+        //     list(,$chunk) = each($chunks);
+        // } while ($chunk === '000');
+
+        foreach ($chunks as $chunk) {
+            if ($chunk !== '000') {
+                break;
+            }
+        }
 
         if (($chunk < 100) || !($chunk % 100)) {
             return true;

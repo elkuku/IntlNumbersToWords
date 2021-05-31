@@ -203,7 +203,6 @@ class HU extends AbstractWords
      *                           that need to be converted to words
      * @param integer $power     The power of ten for the rest of the number to the right.
      *                           Optional, defaults to 0.
-     * @param integer $powsuffix The power name to be added to the end of the return string.
      *                           Used internally. Optional, defaults to ''.
      *
      * @return string  The corresponding word representation
@@ -212,14 +211,14 @@ class HU extends AbstractWords
      * @author Nils Homp
      * @since  Numbers_Words 0.16.3
      */
-    function fromNumber($num, $options = [], $power = 0, $powsuffix = '', $gt2000 = false)
+    function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string
     {
         $chk_gt2000 = true;
 
         /**
          * Loads user options
          */
-        extract($options, EXTR_IF_EXISTS);
+        // extract($powSuffix, EXTR_IF_EXISTS);
 
         /**
          * Return string
@@ -248,10 +247,10 @@ class HU extends AbstractWords
                     // send substr from $curp to $p
                     $snum = substr($num, $maxp - $curp, $curp - $p + 1);
                     $snum = preg_replace('/^0+/', '', $snum);
-                    if ($snum !== '') {
-                        $cursuffix = $this->_exponent[$power][count($this->_exponent[$power])-1];
-                        if ($powsuffix != '') {
-                            $cursuffix .= $this->_sep . $powsuffix;
+                    if ($snum !== '' && $powSuffix) {
+                        $cursuffix = $this->_exponent[$powSuffix][count($this->_exponent[$powSuffix])-1];
+                        if ($powSuffix != '') {
+                            $cursuffix .= $this->_sep . $powSuffix;
                         }
 
                         $ret .= $this->fromNumber(
@@ -290,7 +289,7 @@ class HU extends AbstractWords
             break;
 
         case 0:
-            return;
+            return '';
             break;
         }
 
@@ -359,20 +358,20 @@ class HU extends AbstractWords
             $ret .= $this->_sep . $this->_digits[$d];
         }
 
-        if ($power > 0) {
-            if (isset($this->_exponent[$power])) {
-                $lev = $this->_exponent[$power];
+        if ($powSuffix > 0) {
+            if (isset($this->_exponent[$powSuffix])) {
+                $lev = $this->_exponent[$powSuffix];
             }
 
             if (!isset($lev) || !is_array($lev)) {
-                return null;
+                return '';
             }
 
             $ret .= $this->_sep . $lev[0];
         }
 
-        if ($powsuffix != '') {
-            $ret .= $this->_sep . $powsuffix;
+        if ($powSuffix != '') {
+            $ret .= $this->_sep . $powSuffix;
         }
 
         return $ret;

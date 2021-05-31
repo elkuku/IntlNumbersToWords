@@ -448,7 +448,7 @@ class bg extends AbstractWords
      * @author Kouber Saparev <kouber@php.net>
      * @since  Numbers_Words 0.16.3
      */
-    function fromNumber($num = 0, $power = 0, $powSuffix = '')
+    function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string
     {
         $ret = [];
 

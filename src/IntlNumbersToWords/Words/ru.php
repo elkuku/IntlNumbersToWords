@@ -54,7 +54,7 @@ class ru extends Numbers
      * @var string
      * @access public
      */
-    var $locale = 'ru';
+    var string $locale = 'ru';
 
     /**
      * Language name in English

@@ -55,7 +55,7 @@ class sv extends Numbers
      * @var string
      * @access public
      */
-    var $locale = 'sv';
+    var string $locale = 'sv';
 
     /**
      * Language name in English

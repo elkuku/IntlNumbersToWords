@@ -25,7 +25,7 @@ class ua extends ru
      * @public string
      * @access public
      */
-    public $locale = 'ua';
+    public string $locale = 'ua';
 
     /**
      * Language name in English

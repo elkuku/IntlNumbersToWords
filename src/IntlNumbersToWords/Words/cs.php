@@ -156,11 +156,11 @@ class cs extends AbstractWords
      * Converts a number to its word representation
      * in Czech language
      *
-     * @param integer $num       An integer between -infinity and infinity inclusive :)
+     * @param integer $num        An integer between -infinity and infinity inclusive :)
      *                           that need to be converted to words
-     * @param integer $power     The power of ten for the rest of the number to the right.
+     * @param integer $power      The power of ten for the rest of the number to the right.
      *                           Optional, defaults to 0.
-     * @param integer $powsuffix The power name to be added to the end of the return string.
+     * @param string  $powSuffix  The power name to be added to the end of the return string.
      *                            Used internally. Optional, defaults to ''.
      *
      * @return string  The corresponding word representation
@@ -169,7 +169,7 @@ class cs extends AbstractWords
      * @author Petr 'PePa' Pavel <petr.pavel@pepa.info>
      * @since  Numbers_Words 0.16.3
      */
-	public function fromNumber($num, $power = 0, $powsuffix = '')
+	public function fromNumber(int $num, int $power = 0, string $powSuffix = '')
     {
         $ret = '';
 
@@ -195,8 +195,8 @@ class cs extends AbstractWords
                     $snum = preg_replace('/^0+/', '', $snum);
                     if ($snum !== '') {
                         $cursuffix = $this->_exponent[$power][count($this->_exponent[$power])-1];
-                        if ($powsuffix != '') {
-                            $cursuffix .= $this->_sep . $powsuffix;
+                        if ($powSuffix != '') {
+                            $cursuffix .= $this->_sep . $powSuffix;
                         }
 
                         $ret .= $this->_toWords($snum, $p, $cursuffix);
@@ -337,8 +337,8 @@ class cs extends AbstractWords
             $ret .= $this->_sep . $lev[$idx];
         }
 
-        if ($powsuffix != '') {
-            $ret .= $this->_sep . $powsuffix;
+        if ($powSuffix != '') {
+            $ret .= $this->_sep . $powSuffix;
         }
 
         return $ret;

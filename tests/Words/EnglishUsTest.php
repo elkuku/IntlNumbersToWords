@@ -36,7 +36,7 @@ class EnglishUsTest extends TestCase
 
     var $lang = 'en_US';
 
-    function setUp()
+    function setUp(): void
     {
         $this->handle = new Numbers();
     }

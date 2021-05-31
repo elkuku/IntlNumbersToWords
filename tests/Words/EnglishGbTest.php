@@ -30,7 +30,7 @@ class EnglishGbTest extends TestCase
     var $handle;
     var $lang = 'en_GB';
 
-    function setUp()
+    function setUp(): void
     {
         $this->handle = new Numbers();
     }

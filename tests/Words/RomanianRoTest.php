@@ -32,9 +32,9 @@ class RomanianRoTest extends TestCase
      */
     var $handle;
 
-    var $locale = 'ro_RO';
+    var string $locale = 'ro_RO';
 
-    function setUp()
+    function setUp(): void
     {
         $this->handle = new Numbers();
     }
@@ -176,6 +176,7 @@ class RomanianRoTest extends TestCase
 	    $this->markTestIncomplete(
 		    'temporary disabled.'
 	    );
+
 	    $this->assertEquals('un milion', $this->handle->toWords(1000000, $this->locale));
 
         $this->assertEquals('două miliarde', $this->handle->toWords(2000000000, $this->locale));

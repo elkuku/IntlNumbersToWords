@@ -40,7 +40,7 @@ class SpanishECTest extends TestCase
     /**
      *
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->handle = new Numbers();
     }

@@ -29,7 +29,7 @@ class PolishTest extends TestCase
 {
     var $handle;
 
-    function setUp()
+    function setUp(): void
     {
         $this->handle = new Numbers();
     }

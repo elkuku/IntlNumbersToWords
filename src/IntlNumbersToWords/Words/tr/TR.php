@@ -375,11 +375,11 @@ class TR extends AbstractWords
     /**
      * Converts a number to its word representation.
      *
-     * @param integer $num An integer between -infinity and infinity inclusive :)
+     * @param integer $num       An integer between -infinity and infinity inclusive :)
      *                           that need to be converted to words
-     * @param integer $power The power of ten for the rest of the number to the right.
+     * @param integer $power     The power of ten for the rest of the number to the right.
      *                           Optional, defaults to 0.
-     * @param string $powSuffix The power name to be added to the end of the return string.
+     * @param string  $powSuffix The power name to be added to the end of the return string.
      *                           Used internally. Optional, defaults to ''.
      *
      * @return string  The corresponding word representation
@@ -387,7 +387,7 @@ class TR extends AbstractWords
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    public function fromNumber($num, $power = 0, $powSuffix = '')
+    public function fromNumber(int $num, int $power = 0, string $powSuffix = '')
     {
         // TODO: Implement fromNumber() method.
     }

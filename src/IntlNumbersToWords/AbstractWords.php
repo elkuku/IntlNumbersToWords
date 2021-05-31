@@ -4,6 +4,7 @@ namespace IntlNumbersToWords;
 
 /**
  * Class Words
+ *
  * @package IntlNumbersToWords
  */
 abstract class AbstractWords
@@ -23,5 +24,5 @@ abstract class AbstractWords
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    abstract public function fromNumber($num, $power = 0, $powSuffix = '');
+    abstract public function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string;
 }

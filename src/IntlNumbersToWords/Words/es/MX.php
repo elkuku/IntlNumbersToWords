@@ -177,9 +177,9 @@ class MX extends AbstractWords
      * Converts a number to its word representation
      * in Mexican Spanish.
      *
-     * @param float   $num   An float between -infinity and infinity inclusive :)
+     * @param int     $num    An float between -infinity and infinity inclusive :)
      *                        that should be converted to a words representation
-     * @param integer $power The power of ten for the rest of the number to the right.
+     * @param integer $power  The power of ten for the rest of the number to the right.
      *                        For example toWords(12,3) should give "doce mil".
      *                        Optional, defaults to 0.
      *
@@ -189,7 +189,7 @@ class MX extends AbstractWords
      * @author Martin Marrese
      * @since  Numbers_Words 0.16.3
      */
-    function fromNumber($num, $power = 0, $powSuffix = '')
+    function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string
     {
         // The return string;
         $ret = '';
@@ -377,7 +377,7 @@ class MX extends AbstractWords
             }
 
             if (!isset($lev) || !is_array($lev)) {
-                return null;
+                return '';
             }
 
             // if it's only one use the singular suffix

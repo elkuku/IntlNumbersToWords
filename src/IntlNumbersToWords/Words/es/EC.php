@@ -44,13 +44,12 @@ class EC extends AbstractWords
 {
     /**
      * Locale name
-     * @var string
-     * @access public
      */
-    public $locale = 'es_EC';
+    public string $locale = 'es_EC';
 
     /**
      * Language name in English
+     *
      * @var string
      * @access public
      */
@@ -58,6 +57,7 @@ class EC extends AbstractWords
 
     /**
      * The word for the minus sign
+     *
      * @var string
      * @access private
      */
@@ -65,6 +65,7 @@ class EC extends AbstractWords
 
     /**
      * Native language name
+     *
      * @var string
      * @access public
      */
@@ -72,44 +73,49 @@ class EC extends AbstractWords
 
     /**
      * The sufixes for exponents (singular and plural)
+     *
      * @var array
      * @access private
      */
-    protected $exponent = [
-        0  => ['', ''],
-        3  => ['mil', 'mil'],
-        6  => ['millón', 'millones'],
-        12 => ['billón', 'billones'],
-        18 => ['trilón', 'trillones'],
-        24 => ['cuatrillón', 'cuatrillones'],
-        30 => ['quintillón', 'quintillones'],
-        36 => ['sextillón', 'sextillones'],
-        42 => ['septillón', 'septillones'],
-        48 => ['octallón', 'octallones'],
-        54 => ['nonallón', 'nonallones'],
-        60 => ['decallón', 'decallones'],
-    ];
+    protected $exponent
+        = [
+            0  => ['', ''],
+            3  => ['mil', 'mil'],
+            6  => ['millón', 'millones'],
+            12 => ['billón', 'billones'],
+            18 => ['trilón', 'trillones'],
+            24 => ['cuatrillón', 'cuatrillones'],
+            30 => ['quintillón', 'quintillones'],
+            36 => ['sextillón', 'sextillones'],
+            42 => ['septillón', 'septillones'],
+            48 => ['octallón', 'octallones'],
+            54 => ['nonallón', 'nonallones'],
+            60 => ['decallón', 'decallones'],
+        ];
 
     /**
      * The array containing the digits (indexed by the digits themselves).
+     *
      * @var array
      * @access private
      */
-    protected $digits = [
-        0 => 'cero',
-        'uno',
-        'dos',
-        'tres',
-        'cuatro',
-        'cinco',
-        'seis',
-        'siete',
-        'ocho',
-        'nueve',
-    ];
+    protected $digits
+        = [
+            0 => 'cero',
+            'uno',
+            'dos',
+            'tres',
+            'cuatro',
+            'cinco',
+            'seis',
+            'siete',
+            'ocho',
+            'nueve',
+        ];
 
     /**
      * The word separator
+     *
      * @var string
      * @access private
      */
@@ -125,48 +131,50 @@ class EC extends AbstractWords
      * @link   http://www.shoestring.co.kr/world/p.visa/change.htm Currency names in English
      * @access private
      */
-    protected $currency_names = [
-        'ALL' => [['lek'], ['qindarka']],
-        'AUD' => [['Australian dollar'], ['cent']],
-        'ARS' => [['Peso'], ['centavo']],
-        'BAM' => [['convertible marka'], ['fenig']],
-        'BGN' => [['lev'], ['stotinka']],
-        'BRL' => [['real'], ['centavos']],
-        'BYR' => [['Belarussian rouble'], ['kopiejka']],
-        'CAD' => [['Canadian dollar'], ['cent']],
-        'CHF' => [['Swiss franc'], ['rapp']],
-        'CYP' => [['Cypriot pound'], ['cent']],
-        'CZK' => [['Czech koruna'], ['halerz']],
-        'DKK' => [['Danish krone'], ['ore']],
-        'EEK' => [['kroon'], ['senti']],
-        'EUR' => [['euro'], ['euro-cent']],
-        'GBP' => [['pound', 'pounds'], ['pence']],
-        'HKD' => [['Hong Kong dollar'], ['cent']],
-        'HRK' => [['Croatian kuna'], ['lipa']],
-        'HUF' => [['forint'], ['filler']],
-        'ILS' => [['new sheqel', 'new sheqels'], ['agora', 'agorot']],
-        'ISK' => [['Icelandic krona'], ['aurar']],
-        'JPY' => [['yen'], ['sen']],
-        'LTL' => [['litas'], ['cent']],
-        'LVL' => [['lat'], ['sentim']],
-        'MKD' => [['Macedonian dinar'], ['deni']],
-        'MTL' => [['Maltese lira'], ['centym']],
-        'NOK' => [['Norwegian krone'], ['oere']],
-        'PLN' => [['zloty', 'zlotys'], ['grosz']],
-        'ROL' => [['Romanian leu'], ['bani']],
-        'RUB' => [['Russian Federation rouble'], ['kopiejka']],
-        'SEK' => [['Swedish krona'], ['oere']],
-        'SIT' => [['Tolar'], ['stotinia']],
-        'SKK' => [['Slovak koruna'], []],
-        'TRL' => [['lira'], ['kurus']],
-        'UAH' => [['hryvna'], ['cent']],
-        'USD' => [['dollar', 'dolares'], ['centavo', 'centavos']],
-        'YUM' => [['dinars'], ['para']],
-        'ZAR' => [['rand'], ['cent']],
-    ];
+    protected $currency_names
+        = [
+            'ALL' => [['lek'], ['qindarka']],
+            'AUD' => [['Australian dollar'], ['cent']],
+            'ARS' => [['Peso'], ['centavo']],
+            'BAM' => [['convertible marka'], ['fenig']],
+            'BGN' => [['lev'], ['stotinka']],
+            'BRL' => [['real'], ['centavos']],
+            'BYR' => [['Belarussian rouble'], ['kopiejka']],
+            'CAD' => [['Canadian dollar'], ['cent']],
+            'CHF' => [['Swiss franc'], ['rapp']],
+            'CYP' => [['Cypriot pound'], ['cent']],
+            'CZK' => [['Czech koruna'], ['halerz']],
+            'DKK' => [['Danish krone'], ['ore']],
+            'EEK' => [['kroon'], ['senti']],
+            'EUR' => [['euro'], ['euro-cent']],
+            'GBP' => [['pound', 'pounds'], ['pence']],
+            'HKD' => [['Hong Kong dollar'], ['cent']],
+            'HRK' => [['Croatian kuna'], ['lipa']],
+            'HUF' => [['forint'], ['filler']],
+            'ILS' => [['new sheqel', 'new sheqels'], ['agora', 'agorot']],
+            'ISK' => [['Icelandic krona'], ['aurar']],
+            'JPY' => [['yen'], ['sen']],
+            'LTL' => [['litas'], ['cent']],
+            'LVL' => [['lat'], ['sentim']],
+            'MKD' => [['Macedonian dinar'], ['deni']],
+            'MTL' => [['Maltese lira'], ['centym']],
+            'NOK' => [['Norwegian krone'], ['oere']],
+            'PLN' => [['zloty', 'zlotys'], ['grosz']],
+            'ROL' => [['Romanian leu'], ['bani']],
+            'RUB' => [['Russian Federation rouble'], ['kopiejka']],
+            'SEK' => [['Swedish krona'], ['oere']],
+            'SIT' => [['Tolar'], ['stotinia']],
+            'SKK' => [['Slovak koruna'], []],
+            'TRL' => [['lira'], ['kurus']],
+            'UAH' => [['hryvna'], ['cent']],
+            'USD' => [['dollar', 'dolares'], ['centavo', 'centavos']],
+            'YUM' => [['dinars'], ['para']],
+            'ZAR' => [['rand'], ['cent']],
+        ];
 
     /**
      * The default currency name
+     *
      * @var string
      * @access public
      */
@@ -175,7 +183,7 @@ class EC extends AbstractWords
     /**
      * {@inheritdoc}
      */
-    public function fromNumber($num, $power = 0, $powSuffix = '')
+    public function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string
     {
         // The return string;
         $ret = '';
@@ -357,7 +365,7 @@ class EC extends AbstractWords
             }
 
             if (!isset($lev) || !is_array($lev)) {
-                return null;
+                return '';
             }
 
             // if it's only one use the singular suffix
@@ -396,8 +404,12 @@ class EC extends AbstractWords
      * @access public
      * @author Martin Marrese
      */
-    public function toCurrencyWords($intCurr, $decimal, $fraction = false, $convert_fraction = true)
-    {
+    public function toCurrencyWords(
+        $intCurr,
+        $decimal,
+        $fraction = false,
+        $convert_fraction = true
+    ) {
         $intCurr = strtoupper($intCurr);
         if (!isset($this->currency_names[$intCurr])) {
             $intCurr = $this->defaultCurrency;
@@ -416,14 +428,15 @@ class EC extends AbstractWords
             } else {
                 $ret .= $currNames[0][0].'s';
             }
-
         } else {
             $ret .= $currNames[0][0];
         }
 
         if ($fraction !== false) {
             if ($convert_fraction) {
-                $ret .= $this->sep.'con'.$this->sep.trim($this->fromNumber($fraction));
+                $ret .= $this->sep.'con'.$this->sep.trim(
+                        $this->fromNumber($fraction)
+                    );
             } else {
                 $ret .= $this->sep.'con'.$this->sep.$fraction;
             }
@@ -435,7 +448,6 @@ class EC extends AbstractWords
                 } else {
                     $ret .= $this->sep.$currNames[1][0].'s';
                 }
-
             } else {
                 $ret .= $this->sep.$currNames[1][0];
             }

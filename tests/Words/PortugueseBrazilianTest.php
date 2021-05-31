@@ -29,7 +29,8 @@ class PortugueseBrazilianTest extends TestCase
 {
     protected $handle;
 
-    public function setUp() {
+    public function setUp(): void
+    {
         $this->handle = new Numbers();
     }
     /**
@@ -84,15 +85,15 @@ class PortugueseBrazilianTest extends TestCase
                       79 => 'setenta e nove'
                      );
         foreach ($tens as $number => $word) {
-            $this->assertEquals($word, $this->handle->toWords($number, 'pt_BR'));
-            $this->assertEquals("$word negativo", $this->handle->toWords(-$number, 'pt_BR'));
+            self::assertEquals($word, $this->handle->toWords($number, 'pt_BR'));
+            self::assertEquals("$word negativo", $this->handle->toWords(-$number, 'pt_BR'));
         }
     }
 
     /**
      * Testing numbers between 100 and 999
      */
-    function testHundreds()
+    public function testHundreds(): void
     {
         $hundreds = array(100 => 'cem',
                           101 => 'cento e um',
@@ -111,15 +112,15 @@ class PortugueseBrazilianTest extends TestCase
                           999 => 'novecentos e noventa e nove'
                          );
         foreach ($hundreds as $number => $word) {
-            $this->assertEquals($word, $this->handle->toWords($number, 'pt_BR'));
-            $this->assertEquals("$word negativo", $this->handle->toWords(-$number, 'pt_BR'));
+            self::assertEquals($word, $this->handle->toWords($number, 'pt_BR'));
+            self::assertEquals("$word negativo", $this->handle->toWords(-$number, 'pt_BR'));
         }
     }
 
     /**
      * Testing numbers between 1000 and 9999
      */
-    function testThousands()
+    public function testThousands(): void
     {
         $thousands = array(1000 => 'um mil',
                            1001 => 'um mil e um',
@@ -137,15 +138,15 @@ class PortugueseBrazilianTest extends TestCase
                            9539 => 'nove mil quinhentos e trinta e nove'
                           );
         foreach ($thousands as $number => $word) {
-            $this->assertEquals($word, $this->handle->toWords($number, 'pt_BR'));
-            $this->assertEquals("$word negativo", $this->handle->toWords(-$number, 'pt_BR'));
+            self::assertEquals($word, $this->handle->toWords($number, 'pt_BR'));
+            self::assertEquals("$word negativo", $this->handle->toWords(-$number, 'pt_BR'));
         }
     }
 
     /**
      * Testing numbers greater than 9999
      */
-    function testMillions()
+    public function testMillions(): void
     {
         $millions = array(1000001   => 'um milhão e um',
                           2000025   => 'dois milhões e vinte e cinco',
@@ -161,15 +162,15 @@ class PortugueseBrazilianTest extends TestCase
                          1000777000 => 'um bilhão setecentos e setenta e sete mil',
                           );
         foreach ($millions as $number => $word) {
-            $this->assertEquals($word, $this->handle->toWords($number, 'pt_BR'));
-            $this->assertEquals("$word negativo", $this->handle->toWords(-$number, 'pt_BR'));
+            self::assertEquals($word, $this->handle->toWords($number, 'pt_BR'));
+            self::assertEquals("$word negativo", $this->handle->toWords(-$number, 'pt_BR'));
         }
     }
 
     /**
      * Testing Currency
      */
-    function testCurrency()
+    public function testCurrency(): void
     {
         $money = array('1.00' => 'um real',
                        '1.01' => 'um real e um centavo',
@@ -191,8 +192,8 @@ class PortugueseBrazilianTest extends TestCase
                  '1000000000' => 'um bilhão de reais',
                           );
         foreach ($money as $number => $word) {
-            $this->assertEquals($word, $this->handle->toCurrency($number, 'pt_BR'));
-            $this->assertEquals("$word negativo", $this->handle->toCurrency(-$number, 'pt_BR'));
+            self::assertEquals($word, $this->handle->toCurrency($number, 'pt_BR'));
+            self::assertEquals("$word negativo", $this->handle->toCurrency(-$number, 'pt_BR'));
         }
     }
 }
