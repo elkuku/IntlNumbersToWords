@@ -19,27 +19,22 @@
  * @link       http://pear.php.net/package/Numbers_Words
  */
 
-namespace tests;
+namespace App\Tests\Words;
 
 use IntlNumbersToWords\Numbers;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class SpanishECTest
- * @package tests
+ * @covers \IntlNumbersToWords\Words\Es
+ * @covers \IntlNumbersToWords\Words\Es\Ec
+ * @covers \IntlNumbersToWords\Numbers
  */
 class SpanishECTest extends TestCase
 {
-    /**
-     * @var Numbers
-     */
-    protected $handle;
+    protected Numbers $handle;
 
-    protected $locale = 'es_EC';
+    protected string $locale = 'es_ec';
 
-    /**
-     *
-     */
     public function setUp(): void
     {
         $this->handle = new Numbers();
@@ -47,32 +42,33 @@ class SpanishECTest extends TestCase
 
     /**
      * Testing numbers between 0 and 9
+     * @dataProvider digitsProvider
      */
-    public function testDigits()
+    public function testDigits(float $number, string $word): void
     {
-        $digits = [
-            'cero',
-            'uno',
-            'dos',
-            'tres',
-            'cuatro',
-            'cinco',
-            'seis',
-            'siete',
-            'ocho',
-            'nueve',
-        ];
+        self::assertEquals($word, $this->handle->toWords($number, $this->locale));
+    }
 
-        for ($i = 0; $i < 10; $i++) {
-            $number = $this->handle->toWords($i, $this->locale);
-            $this->assertEquals($digits[$i], $number);
-        }
+    public function digitsProvider(): array
+    {
+        return [
+            [0, 'cero'],
+            [1, 'uno'],
+            [2,'dos'],
+            [3,'tres'],
+            [4,'cuatro'],
+            [5,'cinco'],
+            [6,'seis'],
+            [7,'siete'],
+            [8,'ocho'],
+            [9,'nueve'],
+        ];
     }
 
     /**
      * Testing numbers between 10 and 99
      */
-    public function testTens()
+    public function testTens(): void
     {
         $tens = [
             11 => 'once',
@@ -94,14 +90,17 @@ class SpanishECTest extends TestCase
             79 => 'setenta y nueve',
         ];
         foreach ($tens as $number => $word) {
-            $this->assertEquals($word, $this->handle->toWords($number, $this->locale));
+            self::assertEquals(
+                $word,
+                $this->handle->toWords($number, $this->locale)
+            );
         }
     }
 
     /**
      * Testing numbers between 100 and 999
      */
-    public function testHundreds()
+    public function testHundreds(): void
     {
         $hundreds = [
             100 => 'cien',
@@ -120,14 +119,17 @@ class SpanishECTest extends TestCase
             999 => 'novecientos noventa y nueve',
         ];
         foreach ($hundreds as $number => $word) {
-            $this->assertEquals($word, $this->handle->toWords($number, $this->locale));
+            self::assertEquals(
+                $word,
+                $this->handle->toWords($number, $this->locale)
+            );
         }
     }
 
     /**
      * Testing numbers between 1000 and 9999
      */
-    public function testThousands()
+    public function testThousands(): void
     {
         $thousands = [
             1000 => 'mil',
@@ -145,14 +147,77 @@ class SpanishECTest extends TestCase
             9539 => 'nueve mil quinientos treinta y nueve',
         ];
         foreach ($thousands as $number => $word) {
-            $this->assertEquals($word, $this->handle->toWords($number, $this->locale));
+            self::assertEquals(
+                $word,
+                $this->handle->toWords($number, $this->locale)
+            );
         }
     }
 
     /**
-     * @return void
+     * @dataProvider exponentsProvider
      */
-    public function testCurrencies()
+    public function testExponents($number, $word): void
+    {
+        self::assertEquals(
+            $word,
+            $this->handle->toWords($number, $this->locale)
+        );
+    }
+
+    public function exponentsProvider(): array
+    {
+        return [
+            [1_000_000, 'un millón'],
+            [2_000_000, 'dos millones'],
+            [3_333_000, 'tres millones trescientos treinta y tres mil'],
+            [4_000_333, 'cuatro millones trescientos treinta y tres'],
+            [
+                5_333_333,
+                'cinco millones trescientos treinta y tres mil trescientos treinta y tres',
+            ],
+            [6_000_000, 'seis millones'],
+            [10_000_000, 'diez millones'],
+        ];
+    }
+
+    public function testDecimals(): void
+    {
+        $values = [
+            [123.45, 'ciento veintitres con cuarenta y cinco'],
+            [20000.99, 'veinte mil con noventa y nueve'],
+            [
+                23456.87,
+                'veintitres mil cuatrocientos cincuenta y seis con ochenta y siete',
+            ],
+        ];
+        foreach ($values as $pairs) {
+            self::assertEquals(
+                $pairs[1],
+                $this->handle->toWords($pairs[0], $this->locale)
+            );
+        }
+    }
+
+    public function testNegatives(): void
+    {
+        $values = [
+            [-123.45, 'menos ciento veintitres con cuarenta y cinco'],
+            [-20_000.99, 'menos veinte mil con noventa y nueve'],
+            [
+                -23_456.87,
+                'menos veintitres mil cuatrocientos cincuenta y seis con ochenta y siete',
+            ],
+        ];
+        foreach ($values as $pairs) {
+            self::assertEquals(
+                $pairs[1],
+                $this->handle->toWords($pairs[0], $this->locale)
+            );
+        }
+    }
+
+    public function testCurrencies(): void
     {
         $tests = [
             '1.01' => 'uno dollar con uno centavo',
@@ -160,7 +225,10 @@ class SpanishECTest extends TestCase
         ];
 
         foreach ($tests as $number => $word) {
-            $this->assertEquals($word, $this->handle->toCurrency($number, $this->locale));
+            self::assertEquals(
+                $word,
+                $this->handle->toCurrency($number, $this->locale)
+            );
         }
     }
 }

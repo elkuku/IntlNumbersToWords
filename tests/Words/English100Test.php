@@ -1,5 +1,5 @@
 <?php
-namespace tests;
+namespace App\Tests\Words;
 
 use IntlNumbersToWords\Numbers;
 use PHPUnit\Framework\TestCase;
@@ -23,9 +23,11 @@ use PHPUnit\Framework\TestCase;
  * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version    SVN: $Id$
  * @link       http://pear.php.net/package/Numbers_Words
+ *
+ * @covers \IntlNumbersToWords\Words\En\En100
  */
 
-class Numbers_Words_English100Test extends TestCase
+class English100Test extends TestCase
 {
     var $handle;
     var $lang = 'en_100';

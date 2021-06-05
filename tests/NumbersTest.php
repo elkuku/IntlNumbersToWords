@@ -1,6 +1,6 @@
 <?php
 
-namespace tests;
+namespace App\Tests;
 
 use IntlNumbersToWords\Exception\NumbersToWordsException;
 use IntlNumbersToWords\Numbers;
@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Class NumbersTest
  * @package tests
+ * @covers \IntlNumbersToWords\Numbers
  */
 class NumbersTest extends TestCase
 {
@@ -34,29 +35,26 @@ class NumbersTest extends TestCase
     public function testToWordsInvalidLocale(): void
     {
         $this->expectException(NumbersToWordsException::class);
-        $this->expectExceptionMessage('Unable to load locale class IntlNumbersToWords\Words\doesnotexist');
+        $this->expectExceptionMessage('Unable to load locale class: IntlNumbersToWords\Words\Doesnotexist');
         $this->object->toWords(1, 'doesnotexist');
     }
 
     /**
-     * @expectedException \IntlNumbersToWords\Exception\NumbersToWordsException
-     * @expectedExceptionMessage Unable to load locale class IntlNumbersToWords\Words\doesnotexist
      */
     public function testToCurrencyInvalidLocale(): void
     {
         $this->expectException(NumbersToWordsException::class);
-        $this->expectExceptionMessage('Unable to load locale class IntlNumbersToWords\Words\doesnotexist');
+        $this->expectExceptionMessage('Unable to load locale class: IntlNumbersToWords\Words\Doesnotexist');
         $this->object->toCurrency(1, 'doesnotexist');
     }
 
     public function testGetLocales(): void
     {
         $locales = $this->object->getLocales();
-        // $this->assertInternalType('array', $locales);
         self::assertCount(29, $locales);
         foreach ($locales as $locale) {
             self::assertMatchesRegularExpression(
-                '#^[a-z]{2}(_[A-Z]{2})?$#',
+                '#^[A-Z]{1}[a-z]{1}(_[A-Z]{1}[a-z]{1})?$#',
                 $locale
             );
         }
@@ -65,19 +63,18 @@ class NumbersTest extends TestCase
     public function testGetLocalesString(): void
     {
         $locales = $this->object->getLocales('de');
-        // $this->assertInternalType('array', $locales);
         self::assertCount(1, $locales);
-        self::assertContains('de', $locales);
+        self::assertContains('De', $locales);
     }
 
 
     public function testGetLocalesArray(): void
     {
         $locales = $this->object->getLocales(['de', 'en_US']);
-        // $this->assertInternalType('array', $locales);
+
         self::assertCount(2, $locales);
-        self::assertContains('de', $locales);
-        self::assertContains('en_US', $locales);
+        self::assertContains('De', $locales);
+        self::assertContains('En_Us', $locales);
     }
 
     public function testAllLocales(): void
@@ -85,9 +82,9 @@ class NumbersTest extends TestCase
     	/*
     	 *
     	 */
-        $this->markTestIncomplete(
-            'temporary disabled.'
-        );
+        // $this->markTestIncomplete(
+        //     'temporary disabled.'
+        // );
 
         $locales = $this->object->getLocales();
         foreach ($locales as $locale) {
@@ -100,14 +97,10 @@ class NumbersTest extends TestCase
         }
     }
 
-    /**
-     * @expectedException \IntlNumbersToWords\Exception\NumbersToWordsException
-     * @expectedExceptionMessage Unable to load locale class IntlNumbersToWords\Words\doesnotexist
-     */
     public function testLoadLocaleMissing(): void
     {
         $this->expectException(NumbersToWordsException::class);
-        $this->expectExceptionMessage('Unable to load locale class IntlNumbersToWords\Words\doesnotexist');
-        $this->object->loadLocale('doesnotexist');
+        $this->expectExceptionMessage('Unable to load locale class: IntlNumbersToWords\Words\Doesnotexist');
+        $this->object->getClassName('doesnotexist');
     }
 }

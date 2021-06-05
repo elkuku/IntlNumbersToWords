@@ -1,5 +1,4 @@
 <?php
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent: */
 /**
  * Numbers_Words class extension to spell numbers in Spanish (Castellano).
  *
@@ -20,16 +19,21 @@
  * @link       http://pear.php.net/package/Numbers_Words
  */
 
-namespace tests;
+namespace App\Tests\Words;
 
 use IntlNumbersToWords\Numbers;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \IntlNumbersToWords\Words\Es
+ */
 class SpanishTest extends TestCase
 {
-    var $handle;
+    private Numbers $handle;
 
-    function setUp(): void
+    protected string $locale = 'es';
+
+    public function setUp(): void
     {
         $this->handle = new Numbers();
     }
@@ -133,4 +137,20 @@ class SpanishTest extends TestCase
             $this->assertEquals($word, $this->handle->toWords($number, 'es'));
         }
     }
+
+    /**
+     * Testing Exponents
+     */
+    public function testExponents(): void
+    {
+        $values = [
+            1000000 => 'un millón',
+            2000000 => 'dos millones',
+        ];
+        foreach ($values as $number => $word) {
+            self::assertEquals($word, $this->handle->toWords($number, $this->locale));
+        }
+    }
+
+
 }

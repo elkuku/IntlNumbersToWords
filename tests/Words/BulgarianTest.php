@@ -1,5 +1,5 @@
 <?php
-namespace tests;
+namespace App\Tests\Words;
 
 use IntlNumbersToWords\Numbers;
 use PHPUnit\Framework\TestCase;
@@ -22,8 +22,9 @@ use PHPUnit\Framework\TestCase;
  * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version    SVN: $Id$
  * @link       http://pear.php.net/package/Numbers_Words
+ *
+ * @covers \IntlNumbersToWords\Words\Bg
  */
-
 class BulgarianTest extends TestCase
 {
     var $handle;
@@ -57,32 +58,36 @@ class BulgarianTest extends TestCase
 
     /**
      * Testing numbers between 10 and 99
+     * @dataProvider tensProvider
      */
-    function testTens()
+    function testTens(float $number, string $word)
     {
         $this->markTestIncomplete('This throws errors...');
 
-        $tens = array(11 => 'единадесет',
-                      12 => 'дванадесет',
-                      16 => 'шестнадесет',
-                      19 => 'деветнадесет',
-                      20 => 'двадесет',
-                      21 => 'двадесет и едно',
-                      26 => 'двадесет и шест',
-                      30 => 'тридесет',
-                      31 => 'тридесет и едно',
-                      40 => 'четиридесет',
-                      43 => 'четиридесет и три',
-                      50 => 'петдесет',
-                      55 => 'петдесет и пет',
-                      60 => 'шестдесет',
-                      67 => 'шестдесет и седем',
-                      70 => 'седемдесет',
-                      79 => 'седемдесет и девет'
-                     );
-        foreach ($tens as $number => $word) {
-            $this->assertEquals($word, $this->handle->toWords($number, 'bg'));
-        }
+        self::assertEquals($word, $this->handle->toWords($number, 'bg'));
+    }
+
+    public function tensProvider(): array
+    {
+        return [
+            [11 , 'единадесет'],
+            [12 , 'дванадесет'],
+            [16 , 'шестнадесет'],
+            [19 , 'деветнадесет'],
+            [20 , 'двадесет'],
+            [21 , 'двадесет и едно'],
+            [26 , 'двадесет и шест'],
+            [30 , 'тридесет'],
+            [31 , 'тридесет и едно'],
+            [40 , 'четиридесет'],
+            [43 , 'четиридесет и три'],
+            [50 , 'петдесет'],
+            [55 , 'петдесет и пет'],
+            [60 , 'шестдесет'],
+            [67 , 'шестдесет и седем'],
+            [70 , 'седемдесет'],
+            [79 , 'седемдесет и девет'],
+        ];
     }
 
     /**

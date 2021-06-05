@@ -12,7 +12,7 @@ abstract class AbstractWords
     /**
      * Converts a number to its word representation.
      *
-     * @param integer $num       An integer between -infinity and infinity inclusive :)
+     * @param float   $num       An float between -infinity and infinity inclusive :)
      *                           that need to be converted to words
      * @param integer $power     The power of ten for the rest of the number to the right.
      *                           Optional, defaults to 0.
@@ -24,5 +24,5 @@ abstract class AbstractWords
      * @author Piotr Klaban <makler@man.torun.pl>
      * @since  Numbers_Words 0.16.3
      */
-    abstract public function fromNumber(int $num, int $power = 0, string $powSuffix = ''): string;
+    abstract public function fromNumber(float $num, int $power = 0, string $powSuffix = ''): string;
 }
