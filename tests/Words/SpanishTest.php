@@ -41,7 +41,7 @@ class SpanishTest extends TestCase
     /**
      * Testing numbers between 0 and 9
      */
-    function testDigits()
+    public function testDigits(): void
     {
         $digits = array('cero',
                         'uno',
@@ -57,7 +57,7 @@ class SpanishTest extends TestCase
         for ($i = 0; $i < 10; $i++)
         {
             $number = $this->handle->toWords($i, 'es');
-            $this->assertEquals($digits[$i], $number);
+            self::assertEquals($digits[$i], $number);
         }
     }
 
