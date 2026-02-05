@@ -215,7 +215,7 @@ class Es extends AbstractWords
                 }
             }
             $num = substr($stringNumber, -6);
-            $integer = (integer)$num;
+            $integer = (int)$num;
             if ($num == 0) {
                 return $ret;
             }
