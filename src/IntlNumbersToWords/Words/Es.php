@@ -232,9 +232,9 @@ class Es extends AbstractWords
         }
 
         // values for digits, tens and hundreds
-        $hundreds = (int)floor(($integer / 100) % 10);
-        $tens = (int)floor(($integer / 10) % 10);
-        $digits = (int)floor($integer % 10);
+        $hundreds = intdiv($integer, 100) % 10;
+        $tens = intdiv($integer, 10) % 10;
+        $digits = $integer % 10;
 
         // cientos: doscientos, trescientos, etc...
         switch ($hundreds) {

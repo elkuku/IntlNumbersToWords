@@ -153,7 +153,7 @@ class Numbers
         float $num,
         string $locale = 'en_US',
         string $intCurr = '',
-        string $decimalPoint = null
+        ?string $decimalPoint = null
     ): string {
         $className = $this->getClassName($locale);
 
@@ -302,7 +302,7 @@ class Numbers
      */
     public function normalizeNumber(
         string $num,
-        string $decimalPoint = null
+        ?string $decimalPoint = null
     ): string {
         if (is_null($decimalPoint)) {
             $decimalPoint = $this->decimalPoint;
